@@ -1,0 +1,126 @@
+#
+###################################
+# Site wide configuration
+####################################
+#
+title: Saurabh  
+description: "Informatico, padre e marito. Nel tempo libero mi dedico alla famiglia, agli amici e ai videogiochi"
+keywords: Saurabh, relativist1, blog, jekyll, gh-pages, github, wordpress
+baseurl:  '' # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
+url: https://relativist1.github.io  # url should be 'http://<github_username>.github.io/homepage' as before
+img_path: /static/assets/img/blog  # url should be '/homepage/static/assets/img/blog' as before
+
+#
+###################################
+# Jekyll configuration
+####################################
+#
+timezone: Asia/Kolkata
+highlighter: rouge
+markdown: kramdown
+excerpt_separator: <!--more-->
+
+settings:
+  rating: general  # May be general, mature, restricted, 14 years or safe for kids
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+#
+###################################
+# Jekyll-SEO-tag settings
+####################################
+#
+lang: it_IT
+permalink: /blog/:categories/:title/
+
+social:
+  name: Saurabh 
+  links:
+    - https://www.facebook.com/saurabh.cosmos 
+    - https://www.linkedin.com/in/cristiancastellari/
+    - https://github.com/Relativist1
+    - https://instagram.com/relativist1
+
+# twitter:
+#   card: summary
+#   username: BloggerStanco
+
+# webmaster_verifications:
+#   google: FByo2xcDR6RaUId2DdQjhAmq9YMjlEhVlL0OgK8KDzU
+#   bing: FCA4B700F192727565A2354B488A3DD5
+
+#
+###################################
+# author configuration
+# index page "about me" section
+####################################
+#
+author:  # change following line to your infomation.
+  name: Saurabh # Be used at blog posts' author.
+  first_name: Saurabh  # Be used at index page about me section.
+  last_name:  # Be used at index page about me section.
+  avatar: /static/assets/img/landing/me.jpg  # upload your avatar at directory and edit it.
+  github_username: Relativist1  # Leave blank if you don't have now
+  linkedin_id:  # Leave blank if you don't have now
+  facebook_username: saurabh.cosmos  # Leave blank if you don't have now
+  twitter: 
+  email: sbhkmr1999@gmail.com  # Leave blank if you don't have now
+  cv: https://relativist1.github.ip/static/assets/cv/CV_academia.pdf  # An online CV can be printed as PDF, leave blank if you don't have now
+
+
+  # skill icons are on avatar's left and right side. Reference urls are http://fontawesome.io/ and http://fizzed.com/oss/font-mfizz
+  skill_icon1:
+    - name: fa-paper-plane-o
+    - name: fa-linux
+  skill_icon2:
+    - name: fa-apple
+    - name: fa-code
+  desc: "Informatico, padre e marito. Appassionato di tecnologia da sempre, curioso di natura. Nel tempo libero mi dedico alla famiglia, agli amici, alla cucina e ai videogiochi.
+  Credo fortmente in ITIL come framework da applicare non solo all'IT ma anche a normali situazioni di vita quotidiana"
+
+# comment
+# disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
+#   name: cristiancastellari-it
+
+# analytics
+## google analytics
+ga:  # if you wanna this feature, go to https://www.google.com/analytics/ to get your configuration; if not, comment following line.
+#  id: UA-93473370-3
+
+## google optimize
+go:
+  # id:
+
+## donation
+donation: off  # type 'on'/'off' to choice display donation button at post page or not
+
+## carousels
+index_carousel: on  # index page carousel switch
+blog_carousel: off  # blog page carousel switch
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+
+# scss
+sass:
+  sass_dir: _sass
+  style: compressed
+
+
+# Build settings
+encoding: utf-8
+
+jekyll_admin:
+  hidden_links:
+#    - posts
+#    - pages
+#    - staticfiles
+#    - datafiles
+#    - configuration
+
+
+
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']

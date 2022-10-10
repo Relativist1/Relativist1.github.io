@@ -1,0 +1,25 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Person" lang="it">
+
+    {% if page.title != 'Cristian Castellari' %}
+        {% include head.html %}
+    {% else %}
+        {% include index_head.html %}
+    {% endif %}
+
+<body id="page-top" class="landing-page">
+
+    {% if page.title != 'Cristian Castellari' %}
+        {% include blog_header.html %}
+    {% endif %}
+
+    {{ content }}
+
+{% include footer.html %}   
+
+</body>
+</html>
