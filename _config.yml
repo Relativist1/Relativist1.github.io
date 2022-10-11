@@ -3,8 +3,8 @@
 # Site wide configuration
 ####################################
 #
-title: Saurabh  
-description: "Informatico, padre e marito. Nel tempo libero mi dedico alla famiglia, agli amici e ai videogiochi"
+title: Home  
+description: ""
 keywords: Saurabh, relativist1, blog, jekyll, gh-pages, github, wordpress
 baseurl:  '' # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
 url: https://relativist1.github.io  # url should be 'http://<github_username>.github.io/homepage' as before
@@ -32,14 +32,13 @@ kramdown:
 # Jekyll-SEO-tag settings
 ####################################
 #
-lang: it_IT
+lang: 
 permalink: /blog/:categories/:title/
 
 social:
   name: Saurabh 
   links:
     - https://www.facebook.com/saurabh.cosmos 
-    - https://www.linkedin.com/in/cristiancastellari/
     - https://github.com/Relativist1
     - https://instagram.com/relativist1
 
@@ -77,8 +76,7 @@ author:  # change following line to your infomation.
   skill_icon2:
     - name: fa-apple
     - name: fa-code
-  desc: "Informatico, padre e marito. Appassionato di tecnologia da sempre, curioso di natura. Nel tempo libero mi dedico alla famiglia, agli amici, alla cucina e ai videogiochi.
-  Credo fortmente in ITIL come framework da applicare non solo all'IT ma anche a normali situazioni di vita quotidiana"
+  desc: 
 
 # comment
 # disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
