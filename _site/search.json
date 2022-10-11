@@ -13,7 +13,7 @@
     
     {
         "title" : "Distribuire un aggiornamento di build di Windows 10 via Kace - 2019-12-16",
-        "url" : "/blog/kace/aggiornare-windows10-k1000/",
+        "url" : "/simulations/kace/aggiornare-windows10-k1000/",
         "description" : "Usiamo Kace per aggiornare un PC da Windows 7/8/10 all'ultima build di Windows 10"
     }
     
@@ -31,7 +31,7 @@
     
     {
         "title" : "Come importare un certificato CA su PC Windows con Kace 1000 - 2018-09-17",
-        "url" : "/blog/kace/distribuzione-certificati_ca-kace1000/",
+        "url" : "/simulations/kace/distribuzione-certificati_ca-kace1000/",
         "description" : "Vediamo insieme come distribuire certificati Windows usando KACE 1000"
     }
     
@@ -40,7 +40,7 @@
     
     {
         "title" : "Blocco delle applicazioni con K1000 - 2018-07-11",
-        "url" : "/blog/kace/blocco-applicativo-k1000/",
+        "url" : "/simulations/kace/blocco-applicativo-k1000/",
         "description" : "Come utilizzare KACE 1000 per il controllo ed il blocco dei software non autorizzati sui PC - Una breve guida."
     }
     
@@ -76,7 +76,7 @@
     
     {
         "title" : "code snippet test - 2017-12-21",
-        "url" : "/blog/html/test-code-snippets/",
+        "url" : "/simulations/html/test-code-snippets/",
         "description" : ""
     }
     
@@ -85,7 +85,7 @@
     
     {
         "title" : "Identificare e terminare processi zombie su Linux - 2015-10-25",
-        "url" : "/blog/linux/idenficare-processi-zombie-linux/",
+        "url" : "/simulations/linux/idenficare-processi-zombie-linux/",
         "description" : "Vediamo come uccidere, con un semplice script, eventuali processi zombie rimasti attivi sul nostro server Linux"
     }
     

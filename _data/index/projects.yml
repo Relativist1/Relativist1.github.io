@@ -9,12 +9,12 @@
 
 - name: Black hole Accretion and VLBI Imaging
   url: https://relativist1.github.io/simulations
-  img: /static/assets/img/landing/bh_accretion.png
+  img: /static/assets/img/landing/bh_accretion.jpeg
   desc:  
   #i18n: k1000-database-queries
 
 - name: Modelling X-Ray Binaries
-  img: /static/assets/img/landing/bh_shadow.jpeg
+  img: /static/assets/img/landing/bh_accretion.jpeg
   desc: 
 
 - name: Bayesian Techniques
