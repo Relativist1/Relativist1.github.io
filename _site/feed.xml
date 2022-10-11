@@ -3,10 +3,10 @@
   <channel>
     <title>Home</title>
     <description></description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 11 Oct 2022 11:33:59 +0530</pubDate>
-    <lastBuildDate>Tue, 11 Oct 2022 11:33:59 +0530</lastBuildDate>
+    <link>https://relativist1.github.io/</link>
+    <atom:link href="https://relativist1.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 11 Oct 2022 11:37:03 +0530</pubDate>
+    <lastBuildDate>Tue, 11 Oct 2022 11:37:03 +0530</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
@@ -54,8 +54,8 @@ Il preavviso di 24h si può ridurre al minimo indispensabile in caso di attivit�
 &lt;/ol&gt;
 </description>
         <pubDate>Wed, 10 Aug 2022 10:00:00 +0530</pubDate>
-        <link>http://localhost:4000/blog/itil/black-cat-agreement/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/itil/black-cat-agreement/</guid>
+        <link>https://relativist1.github.io/blog/itil/black-cat-agreement/</link>
+        <guid isPermaLink="true">https://relativist1.github.io/blog/itil/black-cat-agreement/</guid>
         
         <category>it</category>
         
@@ -233,8 +233,8 @@ Andremo a dettagliare i passaggi uno per uno ma chi avesse già esperienza con l
 &lt;p&gt;(ricorda: &lt;strong&gt;PROVA SEMPRE PRIMA DI DISTRIBUIRE!!!&lt;/strong&gt;)&lt;/p&gt;
 </description>
         <pubDate>Mon, 16 Dec 2019 11:30:00 +0530</pubDate>
-        <link>http://localhost:4000/blog/kace/aggiornare-windows10-k1000/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/kace/aggiornare-windows10-k1000/</guid>
+        <link>https://relativist1.github.io/blog/kace/aggiornare-windows10-k1000/</link>
+        <guid isPermaLink="true">https://relativist1.github.io/blog/kace/aggiornare-windows10-k1000/</guid>
         
         <category>kace</category>
         
@@ -329,8 +329,8 @@ Oppure, molto più semplicemente, si può utilizzare un tool di conversione come
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 24 Jan 2019 12:30:00 +0530</pubDate>
-        <link>http://localhost:4000/blog/tools/ipui-to-ipei/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/tools/ipui-to-ipei/</guid>
+        <link>https://relativist1.github.io/blog/tools/ipui-to-ipei/</link>
+        <guid isPermaLink="true">https://relativist1.github.io/blog/tools/ipui-to-ipei/</guid>
         
         <category>telefonia</category>
         
@@ -470,8 +470,8 @@ Ad esempio, nel nostro caso lo script verrà eseguito sui devices desiderati ogn
 &lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/cassl/schedule.png&quot; alt=&quot;kscript Schedule&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 17 Sep 2018 11:30:00 +0530</pubDate>
-        <link>http://localhost:4000/blog/kace/distribuzione-certificati_ca-kace1000/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/kace/distribuzione-certificati_ca-kace1000/</guid>
+        <link>https://relativist1.github.io/blog/kace/distribuzione-certificati_ca-kace1000/</link>
+        <guid isPermaLink="true">https://relativist1.github.io/blog/kace/distribuzione-certificati_ca-kace1000/</guid>
         
         <category>kace</category>
         
@@ -627,8 +627,8 @@ Ad esempio, nel nostro caso lo script verrà eseguito sui devices desiderati ogn
 &lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/appcontrol/messagebox.png&quot; alt=&quot;Screenshot 9&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 11 Jul 2018 00:00:00 +0530</pubDate>
-        <link>http://localhost:4000/blog/kace/blocco-applicativo-k1000/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/kace/blocco-applicativo-k1000/</guid>
+        <link>https://relativist1.github.io/blog/kace/blocco-applicativo-k1000/</link>
+        <guid isPermaLink="true">https://relativist1.github.io/blog/kace/blocco-applicativo-k1000/</guid>
         
         <category>kace</category>
         
@@ -782,8 +782,8 @@ RewriteEngineon
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 13 Apr 2018 00:00:00 +0530</pubDate>
-        <link>http://localhost:4000/blog/wordpress/bloccare-hotlinking-immagini/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/wordpress/bloccare-hotlinking-immagini/</guid>
+        <link>https://relativist1.github.io/blog/wordpress/bloccare-hotlinking-immagini/</link>
+        <guid isPermaLink="true">https://relativist1.github.io/blog/wordpress/bloccare-hotlinking-immagini/</guid>
         
         <category>htaccess</category>
         
@@ -855,8 +855,8 @@ RewriteEngineon
 &lt;p&gt;&lt;a href=&quot;https://www.skyflash.it/traduzione-italiano-morrowind-tribunal-bloodmoon/3581/&quot;&gt;skyflash.it - La traduzione in Italiano di Morrowind, Tribunal e Bloodmoon&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 05 Apr 2018 00:00:00 +0530</pubDate>
-        <link>http://localhost:4000/blog/games/la-traduzione-di-morrowind-e-bloodmoon/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/games/la-traduzione-di-morrowind-e-bloodmoon/</guid>
+        <link>https://relativist1.github.io/blog/games/la-traduzione-di-morrowind-e-bloodmoon/</link>
+        <guid isPermaLink="true">https://relativist1.github.io/blog/games/la-traduzione-di-morrowind-e-bloodmoon/</guid>
         
         <category>Morrowind</category>
         
@@ -1040,8 +1040,8 @@ f.Close
 &lt;p&gt;&lt;strong&gt;Save&lt;/strong&gt; your new report and try it.&lt;/p&gt;
 </description>
         <pubDate>Wed, 14 Feb 2018 00:00:00 +0530</pubDate>
-        <link>http://localhost:4000/blog/kace/k1000-report-pc-with-smartcard-reader/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/kace/k1000-report-pc-with-smartcard-reader/</guid>
+        <link>https://relativist1.github.io/blog/kace/k1000-report-pc-with-smartcard-reader/</link>
+        <guid isPermaLink="true">https://relativist1.github.io/blog/kace/k1000-report-pc-with-smartcard-reader/</guid>
         
         <category>kace</category>
         
@@ -1091,8 +1091,8 @@ say_hello()   // &quot;hello world!&quot;
 &lt;p&gt;Side note comment: applied a bug fix similar to &lt;a href=&quot;https://github.com/Atlas7/atlas7.github.io/commit/6659f4a47f6ec66987adb0f683a9c6f3842252ae#diff-818954a41dbfb01af70050a459c603b9&quot;&gt;this commit&lt;/a&gt; to ensure code snippet does not collapse unexpectly upon clicking on it. This issue is tracked &lt;a href=&quot;https://github.com/jarrekk/Jalpc/issues/97&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Thu, 21 Dec 2017 00:00:00 +0530</pubDate>
-        <link>http://localhost:4000/blog/html/test-code-snippets/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/html/test-code-snippets/</guid>
+        <link>https://relativist1.github.io/blog/html/test-code-snippets/</link>
+        <guid isPermaLink="true">https://relativist1.github.io/blog/html/test-code-snippets/</guid>
         
         <category>Jalpc</category>
         
@@ -1210,8 +1210,8 @@ else
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 25 Oct 2015 00:00:00 +0530</pubDate>
-        <link>http://localhost:4000/blog/linux/idenficare-processi-zombie-linux/</link>
-        <guid isPermaLink="true">http://localhost:4000/blog/linux/idenficare-processi-zombie-linux/</guid>
+        <link>https://relativist1.github.io/blog/linux/idenficare-processi-zombie-linux/</link>
+        <guid isPermaLink="true">https://relativist1.github.io/blog/linux/idenficare-processi-zombie-linux/</guid>
         
         <category>Linux</category>
         
