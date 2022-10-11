@@ -1,0 +1,16 @@
+I"÷<table align="left">
+    <tr>
+        <td><img src="/static/assets/img/landing/hotspot.gif" alt="Hotspot model" width="480" height="400" /></td>
+        <td><img src="/static/assets/img/landing/riaf.gif" alt="RIAF Model" width="290" height=" 320" /></td>
+        <td><img src="/static/assets/img/landing/thindisk.gif" alt="RIAF Model" width="400" height=" 410" /></td>
+    </tr>    
+</table>
+
+<!-- <div class="column">
+  <div class="row">
+    <img src="/static/assets/img/landing/hotspot.gif" alt="Hotspot model" width="480" height="400">
+    <img src="/static/assets/img/landing/hotspot.gif" alt="Hotspot model" width="480" height="400">
+    <img src="/static/assets/img/landing/hotspot.gif" alt="Hotspot model" width="480" height="400">
+  </div>
+</div> -->
+:ET
