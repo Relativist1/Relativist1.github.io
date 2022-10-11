@@ -1,0 +1,1232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home</title>
+    <description></description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 11 Oct 2022 11:33:59 +0530</pubDate>
+    <lastBuildDate>Tue, 11 Oct 2022 11:33:59 +0530</lastBuildDate>
+    <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>Regole operative per la gestione dell’Infrastruttura IT: Il Black Cat Agreement</title>
+        <description>&lt;h2 id=&quot;regole-operative-per-la-gestione-dellinfrastruttura-it&quot;&gt;Regole operative per la gestione dell’Infrastruttura IT&lt;/h2&gt;
+
+&lt;h3 id=&quot;agreements&quot;&gt;Agreements&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Non si effettuano attività sull’infrastruttura IT di produzione &lt;u&gt;il Venerdì, il Sabato e la Domenica/Festivi&lt;/u&gt; (ed anche il Giovedì dopo le 16:00)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Prima di effettuare &lt;strong&gt;qualsiasi attività&lt;/strong&gt; sull’infrastruttura IT di test o produzione va inviata &lt;u&gt;una email a tutti i colleghi&lt;/u&gt; per informare dell’intervento, &lt;strong&gt;con almeno 24h di anticipo&lt;/strong&gt;.&lt;br /&gt;
+Il preavviso di 24h si può ridurre al minimo indispensabile in caso di attività da effettuare per risolvere problemi urgenti (la comunicazione va comunque inviata sempre).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Nel caso l’attività abbia un impatto sugli utenti, &lt;strong&gt;il preavviso sale ad almeno 72h&lt;/strong&gt; per la comunicazione, che va inviata anche a tutti gli utenti coinvolti.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Per ciascuna attività va inviata a tutti i soggetti coinvolti (interni ed esterni) una email di inizio attività ed una email di fine attività.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Riunioni interne di allineamento che coinvolgono tutto il gruppo:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Almeno &lt;strong&gt;una a settimana&lt;/strong&gt; il Venerdì mattina.&lt;/li&gt;
+      &lt;li&gt;Non pià di &lt;strong&gt;3 a settimana&lt;/strong&gt;.&lt;/li&gt;
+      &lt;li&gt;Durata MAX di ciascuna riunione &lt;strong&gt;90 minuti&lt;/strong&gt;&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;La gestione dei progetti prevede:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;La condivisione degli obiettivi e delle scadenze con la Direzione IT e con il gruppo di progetto, che prevede la &lt;strong&gt;presenza fissa dei responsabili delle varie BU interessate&lt;/strong&gt;.&lt;/li&gt;
+      &lt;li&gt;L’approvazione del progetto da parte della Direzione IT, prima di iniziare a lavorare sul progetto stesso.&lt;/li&gt;
+      &lt;li&gt;La redazione della documentazione di progetto &lt;strong&gt;prima di iniziare il progetto&lt;/strong&gt;.&lt;/li&gt;
+      &lt;li&gt;Che gli eventuali acquisti vanno &lt;strong&gt;sempre correlati&lt;/strong&gt; ad un progetto approvato&lt;br /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Le decisioni prese in riunione possono essere modificate &lt;strong&gt;solo a seguito di una nuova riunione&lt;/strong&gt; che allinei tutti i partecipanti.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Wed, 10 Aug 2022 10:00:00 +0530</pubDate>
+        <link>http://localhost:4000/blog/itil/black-cat-agreement/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/itil/black-cat-agreement/</guid>
+        
+        <category>it</category>
+        
+        <category>service management</category>
+        
+        <category>gestione</category>
+        
+        <category>ITIL</category>
+        
+        
+        <category>ITIL</category>
+        
+        <category>Life</category>
+        
+      </item>
+    
+      <item>
+        <title>Distribuire un aggiornamento di build di Windows 10 via Kace</title>
+        <description>&lt;p&gt;Gli aggiornamenti di build di Windows 10 non sono &lt;em&gt;patch&lt;/em&gt; tradizionali, &lt;em&gt;rollup&lt;/em&gt; o &lt;em&gt;service pack&lt;/em&gt;. Dal punto di vista della distribuzione, sono progettati e si comportano come un aggiornamento del sistema operativo &lt;em&gt;“in-place”&lt;/em&gt;, cioè senza toccare alcun dato od impostazione preesistente, rimuovere la versione di SO precedente e senza salvare nessun dato. Pertanto richiedono maggiore pianificazione e test rispetto alle patch tradizionali, oltre a maggiori risorse (capacità del disco per server e client, larghezza di banda, tempo di installazione, ecc.).&lt;/p&gt;
+
+&lt;p&gt;&lt;small&gt;&lt;b&gt;NOTA: questa guida utilizza la versione 1903 di Ottobre 2019 come esempio di build nei passaggi seguenti&lt;/b&gt;&lt;/small&gt;&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#prima-fase-creare-il-pacchetto-di-installazione&quot; id=&quot;markdown-toc-prima-fase-creare-il-pacchetto-di-installazione&quot;&gt;Prima fase: Creare il pacchetto di installazione&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#otteniamo-una-iso-ufficiale-di-windows-10&quot; id=&quot;markdown-toc-otteniamo-una-iso-ufficiale-di-windows-10&quot;&gt;Otteniamo una ISO ufficiale di Windows 10&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#montare-la-iso-e-creare-un-file-zip&quot; id=&quot;markdown-toc-montare-la-iso-e-creare-un-file-zip&quot;&gt;Montare la ISO e creare un file .zip&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#seconda-fase-upload-del-pacchetto-su-kace-sma&quot; id=&quot;markdown-toc-seconda-fase-upload-del-pacchetto-su-kace-sma&quot;&gt;Seconda fase: Upload del pacchetto su KACE SMA&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#verifica-dellattivazione-di-samba&quot; id=&quot;markdown-toc-verifica-dellattivazione-di-samba&quot;&gt;Verifica dell’attivazione di Samba&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#caricamento-dellarchivio-nella-clientdrop&quot; id=&quot;markdown-toc-caricamento-dellarchivio-nella-clientdrop&quot;&gt;Caricamento dell’archivio nella clientdrop&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#terza-fase-mappare-il-pacchetto-di-installazione-allinterno-dellinventario&quot; id=&quot;markdown-toc-terza-fase-mappare-il-pacchetto-di-installazione-allinterno-dellinventario&quot;&gt;Terza Fase: Mappare il pacchetto di installazione all’interno dell’Inventario&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#scenario-operativo&quot; id=&quot;markdown-toc-scenario-operativo&quot;&gt;Scenario Operativo&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#creazione-di-un-custom-software&quot; id=&quot;markdown-toc-creazione-di-un-custom-software&quot;&gt;Creazione di un Custom Software&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#quarta-fase-creazione-e-deploy-del-processo-di-aggiornamento&quot; id=&quot;markdown-toc-quarta-fase-creazione-e-deploy-del-processo-di-aggiornamento&quot;&gt;Quarta Fase: Creazione e deploy del processo di aggiornamento&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#creazione-della-managed-install&quot; id=&quot;markdown-toc-creazione-della-managed-install&quot;&gt;Creazione della Managed Install&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#deploy&quot; id=&quot;markdown-toc-deploy&quot;&gt;Deploy&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;prima-fase-creare-il-pacchetto-di-installazione&quot;&gt;Prima fase: Creare il pacchetto di installazione&lt;/h2&gt;
+
+&lt;p&gt;Gli aggiornamenti di build devono essere ottenuti direttamente da Microsoft. Sono distribuiti in formato ISO e devono essere estratti e ripacchettizzati per la distribuzione tramite prodotti di terze parti come KACE Systems Management Appliance.&lt;/p&gt;
+
+&lt;h3 id=&quot;otteniamo-una-iso-ufficiale-di-windows-10&quot;&gt;Otteniamo una ISO ufficiale di Windows 10&lt;/h3&gt;
+
+&lt;p&gt;Per ottenere la ISO di Windows 10 useremo &lt;strong&gt;uno quasiasi&lt;/strong&gt; di questi &lt;strong&gt;tre metodi&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Scaricare la ISO dalla propria &lt;strong&gt;MSDN Library&lt;/strong&gt; (richiede una licenza MSDN attiva), assicurandosi di ottenere la versione appropriata per il proprio scopo (es: Home, Professional, eccetera)&lt;/li&gt;
+  &lt;li&gt;Usare il &lt;strong&gt;Media Creation Tool&lt;/strong&gt; di Microsoft, scaricandolo da questo indirizzo: &lt;a href=&quot;https://www.microsoft.com/en-us/software-download/windows10&quot;&gt;https://www.microsoft.com/en-us/software-download/windows10&lt;/a&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Una volta scaricato, esegui il Tool&lt;/li&gt;
+      &lt;li&gt;Quando ti viene richiesto cosa vuoi fare, scegli “&lt;strong&gt;Crea supporti di installazione (unità flash USB, DVD o file ISO) per un altro PC&lt;/strong&gt;” e clicca &lt;strong&gt;Avanti&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;Verifica che le opzioni raccomandate (linuga, versione ed architettura) siano corrette in base alle tue necessità e prosegui&lt;/li&gt;
+      &lt;li&gt;In “Scegli il supporto da usare” seleziona &lt;strong&gt;File ISO&lt;/strong&gt; e clicca &lt;strong&gt;Avanti&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;Scegli un nome per il file (esempio: &lt;strong&gt;Windows10_1903_Italiano_x64.iso&lt;/strong&gt;) e prosegui. Inizierà il download della ISO configurata così come hai deciso nelle opzioni precedenti&lt;/li&gt;
+      &lt;li&gt;Clicca &lt;strong&gt;Fine&lt;/strong&gt; al completamento per chiudere il wizard&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Metodo Alternativo: Scaricare la ISO direttamente da &lt;a href=&quot;https://www.microsoft.com/en-us/
+software-download/windows10ISO&quot;&gt;https://www.microsoft.com/en-us/software-download/windows10ISO&lt;/a&gt;, visitando la URL con un computer &lt;strong&gt;non Windows&lt;/strong&gt; (OS X o Linux)&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;montare-la-iso-e-creare-un-file-zip&quot;&gt;Montare la ISO e creare un file .zip&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In Windows 10, la ISO può essere montata facendo clic con il pulsante destro del mouse sul file e scegliendo “&lt;strong&gt;Monta&lt;/strong&gt;” o semplicemente facendo doppio clic sul file ISO.&lt;/li&gt;
+  &lt;li&gt;Assicurati di avere 7-Zip installato. 7-Zip è una condizione essenziale, quindi se non lo hai procuratelo da &lt;a href=&quot;https://www.7-zip.org/a/7z1604.exe&quot;&gt;qui&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Una volta montata, &lt;strong&gt;seleziona tutti i file all’interno della ISO&lt;/strong&gt; (non la directory / unità, ma i file al suo interno), quindi fai clic con il pulsante destro del mouse e scegli “&lt;strong&gt;7-Zip &amp;gt; Aggiungi all’archivio…&lt;/strong&gt;”
+&lt;img src=&quot;/static/assets/img/blog/kace/w10upgrade/KB_1-547AMZ0_AddToArchive.png&quot; alt=&quot;Screenshot 1 - 7-Zip &amp;gt; Add to Archive...&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Nota:&lt;/strong&gt; visto che la ISO è ovviamente read-only, scegli un percorso di salvataggio dello zip esterno, da qualche parte sul tuo hard disk&lt;/li&gt;
+  &lt;li&gt;Al termine della compressione, il file zip verrà creato nella posizione selezionata con un nome generato automaticamente (esempio: setup.zip). Rinomina in modo appropriato (esempio: &lt;strong&gt;Windows10_1903_Italiano_x64.zip&lt;/strong&gt;). Questo file verrà utilizzato nei seguenti passaggi&lt;/li&gt;
+  &lt;li&gt;Smonta la ISO (fai clic con il pulsante destro del mouse sull’unità ed espelli) e fanne ciò che preferisci. Per questa guida non ne avremo più bisogno&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;seconda-fase-upload-del-pacchetto-su-kace-sma&quot;&gt;Seconda fase: Upload del pacchetto su KACE SMA&lt;/h2&gt;
+
+&lt;p&gt;Per via delle limitazioni sulla massima dimensione uploadabile di un file via interfaccia web, il pacchetto zip deve essere caricato su Kace tramite la &lt;strong&gt;condivisione samba &lt;em&gt;clientdrop&lt;/em&gt;&lt;/strong&gt;. La dimensione massima del file per il caricamento tramite l’interfaccia utente Web di SMA è infatti di 2GB (versione 8.0 e precedenti) o 4 GB (versione 8.1 e successive), mentre gli aggiornamenti di build tendono ad essere leggermente troppo grandi rispetto a questi limiti. Il metodo Samba evita del tutto il limite di upload e, opinione personale, è anche più veloce e pratico.&lt;/p&gt;
+
+&lt;h3 id=&quot;verifica-dellattivazione-di-samba&quot;&gt;Verifica dell’attivazione di Samba&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Se Samba non è abilitato, abilitalo (Samba può essere disabilitato dopo che il pacchetto è stato caricato e importato al passaggio 3). Le impostazioni di abilitazione / disabilitazione di Samba si trovano in &lt;strong&gt;Settings &amp;gt; Security Settings&lt;/strong&gt; all’interno dell’interfaccia di Amministrazione. Per abilitare Samba, verifica che sia abilitato il checkbox “&lt;strong&gt;Enable organization file shares&lt;/strong&gt;”
+&lt;img src=&quot;/static/assets/img/blog/kace/w10upgrade/KB_1-547AMZ0_w10bu_samba.png&quot; alt=&quot;Screenshot 2 - Samba Shares&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Assicurati anche che la condivisione sia abilitata anche a &lt;strong&gt;livello di organizzazione&lt;/strong&gt; e di conoscere le credenziali per la share &lt;strong&gt;clientdrop&lt;/strong&gt;. In caso contrario la password può essere reimpostata nella pagina &lt;strong&gt;Settings &amp;gt; General Settings&lt;/strong&gt; nell’interfaccia utente di amministrazione (specifica dell’organizzazione per sistemi multi-org)
+&lt;img src=&quot;/static/assets/img/blog/kace/w10upgrade/KB_1-547AMZ0_w10bu_samba_share.png&quot; alt=&quot;Screenshot 3 - Samba Shares&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;caricamento-dellarchivio-nella-clientdrop&quot;&gt;Caricamento dell’archivio nella clientdrop&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Collegati alla share &lt;strong&gt;clientdrop&lt;/strong&gt;. Puoi farlo facilmente aprendo un Esplora Risorse e digitando l’indirizzo UNC della tua appliance Kace (esempio: &lt;strong&gt;\\KBOX\clientdrop&lt;/strong&gt;, sostituendo &lt;em&gt;KBOX&lt;/em&gt; con il nome del tuo host SMA).
+&lt;img src=&quot;/static/assets/img/blog/kace/w10upgrade/KB_1-547AMZ0_w10bu_clientdrop.png&quot; alt=&quot;Screenshot 4 - KACE SMA clientdrop&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Trascina all’interno della &lt;strong&gt;clientdrop&lt;/strong&gt; il file .zip creato nella &lt;a href=&quot;#prima-fase-creare-il-pacchetto-di-installazione&quot;&gt;Fase Uno&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;img src=&quot;/static/assets/img/blog/kace/w10upgrade/KB_1-547AMZ0_w10bu_clientdrop_copy.png&quot; alt=&quot;Screenshot 5 - KACE SMA clientdrop&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Concluso con successo il caricamento, passiamo allo Step 3&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;terza-fase-mappare-il-pacchetto-di-installazione-allinterno-dellinventario&quot;&gt;Terza Fase: Mappare il pacchetto di installazione all’interno dell’Inventario&lt;/h2&gt;
+
+&lt;h3 id=&quot;scenario-operativo&quot;&gt;Scenario Operativo&lt;/h3&gt;
+
+&lt;p&gt;Per ragioni di performance, andremo a creare un &lt;strong&gt;Custom Software Title&lt;/strong&gt; all’interno del &lt;strong&gt;Software Inventory&lt;/strong&gt;, tralasciando invece il &lt;strong&gt;Software Catalog&lt;/strong&gt;. Questa scelta è dovuta alla grande quantità di versioni e revisioni di Windows 10 all’interno del Catalog che andrebbero ad impattare fortemente sulle prestazioni del database di Kace ad ogni interrogazione dello stesso da parte della Managed Install che andremo a vedere verso la fine di questa guida.&lt;/p&gt;
+
+&lt;p&gt;Creeremo anche una apposita &lt;strong&gt;regola di inventario personalizzato&lt;/strong&gt; (“&lt;em&gt;Custom Inventory Rule&lt;/em&gt;”), in modo da avere un controllo più preciso e granulare sul processo di aggiornamento attuale e futuro.&lt;/p&gt;
+
+&lt;h3 id=&quot;creazione-di-un-custom-software&quot;&gt;Creazione di un Custom Software&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Nell’interfaccia di amministraizone, vai su &lt;strong&gt;Inventory &amp;gt; Software&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Dal menu &lt;strong&gt;Choose Action&lt;/strong&gt; seleziona &lt;strong&gt;New&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Compila i campi &lt;strong&gt;Name&lt;/strong&gt;, &lt;strong&gt;Version&lt;/strong&gt;, &lt;strong&gt;Publisher&lt;/strong&gt; e &lt;strong&gt;Notes&lt;/strong&gt; come preferisci. Ad esempio:
+&lt;img src=&quot;/static/assets/img/blog/kace/w10upgrade/customsoftware.png&quot; alt=&quot;Screenshot 6 - Custom Inventory Title&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Nel campo &lt;strong&gt;Custom Inventory Rule&lt;/strong&gt; inseriamo una regola che andrà a verificare una precisa chiave di registro, situata in &lt;strong&gt;HKLM\Software\Microsoft\Windows NT\CurrentVersion&lt;/strong&gt;, per identificare la verisone della build.
+&lt;img src=&quot;/static/assets/img/blog/kace/w10upgrade/cir1903.png&quot; alt=&quot;Screenshot 7 - Custom Inventory Rule&quot; /&gt;&lt;br /&gt;
+Codice:
+    &lt;div class=&quot;language-dosbatch highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;RegistryValueEquals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;HKLM64&lt;/span&gt;\SOFTWARE\Microsoft\Windows &lt;span class=&quot;kd&quot;&gt;NT&lt;/span&gt;\CurrentVersion&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;ReleaseId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1903&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Associamo finalmente il nostro file zip, creato in precendenza e copiato nella condivisione clientdrop, al Custom Software. Per far ciò andremo a scegliere dal menu a tendina &lt;strong&gt;Upload and Associate Client Drop File&lt;/strong&gt; il file, salvando al termine.
+&lt;img src=&quot;/static/assets/img/blog/kace/w10upgrade/mediaupload.png&quot; alt=&quot;Screenshot 8 - Media Upload&quot; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;quarta-fase-creazione-e-deploy-del-processo-di-aggiornamento&quot;&gt;Quarta Fase: Creazione e deploy del processo di aggiornamento&lt;/h2&gt;
+
+&lt;p&gt;Ora che abbiamo tutti i pezzi del puzzle, dobbiamo solo unirli nel passaggio finale. Andremo a creare una &lt;strong&gt;Installazione Gestita&lt;/strong&gt; (&lt;em&gt;Managed Install&lt;/em&gt;) che avrà il compito di distrubire la nuova build di Windows 10 nei PC target.&lt;br /&gt;
+Andremo a dettagliare i passaggi uno per uno ma chi avesse già esperienza con le Managed Install può saltare direttamente alla fine.&lt;/p&gt;
+
+&lt;h3 id=&quot;creazione-della-managed-install&quot;&gt;Creazione della Managed Install&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Nel pannello di Amministrazione, vai in &lt;strong&gt;Distribution &amp;gt; Managed Installations&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Seleziona &lt;strong&gt;Choose Action &amp;gt; **New&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Digita un nome per la Managed Install, ad esempio “Windows 10 1903 Upgrade”&lt;/li&gt;
+  &lt;li&gt;Imposta l’opzione di esecuzione desiderata in base ai tuoi requisiti. Se tieni il campo con valore “Disabled” la MI non verrà eseguita&lt;/li&gt;
+  &lt;li&gt;In &lt;strong&gt;Inventory&lt;/strong&gt; scegli &lt;strong&gt;Software&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Nel menu a discesa &lt;strong&gt;Software&lt;/strong&gt;, scegli il software title che hai creato nello &lt;a href=&quot;#terza-fase-mappare-il-pacchetto-di-installazione-allinterno-dellinventario&quot;&gt;Step 3&lt;/a&gt; ed a cui hai associato lo zip&lt;/li&gt;
+  &lt;li&gt;Verifica che sia selezionato &lt;strong&gt;Use associated file&lt;/strong&gt; e che il fle mostrato sia il tuo zip
+&lt;img src=&quot;/static/assets/img/blog/kace/w10upgrade/mi-general.png&quot; alt=&quot;Screenshot 9 - Managed Install - General Settings&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Se lo desideri (consigliato), seleziona &lt;strong&gt;Delete downloaded files&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Installation Options:&lt;/strong&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Seleziona &lt;strong&gt;Override default installation&lt;/strong&gt; ed inserisci questa stringa&lt;br /&gt;
+  Codice:
+        &lt;div class=&quot;language-dosbatch highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.exe&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/auto &lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;upgrade&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/DynamicUpdate disable&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/showoobe &lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;none&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Verifica che sia spuntato il selettore &lt;strong&gt;Don’t prepend msiexec.exe&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&quot;/static/assets/img/blog/kace/w10upgrade/mi-options.png&quot; alt=&quot;Screenshot 10 - Managed Install - Opzioni&quot; /&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;Nota&lt;/strong&gt;: Puoi trovare una spiegazione esaustiva riguardo tutti i parametri di &lt;strong&gt;setup.exe&lt;/strong&gt; tu technet di Microsoft, qui: &lt;a href=&quot;https://blogs.technet.microsoft.com/home_is_where_i_lay_my_head/2015/09/14/windows-10-setup-command-line-switches/&quot;&gt;https://blogs.technet.microsoft.com/home_is_where_i_lay_my_head/2015/09/14/windows-10-setup-command-line-switches/&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;deploy&quot;&gt;Deploy&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Nella sezione &lt;strong&gt;Deploy&lt;/strong&gt;, assegna alla Managed Install le &lt;strong&gt;Labels&lt;/strong&gt; che ritieni più opportune (&lt;em&gt;è &lt;strong&gt;fortemente raccomandato&lt;/strong&gt; eseguire uno o più test preliminari su un numero ristretto di computer&lt;/em&gt;)&lt;/li&gt;
+  &lt;li&gt;Configura la sezione di &lt;strong&gt;Notifica&lt;/strong&gt;, inserendo un messaggio chiaro e che rispecchi le tue necessità
+&lt;img src=&quot;/static/assets/img/blog/kace/w10upgrade/mi-schedule.png&quot; alt=&quot;Screenshot 11 - Managed Install - Schedule&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Configura la &lt;strong&gt;Schedulazione&lt;/strong&gt;, anche qui in base alle tue specifiche (&lt;em&gt;Nota: non è consigliabile regolare la finestra di distribuzione, poiché le MIs vengono eseguite solo durante l’intervallo di inventario. Se la finestra è configurata in modo tale da non essere aperta abbastanza a lungo da consentire a tutti i sistemi di eseguire un intervallo di inventario, i sistemi interessati non riceveranno mai l’aggiornamento.&lt;/em&gt;)
+&lt;img src=&quot;/static/assets/img/blog/kace/w10upgrade/mi-deployment.png&quot; alt=&quot;Screenshot 12 - Managed Install - Schedule&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Premi &lt;strong&gt;Save&lt;/strong&gt; per completare il lavoro. Abbiamo finito, buon aggiornamento di build&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;(ricorda: &lt;strong&gt;PROVA SEMPRE PRIMA DI DISTRIBUIRE!!!&lt;/strong&gt;)&lt;/p&gt;
+</description>
+        <pubDate>Mon, 16 Dec 2019 11:30:00 +0530</pubDate>
+        <link>http://localhost:4000/blog/kace/aggiornare-windows10-k1000/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/kace/aggiornare-windows10-k1000/</guid>
+        
+        <category>kace</category>
+        
+        <category>k1000</category>
+        
+        <category>script</category>
+        
+        <category>batch</category>
+        
+        <category>kscript</category>
+        
+        <category>windows</category>
+        
+        <category>windows 10</category>
+        
+        <category>upgrade</category>
+        
+        <category>aggiornamento</category>
+        
+        
+        <category>Kace</category>
+        
+      </item>
+    
+      <item>
+        <title>IPUI to IPEI</title>
+        <description>&lt;p&gt;Talvolta (prendiamo ad esempio le installazioni aziendali) diventa necessario registrare sull’impianto DECT un telefono di produttore diverso da quello del centralino, vuoi per mancanza di disponibilità del prodotto voluto, vuoi per pure e semplici ragioni di budget (un cordless &lt;strong&gt;Siemes&lt;/strong&gt; costa mediamente fra i 50 e i 70€, mentre un terminale ad esempio &lt;strong&gt;Spectralink&lt;/strong&gt; o &lt;strong&gt;Avaya&lt;/strong&gt; supera allegramente i 250€).&lt;/p&gt;
+
+&lt;p&gt;L’operazione è comunque veloce ed indolore per ogni tipo di terminale che supporti ovviamente lo standard DECT/GAP in quanto, come detto, è sufficiente l’IPEI del telefono che intendiamo registrare ed il gioco è fatto.
+Con Siemens, invece, ci servirà un passaggio in più, proprio per via della loro scelta di utilizzare IPUI, che ha una diversa notazione ed una diversa struttura e non viene quindi riconosciuto come IPEI valido.&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#cosa-è-il-codice-ipei&quot; id=&quot;markdown-toc-cosa-è-il-codice-ipei&quot;&gt;Cosa è il codice IPEI?&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#come-convertire-il-codice-ipei-in-ipui&quot; id=&quot;markdown-toc-come-convertire-il-codice-ipei-in-ipui&quot;&gt;Come convertire il codice IPEI in IPUI?&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#ipui2ipei-strumento-di-conversione-da-ipui-a-ipei&quot; id=&quot;markdown-toc-ipui2ipei-strumento-di-conversione-da-ipui-a-ipei&quot;&gt;Ipui2Ipei: strumento di conversione da IPUI a IPEI&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#informazioni-aggiuntive&quot; id=&quot;markdown-toc-informazioni-aggiuntive&quot;&gt;Informazioni aggiuntive&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#come-trovare-il-codice-ipui-di-un-telefono-siemens&quot; id=&quot;markdown-toc-come-trovare-il-codice-ipui-di-un-telefono-siemens&quot;&gt;Come trovare il codice IPUI di un telefono SIEMENS?&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#note-ulteriori&quot; id=&quot;markdown-toc-note-ulteriori&quot;&gt;Note ulteriori&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#riferimenti&quot; id=&quot;markdown-toc-riferimenti&quot;&gt;Riferimenti&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;cosa-è-il-codice-ipei&quot;&gt;Cosa è il codice IPEI?&lt;/h2&gt;
+
+&lt;p&gt;L’IPEI è un codice numerico di identificazione, simile al codice IMEI dei telefoni cellulari, dei telefoni DECT/GAP (i cosiddetti “telefoni cordless”).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;IPEI è un codice numerico di 13 caratteri&lt;/li&gt;
+  &lt;li&gt;IPUI è un codice alfanumerico di 10 caratteri&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;come-convertire-il-codice-ipei-in-ipui&quot;&gt;Come convertire il codice IPEI in IPUI?&lt;/h3&gt;
+
+&lt;p&gt;La conversione consiste nella divisione di IPUI in due parti separate, con conseguente trasformazione dei due valori esadecimanli in decimali e qualche altro calcolo più o meno divertente. 
+Oppure, molto più semplicemente, si può utilizzare un tool di conversione come quello indicato di seguito.&lt;/p&gt;
+
+&lt;h2 id=&quot;ipui2ipei-strumento-di-conversione-da-ipui-a-ipei&quot;&gt;Ipui2Ipei: strumento di conversione da IPUI a IPEI&lt;/h2&gt;
+&lt;p&gt;Al questo link è possibile trovare &lt;a href=&quot;https://cristiancastellari.it/ipui2ipei/&quot;&gt;ipui2ipei&lt;/a&gt;, un tool web che ho trovato su GitHub e che ho poi provveduto a modificare e migliorare (si spera) secondo le mie esigenze.&lt;/p&gt;
+
+&lt;p&gt;Il suo utilizzo è semplicissimo: è sufficiente scrivere nel primo campo il codice IPUI estratto dal telefono Siemens seguendo la procedura indicata successivamente e premere il bottone Converti.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/ipuitoipei/conversione.jpg&quot; alt=&quot;Conversione da IPUI a IPEI&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Un attimo dopo avrete il risultato desiderato, con tanto di spiegazione sul tipo di calcoli che sono stati eseguiti.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/ipuitoipei/calcolo.jpg&quot; alt=&quot;Calcolo IPUI a IPEI&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;informazioni-aggiuntive&quot;&gt;Informazioni aggiuntive&lt;/h2&gt;
+
+&lt;h3 id=&quot;come-trovare-il-codice-ipui-di-un-telefono-siemens&quot;&gt;Come trovare il codice IPUI di un telefono SIEMENS?&lt;/h3&gt;
+
+&lt;p&gt;col portatile in stand-by, bisogna premere la seguente sequenza di tasti:
+  &lt;strong&gt;Tasto MENU’&lt;/strong&gt; seguito da [*] [#] 0 6 [#]&lt;/p&gt;
+
+&lt;h3 id=&quot;note-ulteriori&quot;&gt;Note ulteriori&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Il codice IPEI è composto da 13 caratteri: i primi 12 sono il codice vero e proprio, mentre il tredicesimo è un carattere di controllo.&lt;/li&gt;
+  &lt;li&gt;A seconda del produttore del vostro centralino o server DECT dovrete inserirli tutti o solo i primi 12.&lt;/li&gt;
+  &lt;li&gt;La conversione potrebbe portare ad un risultato con &lt;em&gt;quattordici&lt;/em&gt; numeri in quanto il codice di controllo può essere un qualsiasi numero compreso fra 1 e 10. In questo caso trasfromate il 10 in “asterisco” [*]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;riferimenti&quot;&gt;Riferimenti&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cristiancastellari.it/ipui2ipei/&quot;&gt;Strumento di conversione Ipui 2 Ipei&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/skyflash/ipui2ipei&quot;&gt;Pagina GitHub del progetto&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/StrongeLeeroy/ipui2ipei&quot;&gt;Progetto originale&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 24 Jan 2019 12:30:00 +0530</pubDate>
+        <link>http://localhost:4000/blog/tools/ipui-to-ipei/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/tools/ipui-to-ipei/</guid>
+        
+        <category>telefonia</category>
+        
+        <category>cordless</category>
+        
+        <category>siemens</category>
+        
+        <category>dect</category>
+        
+        <category>ipui</category>
+        
+        <category>ipei</category>
+        
+        <category>conversione</category>
+        
+        
+        <category>HTML</category>
+        
+        <category>Tools</category>
+        
+      </item>
+    
+      <item>
+        <title>Come importare un certificato CA su PC Windows con Kace 1000</title>
+        <description>&lt;p&gt;Per installare certificati in maniera trasparente possiamo usare diversi metodi, il più ovvio e diffuso dei quali è senza dubbio una &lt;em&gt;GPO&lt;/em&gt;. Ma non è sempre detto che la GPO sia la soluzione più veloce (ad esempio: chi deve eseguire il deploy dei certificati non ha i permessi per lavorare sulle GPO, o il certificato deve essere installato su un numero esiguo di PC per cui chi dovrebbe fare la GPO non considera questa un’attività primaria da svolgere ed i tempi rischiano di allungarsi)&lt;/p&gt;
+
+&lt;p&gt;Andiamo quindi a vedere come &lt;strong&gt;distribuire un certificato CA self-signed tramite KACE 1000&lt;/strong&gt;. In seguito andremo anche ad installare sui client, con la stessa procedura, un secondo certificato intermedio, validato a sua volta dalla CA.&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#lutility-certutilexe&quot; id=&quot;markdown-toc-lutility-certutilexe&quot;&gt;L’utility certutil.exe&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#definizioni&quot; id=&quot;markdown-toc-definizioni&quot;&gt;Definizioni&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#importazione-della-ca-tramite-certutilexe&quot; id=&quot;markdown-toc-importazione-della-ca-tramite-certutilexe&quot;&gt;Importazione della CA tramite certutil.exe&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#importazione-del-certificato-intermedio&quot; id=&quot;markdown-toc-importazione-del-certificato-intermedio&quot;&gt;Importazione del certificato intermedio&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#lo-script-kscript-su-kace&quot; id=&quot;markdown-toc-lo-script-kscript-su-kace&quot;&gt;Lo script (kscript) su Kace&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#riassunto-delle-attività&quot; id=&quot;markdown-toc-riassunto-delle-attività&quot;&gt;Riassunto delle Attività&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#realizzazione&quot; id=&quot;markdown-toc-realizzazione&quot;&gt;Realizzazione&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#schedulazione&quot; id=&quot;markdown-toc-schedulazione&quot;&gt;Schedulazione&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;lutility-certutilexe&quot;&gt;L’utility certutil.exe&lt;/h1&gt;
+&lt;p&gt;certutil.exe è una utility, presente in tutti i sistemi Windows, che ci permette di fare tante cose con i certificati.
+Possiamo convertirli in caso il formato che abbiamo non sia quello che ci serve, possiamo importarli ed esportarli (sia in locale che su Active Directory), verificare la validità delle coppie di chiavi privata/pubblica eccetera.&lt;/p&gt;
+
+&lt;p&gt;Si usa da riga di comando e per la sintassi completa vi rimando &lt;a href=&quot;https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil&quot; target=&quot;_blank&quot;&gt;all’apposita pagina&lt;/a&gt; sulla Knowledge Base Micorosoft&lt;/p&gt;
+
+&lt;h2 id=&quot;definizioni&quot;&gt;Definizioni&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Entrambi i nostri certificati sono già in formato .cer&lt;/li&gt;
+  &lt;li&gt;Il certificato CA si chiama NGIRootCA01&lt;/li&gt;
+  &lt;li&gt;Il certificato intermedio si chiama NGISSLCA01.cer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;importazione-della-ca-tramite-certutilexe&quot;&gt;Importazione della CA tramite certutil.exe&lt;/h2&gt;
+
+&lt;p&gt;Il comando di importazione, che possiamo eseguire da un qualsiasi prompt amministrativo, è il seguente&lt;/p&gt;
+
+&lt;div class=&quot;language-batch highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/wait &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;certutil&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;-addstore &lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;Root&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;NGIRootCA01&lt;/span&gt;.cer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Il parametro -addstore deifnisce il datastore in cui andremo ad installare il certificato. &lt;em&gt;Root&lt;/em&gt; corrisponde a “&lt;strong&gt;Autorità di certificazione radice attendibili&lt;/strong&gt;”&lt;/p&gt;
+
+&lt;h2 id=&quot;importazione-del-certificato-intermedio&quot;&gt;Importazione del certificato intermedio&lt;/h2&gt;
+
+&lt;p&gt;Il certificato intermedio (che chiameremo SSLCA01.cer) a cui si faceva riferimento poco fa si importerà nella stessa maniera, cambiando solamente il datastore di riferimento:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-msdos&quot;&gt;start /wait certutil -addstore CA NGISSLCA01.cer
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;lo-script-kscript-su-kace&quot;&gt;Lo script (kscript) su Kace&lt;/h1&gt;
+
+&lt;p&gt;Andiamo ora a riportare tutto su Kace 1000, creando uno script apposito.&lt;/p&gt;
+
+&lt;h2 id=&quot;riassunto-delle-attività&quot;&gt;Riassunto delle Attività&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Impostazione dei parametri di base&lt;/li&gt;
+  &lt;li&gt;Importazione dei due certificati come dipendenze&lt;/li&gt;
+  &lt;li&gt;Creazione di un batch file&lt;/li&gt;
+  &lt;li&gt;Schedulazione&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;realizzazione&quot;&gt;Realizzazione&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Portiamoci in &lt;em&gt;Scripting / Scripts&lt;/em&gt; e creiamo un novo kscript (“&lt;em&gt;New&lt;/em&gt;”)&lt;/li&gt;
+  &lt;li&gt;Una volta definito un nome, portiamoci nella sezione &lt;em&gt;Operating Systems&lt;/em&gt; e clicchiamo su &lt;strong&gt;Manage Operating Systems&lt;/strong&gt;, andando a selezionare tutti i SO Windows (e, visto che andremo a creare un batch file, &lt;strong&gt;solo&lt;/strong&gt; quelli Windows) di nostro interesse&lt;br /&gt;
+  &lt;img src=&quot;/static/assets/img/blog/kace/cassl/oss.png&quot; alt=&quot;kscript Manage Operating Systems&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Verifichiamo che &lt;em&gt;Windows Run As&lt;/em&gt; sia impostato a &lt;strong&gt;Local System&lt;/strong&gt;&lt;br /&gt;
+  &lt;img src=&quot;/static/assets/img/blog/kace/cassl/runas.png&quot; alt=&quot;kscript Run As&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Nella sezione &lt;strong&gt;Dependencies&lt;/strong&gt; facciamo click su &lt;strong&gt;+New Dependency…&lt;/strong&gt; e carichiamo:&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;Il certificato Root&lt;/li&gt;
+      &lt;li&gt;Il certificato Intermedio&lt;br /&gt;
+&lt;img src=&quot;/static/assets/img/blog/kace/cassl/certificati.png&quot; alt=&quot;kscript Certificati&quot; /&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Facciamo ora click su &lt;strong&gt;+Task…&lt;/strong&gt; nella sezione sottostante ed impostiamo i seguenti passi:&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;&lt;strong&gt;Verify&lt;/strong&gt; that the file “C:\Tools\certificato.ok” exists (questo ci servirà per fare un check sull’applicazione del certificato, che andremo a schedulare e qundi ad eseguire ad intervalli regolari; se il file &lt;em&gt;certificato.ok&lt;/em&gt; esiste allora lo script si interrompe). Per riferimento sul percorso scelto, potete vedere &lt;a href=&quot;/blog/kace/k1000-report-pc-with-smartcard-reader/&quot; target=&quot;_blank&quot;&gt;questo mio precedente articolo&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;On Success&lt;/strong&gt;: nulla&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Remediation&lt;/strong&gt;: Run the batch file “&lt;em&gt;Install_CA_Root_Script&lt;/em&gt;” with params “”&lt;br /&gt;
+ &lt;img src=&quot;/static/assets/img/blog/kace/cassl/script.png&quot; alt=&quot;kscript Script&quot; /&gt;&lt;br /&gt;
+ Codice:
+        &lt;div class=&quot;language-dosbatch highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; @echo &lt;span class=&quot;na&quot;&gt;off&lt;/span&gt;
+ &lt;span class=&quot;nb&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/wait &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;certutil&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;-addstore &lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;Root&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;NGIRootCA01&lt;/span&gt;.cer
+ &lt;span class=&quot;nb&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;/wait &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;certutil&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;-addstore &lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;CA&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;NGISSLCA01&lt;/span&gt;.cer
+ &lt;span class=&quot;k&quot;&gt;exit&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;On Remediaton Success&lt;/strong&gt; Launch a program…&lt;br /&gt;
+ &lt;img src=&quot;/static/assets/img/blog/kace/cassl/remediation.png&quot; alt=&quot;kscript Remediation&quot; /&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Clicchiamo su &lt;strong&gt;Save&lt;/strong&gt; per completare la creazione del kscript&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;schedulazione&quot;&gt;Schedulazione&lt;/h2&gt;
+
+&lt;p&gt;In caso volessimo schedulare lo script, sarà sufficiente, una volta tornati in editing, andare ad impostare la finestra desiderata.
+Ad esempio, nel nostro caso lo script verrà eseguito sui devices desiderati ogni tre ore secondo questa logica:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Lo script viene eseguito la prima volta&lt;/li&gt;
+  &lt;li&gt;Al termine, lascia un file “&lt;em&gt;certificato.ok&lt;/em&gt;”, di dimensione 0 bytes, in C:\Tools\&lt;/li&gt;
+  &lt;li&gt;Dalla volta seguente (ogni tre ore…) se trova il file “certificato.ok” allora si interrompe e non fa null’altro&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/cassl/schedule.png&quot; alt=&quot;kscript Schedule&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 17 Sep 2018 11:30:00 +0530</pubDate>
+        <link>http://localhost:4000/blog/kace/distribuzione-certificati_ca-kace1000/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/kace/distribuzione-certificati_ca-kace1000/</guid>
+        
+        <category>kace</category>
+        
+        <category>k1000</category>
+        
+        <category>script</category>
+        
+        <category>batch</category>
+        
+        <category>kscript</category>
+        
+        <category>ssl</category>
+        
+        <category>ca root</category>
+        
+        <category>certificate</category>
+        
+        <category>security</category>
+        
+        <category>sicurezza</category>
+        
+        
+        <category>Kace</category>
+        
+      </item>
+    
+      <item>
+        <title>Blocco delle applicazioni con K1000</title>
+        <description>&lt;p&gt;In questa veloce guida si dà per scontato che il lettore abbia già una buona conoscenza dell’ambiente KACE 1000 (KACE SMA) e del funzionamento delle etichette (&lt;em&gt;Labels&lt;/em&gt;)&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#il-blocco-delle-applicazioni-tramite-k1000-passo-per-passo&quot; id=&quot;markdown-toc-il-blocco-delle-applicazioni-tramite-k1000-passo-per-passo&quot;&gt;Il blocco delle applicazioni tramite K1000, passo per passo&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#la-label&quot; id=&quot;markdown-toc-la-label&quot;&gt;La Label&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#significato-della-label&quot; id=&quot;markdown-toc-significato-della-label&quot;&gt;Significato della Label&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#i-software-da-bloccare&quot; id=&quot;markdown-toc-i-software-da-bloccare&quot;&gt;I software da bloccare&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#i-pc-e-la-loro-label&quot; id=&quot;markdown-toc-i-pc-e-la-loro-label&quot;&gt;I PC e la loro Label&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#linventario&quot; id=&quot;markdown-toc-linventario&quot;&gt;L’Inventario&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#il-risultato-finale&quot; id=&quot;markdown-toc-il-risultato-finale&quot;&gt;Il risultato finale&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;il-blocco-delle-applicazioni-tramite-k1000-passo-per-passo&quot;&gt;Il blocco delle applicazioni tramite K1000, passo per passo&lt;/h1&gt;
+
+&lt;p&gt;Il blocco delle applicazioni su Kace funziona con una doppia logica:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Una &lt;a href=&quot;#la-label&quot;&gt;&lt;em&gt;Label&lt;/em&gt;&lt;/a&gt;, in grado di controllare e bloccare i software&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Uno o più Software marcati come &lt;a href=&quot;#i-software-da-bloccare&quot;&gt;&lt;em&gt;Not Allowed&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Per funzionare, è necessario che &lt;strong&gt;entrambe&lt;/strong&gt; le condizioni siano &lt;strong&gt;vere&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;la-label&quot;&gt;La Label&lt;/h2&gt;
+
+&lt;p&gt;Kace mette a disposizione una Label già preconfezionata, secondo i parametri di default.&lt;/p&gt;
+
+&lt;p&gt;Useremo quindi questa per illustrare il funzionamento del blocco applicativo.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/appcontrol/K1000_appcontrol.png&quot; alt=&quot;Screenshot 1 - Default Application Control Label&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Portarsi in &lt;em&gt;Home&lt;/em&gt; ed in seguito in &lt;em&gt;Label Management&lt;/em&gt; e selezionare &lt;strong&gt;Labels&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;La nostra etichetta di default si chiama &lt;strong&gt;“ApplicationControlDevices”&lt;/strong&gt; ed è così impostata:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/appcontrol/appcontrol_label.png&quot; alt=&quot;Screenshot 2 - Appcontrol Label Details&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;significato-della-label&quot;&gt;Significato della Label&lt;/h3&gt;
+
+&lt;p&gt;Illustriamo velocemente il significato dei vari flag:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Device Inventory: La Label si applica all’Inventario dei devices (quindi: ai PC)
+    &lt;ul&gt;
+      &lt;li&gt;Allow Application Control:    La Label è in grado di controllare l’avvio delle applicazioni&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Resources (Processes, Services, Startup Items):   La Label si può applicare anche a processi e servizi&lt;/li&gt;
+  &lt;li&gt;Catalog:  La Label si applica al Catalogo Software (&lt;strong&gt;essenziale&lt;/strong&gt; per il buon funzionamento del meccanismo di blocco!)&lt;/li&gt;
+  &lt;li&gt;Software: Come sopra, ma per i software non normalizzati dal catalogo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;i-software-da-bloccare&quot;&gt;I software da bloccare&lt;/h2&gt;
+
+&lt;p&gt;Portiamoci nel &lt;strong&gt;Software Catalog&lt;/strong&gt; (&lt;em&gt;Inventory&lt;/em&gt; -&amp;gt; &lt;em&gt;Software Catalog&lt;/em&gt;), che racchiude e “normalizza” tutti i software rilevati e riconosciuti, all’interno di un unico nome. Più chiaramente, avremo ad esempio “iTunes 12.x”, che contiene tutte le revisioni di iTunes 12 (es: 12.1, 12.4, 12.74 e via dicendo).&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Lavorare nel Catalogo Software ci consente di bloccare o monitorare un software indipendentemente dagli aggiornamenti che riceve.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/appcontrol/appcontrol_software_catalog.png&quot; alt=&quot;Screenshot 3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Una volta trovato il nostro software (prendiamo sempre ad esempio iTunes 12.x), selezioniamo il checkbox e da menu “Choose Action” scegliamo “&lt;strong&gt;Mark Not Allowed&lt;/strong&gt;”&lt;/p&gt;
+
+&lt;p&gt;In alternativa, è possibile spuntare “&lt;strong&gt;Not Allowed&lt;/strong&gt;” all’interno della pagina del software di nostro interesse. L’autosave è automatico nel momento del cambio di selezione del checkbox.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/appcontrol/software_catalog_detail.png&quot; alt=&quot;Screenshot 4&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;i-pc-e-la-loro-label&quot;&gt;I PC e la loro Label&lt;/h2&gt;
+
+&lt;p&gt;Ora che abbiamo capito come funzionano sia la Label (che si applica ai PC) che il marker di blocco (relativo ai software), possiamo metterli insieme ed ottenere l’effetto desiderato.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTA BENE:&lt;/strong&gt; &lt;em&gt;il meccanismo di Kace bloccherà l’apertura dei programmi SOLO sui PC a cui abbiamo applicato la Label “ApplicationControlDevice” e solo a loro&lt;/em&gt;. In questa fase sperimentale l’etichetta NON VIENE applicata di default a tutti i device in inventario e l’operazione dovrà quindi essere fatta manualmente.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Un pc che ha un software bloccato ma che non appartiene alla Label continuerà ad eseguire quel software come se nulla fosse, senza alcun problema.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1 Otteniamo il nome od i nomi dei PC che ci interessa inserire nella Label. Per fare ciò abbiamo diverse strade, tutte corrette:
+    &lt;ol&gt;
+      &lt;li&gt;Lo conosciamo e lo troviamo direttamente in Inventario&lt;/li&gt;
+      &lt;li&gt;Dal Catalogo Software clicchiamo sul numero nella colonna “Installed”, che ci porterà alla lista di tutti i PC con quel software&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/appcontrol/appcontrol_locked.png&quot; alt=&quot;Screenshot 5&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2 Selezioniamo il checkbox a fianco del o dei PC di nostro interesse e da menu “&lt;strong&gt;Choose Action&lt;/strong&gt;” facciamo click su “&lt;strong&gt;Apply Labels&lt;/strong&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/appcontrol/apply_label.png&quot; alt=&quot;Screenshot 6&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;3 Scegliamo quindi la Label “&lt;strong&gt;ApplicationControlDevices&lt;/strong&gt;” e trasciniamola nella parte destra della finestra, cliccando poi su “&lt;strong&gt;Apply Labels&lt;/strong&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/appcontrol/labels_list.png&quot; alt=&quot;Screenshot 7&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;linventario&quot;&gt;L’Inventario&lt;/h2&gt;
+
+&lt;p&gt;Abbiamo fatto le regole. Abbiamo applicato le Labels. Manca ancora qualcosa?&lt;/p&gt;
+
+&lt;p&gt;Uno dei punti di forza dell’agente Kace è quello di lavorare sostanzialmente offline: si collega una volta al server, riceve tutte le regole, le informazioni e gli script e poi continua a lavorare, da solo, senza più bisogno di dialogare col server. E continua a fare tutto ciò che gli è stato detto di fare fino a prova contraria. Questo meccanismo si chiama “Inventario” e nel nostro caso viene eseguito una volta ogni 8 ore (almeno) da ogni singolo computer inventariato.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Le nuove regole di blocco, quindi, verranno applicate al PC al suo prossimo contatto (cioè al prossimo inventario)&lt;/em&gt;. Le potremo forzare manualmente (click sul box del device e poi “&lt;strong&gt;Force Inventory&lt;/strong&gt;”) ma, in condizioni normali, il frutto delle nostre regole si vedrà solo dopo alcune ore (ed un riavvio del PC) e non in tempo reale.&lt;/p&gt;
+
+&lt;h1 id=&quot;il-risultato-finale&quot;&gt;Il risultato finale&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/appcontrol/final_result.png&quot; alt=&quot;Screenshot 8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In seguito alla creazione della lista di blocco (alcuni software in questa immagine sono solo puramente a scopo di esempio e non si intende veramente bloccarli), all’assegnazione della Label al PC ed al propagarsi delle regole tramite inventario, una volta che l’utente tenterà di aprire il software riceverà un alert nell’angolo basso a destra dello schermo, come questo:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/appcontrol/messagebox.png&quot; alt=&quot;Screenshot 9&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 11 Jul 2018 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/blog/kace/blocco-applicativo-k1000/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/kace/blocco-applicativo-k1000/</guid>
+        
+        <category>kace</category>
+        
+        <category>script</category>
+        
+        <category>vbs</category>
+        
+        <category>smartcard</category>
+        
+        <category>security</category>
+        
+        <category>encryption</category>
+        
+        
+        <category>Kace</category>
+        
+      </item>
+    
+      <item>
+        <title>Come bloccare l'hotlinking delle immagini con .htaccess</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#lhotlinking-danneggia-il-tuo-sito&quot; id=&quot;markdown-toc-lhotlinking-danneggia-il-tuo-sito&quot;&gt;L’HOTLINKING DANNEGGIA IL TUO SITO&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#come-proteggersi-da-hotlinking&quot; id=&quot;markdown-toc-come-proteggersi-da-hotlinking&quot;&gt;COME PROTEGGERSI DA HOTLINKING&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#spiegazione&quot; id=&quot;markdown-toc-spiegazione&quot;&gt;SPIEGAZIONE&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#concedere-laccesso-a-bing-yahoo-e-facebook&quot; id=&quot;markdown-toc-concedere-laccesso-a-bing-yahoo-e-facebook&quot;&gt;CONCEDERE L’ACCESSO A BING, YAHOO E FACEBOOK&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#conclusioni&quot; id=&quot;markdown-toc-conclusioni&quot;&gt;CONCLUSIONI&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;lhotlinking-danneggia-il-tuo-sito&quot;&gt;L’HOTLINKING DANNEGGIA IL TUO SITO&lt;/h1&gt;
+
+&lt;p&gt;Facciamo un esempio. L’immagine che vedete qui sotto è stata caricata direttamente su un mio sito (ospite originale di questo articolo). Il server web non fa altro che andare a caricare una risorsa interna (l’immagine stessa) e mostrarla al visitatore, senza alcun carico elaborativo extra.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/hotlinking-htaccess/kenny-mccormick.jpg&quot; alt=&quot;Kenny&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Il codice dell’immagine è il seguente:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/wp-content/uploads/2012/05/kenny-mccormick.jpg&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;border=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;320&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;240&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Un sito esterno, invece di effettuare il download dell’immagine e di caricarla sul proprio server (cosa che, oltretutto, è sempre consigliabile in quanto migliora moltissimo i tempi di caricamento e le prestazioni generali del sito), ottiene il collegamento diretto alla risorsa e lo include all’interno di una propria pagina.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://www.skyflash.it/wp-content/uploads/2012/05/kenny-mccormick.jpg&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;border=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;320&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;240&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Il risultato sarà che il secondo sito, eterno al nostro, sfrutta l’immagine senza però sacrificare il proprio spazio web, mentre il nostro sito, su cui risiede l’immagine, sarà sottoposto ad un carico eccessivo (ed assolutamente non richiesto nè tanto meno gradito) sia per quanto riguarda la propria banda passante che per le risorse del server.&lt;/p&gt;
+
+&lt;h1 id=&quot;come-proteggersi-da-hotlinking&quot;&gt;COME PROTEGGERSI DA HOTLINKING&lt;/h1&gt;
+
+&lt;p&gt;Sono sufficienti alcune righe da aggiungere al proprio, immancabile, file &lt;em&gt;.htaccess&lt;/em&gt; e, se volete, un’immagine preparata per lo scopo, che servirà per sbattere in faccia al webmaster antipatico la dura verità :smile:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ATTENZIONE:&lt;/strong&gt; la modifica di .htaccess, se fatta da persone non esperte e non particolarmente attente, può generare molti problemi al vostro sito WordPress, fino a &lt;strong&gt;renderlo inaccessibile&lt;/strong&gt;. Assicuratevi quindi di fare &lt;strong&gt;SEMPRE una copia di sicurezza&lt;/strong&gt; di .htaccess prima di cominciare le modifiche&lt;/p&gt;
+
+&lt;p&gt;Aprite in un qualsaisi editor di testo il vostro file &lt;em&gt;.htaccess&lt;/em&gt; ed in coda (se usate WordPress, dovrebbero esserci solo le direttive di default) e &lt;strong&gt;dopo ### END WordPress ###&lt;/strong&gt; aggiungete il seguente codice:&lt;/p&gt;
+
+&lt;div class=&quot;language-apache highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;### Blocca l'hotlinking - Webmaster cattivo pussa via&lt;/span&gt;
+RewriteEngineon
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_REFERER}!^$
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_REFERER}!^http(s)?://(www\.)?skyflash.it[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_REFERER}!^http(s)?://(www\.)?google.com[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_USER_AGENT}!googlebot[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{REQUEST_URI}!^hotlink.jpg$
+&lt;span class=&quot;nc&quot;&gt;RewriteRule&lt;/span&gt;\.(jpg|jpeg|png|gif|js|swf)$hotlink.jpg[NC,R,L]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;spiegazione&quot;&gt;SPIEGAZIONE&lt;/h2&gt;
+
+&lt;p&gt;Alla &lt;strong&gt;terza riga&lt;/strong&gt; trovate:&lt;/p&gt;
+
+&lt;div class=&quot;language-apache highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_REFERER}!^$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Questa istruzione consente ai referrer che non forniscono informazioni di accedere al contenuto. Ciò è reso necessario in quanto molti visitatori (soprattutto quelli che si connettono dall’ufficio e si trovano dietro a proxy) sono protetti da un firewall che non rilascia informazioni al server per ragioni di sicurezza.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Righe 4, 5 e 6:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-apache highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_REFERER}!^http(s)?://(www\.)?skyflash.it[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_REFERER}!^http(s)?://(www\.)?google.com[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_USER_AGENT}!googlebot[NC]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;specificano i domini che invece possono effettuare l’hotlinking e quindi visualizzare le immagini presenti sul server. Quindi scriveremo il nostro dominio internet e, in caso vogliate farvi indicizzare le immagini, Google. Tutti gli altri sono fuori.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Riga 7:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-apache highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{REQUEST_URI}!^hotlink.jpg$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Se proprio qualcuno vuole rubare qualche immagine, allora lasciamogli prendere quella che abbiamo preparato per segnalare gli hotlinker. Questa riga ci assicura che l’immagine sia sempre visualizzabile.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Riga 8:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-apache highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;RewriteRule&lt;/span&gt;\.(jpg|jpeg|png|gif|js|swf)$hotlink.jpg[NC,R,L]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Specifica il formato dei file protetti dall’hotlinking (non solo le immagini ne sono soggette) e sostituisce le richieste con un’immagine statica.&lt;/p&gt;
+
+&lt;p&gt;Ovviamente potrete specificare l’immagine che desiderate, ma assicuratevi che questa non sia protetta (vedi riga precedente) oppure, ancora meglio, caricatela su una risorsa esterna come &lt;a href=&quot;http://db.tt/wgafhzXi&quot;&gt;Dropbox&lt;/a&gt;, o il risultato sarà un loop infinito!&lt;/p&gt;
+
+&lt;h3 id=&quot;concedere-laccesso-a-bing-yahoo-e-facebook&quot;&gt;CONCEDERE L’ACCESSO A BING, YAHOO E FACEBOOK&lt;/h3&gt;
+
+&lt;p&gt;Esattamente come abbiamo fatto per Google, aggiungiamo al nostro &lt;em&gt;.htaccess&lt;/em&gt; le seguenti direttive:&lt;/p&gt;
+
+&lt;div class=&quot;language-apache highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_REFERER}!msn.[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_REFERER}!yahoo.[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_REFERER}!^https?://(www\.)?facebook\.com[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_USER_AGENT}!facebookplatform[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_USER_AGENT}!msnbot[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;${HTTP_USER_AGENT}!slurp[NC]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;conclusioni&quot;&gt;CONCLUSIONI&lt;/h2&gt;
+
+&lt;p&gt;Il risultato finale sarà quindi il seguente:&lt;/p&gt;
+
+&lt;div class=&quot;language-apache highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;### Blocca l'hotlinking - Webmaster cattivo pussa via&lt;/span&gt;
+
+RewriteEngineon
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_REFERER}!^$
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_REFERER}!^http(s)?://(www\.)?skyflash.it[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_REFERER}!^http(s)?://(www\.)?google.com[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_REFERER}!msn.[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_REFERER}!yahoo.[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_REFERER}!^https?://(www\.)?facebook\.com[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_USER_AGENT}!googlebot[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_USER_AGENT}!facebookplatform[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{HTTP_USER_AGENT}!msnbot[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;${HTTP_USER_AGENT}!slurp[NC]
+&lt;span class=&quot;nc&quot;&gt;RewriteCond&lt;/span&gt;%{REQUEST_URI}!^hotlink.jpg$
+&lt;span class=&quot;nc&quot;&gt;RewriteRule&lt;/span&gt;\.(jpg|jpeg|png|gif|js|swf)$hotlink.jpg[NC,R,L]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Chi dovesse linkare ad una risorsa con estensione jpg, jpeg, png, gif, js o swf sul sito così “trattato”, come unico risultato avrà la visualizzazione della seguente immagine&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/hotlinking-htaccess/hotlink.jpg&quot; alt=&quot;Hotlink-Monkey&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Se guardando le statistiche del vostro spazio web avete notato un consumo eccessivo di banda in uscita o se state rilevando una grande quantità di accessi esterni alle stesse immagini, probabilmente siete hotlinkati da qualcuno. Ora sapete come difendervi.&lt;/p&gt;
+
+&lt;p&gt;Risorse esterne:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.istanto.net/stop-bandwith-thief-using-rewrite-rules-on-htaccess-file.html&quot;&gt;Stop bandwith thief using rewrite rules on .htaccess file&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.htaccesstools.com/hotlink-protection/&quot;&gt;Prevent hotlinking of images – how to hotlink protect&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.hongkiat.com/blog/smarter-way-to-prevent-image-hotlinking-with-htaccess/&quot;&gt;Smarter Way To Prevent Image Hotlinking With .Htaccess&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://gabrieleromanato.com/2012/03/impedire-hotlinking-immagini-htaccess/&quot;&gt;Impedire l’hotlinking delle immagini con il file .htaccess&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://vincenzodibiaggio.it/2008/07/11/proteggiamoci-dallhotlinking-con-un-semplice-file-htaccess/&quot;&gt;Proteggiamoci dall’hotlinking con un semplice file&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.thewebsqueeze.com/web-design-tutorials/stop-image-hotlinking-with-htaccess.html&quot;&gt;Stop image hotlinking with .htaccess&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.skyflash.it/internet-reti/sicurezza/come-bloccare-lhotlinking-delle-immagini-tramite-htaccess/6552/&quot;&gt;Il post originale&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 13 Apr 2018 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/blog/wordpress/bloccare-hotlinking-immagini/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/wordpress/bloccare-hotlinking-immagini/</guid>
+        
+        <category>htaccess</category>
+        
+        <category>apache</category>
+        
+        <category>wordpress</category>
+        
+        
+        <category>Wordpress</category>
+        
+        <category>Apache</category>
+        
+      </item>
+    
+      <item>
+        <title>La traduzione in italiano di Morrowind, Tribunal e Bloodmoon</title>
+        <description>&lt;p&gt;Atteso dai fan di mezzo mondo, il lancio Italiano di &lt;strong&gt;The Elder Scrolls 3: Morrowind&lt;/strong&gt; destò molte polemiche. Il gioco infatti, inspiegabilmente, non venne tradotto in nessuna sua parte. Ricordo ancora le parole di un P.R. Ubisoft, il quale dichiarò, più o meno, che la traduzione non era stata fatta per motivi di tempo. In pratica, ci disse che non lo avevano tradotto perchè altrimenti ci sarebbe stato un pesante ritardo nella distribuzione, e che quindi avevano preso questa decisione per fare un favore a noi giocatori. Che avesse forse dinanzi un roseo futuro da umorista? O forse da politico? Fatto sta che Morrowind venne distribuito in rigorosa lingua Inglese. Il CRPG che avrebbe rivoluzionato il genere, il gioco con la più grande mole di testi mai realizzato, sarebbe stato di difficile comprensione per molti giocatori Italiani.&lt;/p&gt;
+
+&lt;p&gt;Qualche mese prima della sua uscita nel nostro mercato, io ed altri appassionati ci eravamo già procurati la versione USA del gioco (per quanto mi riguarda, fu la Collector’s Edition), scoprendo così le fantastiche potenzialità dell’editor integrato. Tramite il TES Construction Set era possibile realizzare praticamente di tutto; si potevano creare nuovi oggetti, nuove quest, nuovi NPC. Si poteva addirittura realizzare un plugin che cambiasse ogni singola parola del gioco. Come? Era possibile cambiare i testi a video? Allora era anche possibile tradurre Morrowind!&lt;/p&gt;
+
+&lt;h3 id=&quot;si-comincia-a-tradurre&quot;&gt;SI COMINCIA A TRADURRE!&lt;/h3&gt;
+
+&lt;p&gt;Quasi per gioco, iniziai a tradurre il tutorial e le prime fasi di gioco. In quegli anni uno dei miei contatti era Lello Sarti, responsabile della testata online &lt;a href=&quot;http://forum.multiplayer.it/showthread.php?209954-RPGPLAYER&quot;&gt;RPGPlayer.it&lt;/a&gt;, poi assorbita da Multiplayer. Lello era a sua volta in contatti con alcuni membri dell’ITP, a cui riferì che io avevo iniziato a tradurre il gioco. Il prossimo passo fu ovvio: stava per prendere il via la traduzione in Italiano più lunga e complessa mai realizzata a livello amatoriale!&lt;/p&gt;
+
+&lt;p&gt;Proprio su questo stesso dominio istituimmo una mailing list con cui tenerci in contatto, e creai anche un piccolo forum (utilizzando lo storico &lt;a href=&quot;http://forum.snitz.com/&quot;&gt;Snitz! forum&lt;/a&gt;, un ormai obsoleto forum in .ASP). Nel frattempo il gioco era già uscito in Italia e, come c’era da immaginarsi, venne accolto con molta timidezza, proprio a causa della sua gigantesca mole di testo in Inglese. Non ci volle molto perchè la voce secondo cui l’ITP, già noto per il meraviglioso lavoro svolto con &lt;a href=&quot;https://www.skyflash.it/2009/10/la-traduzione-in-italiano-di-planescape-torment-del-team-itp/&quot;&gt;Planescape: Torment&lt;/a&gt;, si era messo al lavoro su Morrowind si diffondesse. Nel giro di alcuni mesi si parlava di noi su Usenet, sui forum, e persino su qualche rivista.&lt;/p&gt;
+
+&lt;h3 id=&quot;i-primi-problemi&quot;&gt;I PRIMI PROBLEMI…&lt;/h3&gt;
+
+&lt;p&gt;L’opera di traduzione stava procedendo bene, quando ci rendemmo conto di una cosa: la particolare struttura del Journal – il Diario – di Morrowind era basata sul linguaggio HTML, ed alcuni termini erano veri e propri hyperlinks che riconducevano ad altre sezioni, le quali erano a loro volta collegate con altre ancora. Non aver verificato quali fossero questi particolari termini (indicati col prefisso @, es: @elves) significava una sola cosa: era tutto da rifare!&lt;/p&gt;
+
+&lt;p&gt;Per nostra grande fortuna, uno dei componenti il team era un buon programmatore e riuscì a realizzare un software il cui compito era quello di analizzare il Journal ed estrarre tutti i termini ‘speciali’. Questo comportò ovviamente un ritardo sui tempi, ma ci permise di non buttare tutto quanto fino a quel momento realizzato, limitandoci a ricontrollare solo le parti indicate dal nostro programma specifico.&lt;/p&gt;
+
+&lt;p&gt;I mesi passavano ed il lavoro proseguiva. Le richieste da parte degli utenti fioccavano da più parti, tutti impazienti di poter finalmente giocare a Morrowind senza essere costretti a tenere un vocabolario sulle gambe. Ci fu anche qualche problema con Ubisoft, il publisher, di cui non vi parlerò neppure sotto tortura perchè sono comunque argomenti riservati.&lt;/p&gt;
+
+&lt;h3 id=&quot;la-quest-aggiuntiva&quot;&gt;LA QUEST AGGIUNTIVA&lt;/h3&gt;
+
+&lt;p&gt;Ci mancava ancora qualcosa, però. In fin dei conti si stava lavorando sul TES, e si stava realizzando un plugin, no? E allora, perchè non distribuire nello stesso pacchetto anche una quest aggiuntiva, la quale avrebbe ricompensato il giocatore con un libro il cui contenuto si riferiva a “Coloro i quali fecero l’impresa”? In quel libro avremmo riportato una breve ‘Bio’ di ciascuno di noi, con uno stile ovviamente conforme all’ambientazione di gioco. Dopo tanto lavoro, un minimo di auto referenzialità mi pare dovuta, no?&lt;/p&gt;
+
+&lt;p&gt;Purtroppo, a causa di mancanza di tempo, io fui costretto a sospendere la mia collaborazione con l’ITP anzitempo, ma questo non comportò alcun problema per i ragazzi, che non mi stancherò mai di ringraziare per avermi comunque incluso sia fra i ringraziamenti nelle note di rilascio che nella quest aggiuntiva, malgrado la mia defezione anticipata.&lt;/p&gt;
+
+&lt;p&gt;Ebbene, se siete arrivati fin qui a leggere e state cercando disperatamente la traduzione di Morrowind, direi che è giunto il momento di ricompensarvi per il tempo dedicato ai miei ricordi.&lt;/p&gt;
+
+&lt;h2 id=&quot;la-traduzione-in-italiano-di-morrowind---download&quot;&gt;La traduzione in Italiano di Morrowind - Download&lt;/h2&gt;
+
+&lt;p&gt;Questa è la versione definitiva della traduzione, che non necessita di preventivi aggiornamenti del gioco. Si basa sull’edizione Game of the Year di Morrowind e contiene sia la traduzione del gioco base che della sua espansione “vampiresca”, BloodMoon. E’ un unico file auto installante che, se necessario, aggiornerà la vostra copia di The Elder Scrolls III: Morrowind alla più recente versione 1.6&lt;/p&gt;
+
+&lt;p&gt;Si consiglia di non applicare la traduzione ad una partita già in corso; ciò potrebbe corrompere i salvataggi. E’ comunque possibile “trattare” i propri salvataggi con il programma Savepatcher, distribuito nell’archivio Tribunal.zip&lt;/p&gt;
+
+&lt;p&gt;Installare la traduzione di Tribunal solo dopo aver installato il file precedente, relativo alle traduzioni di Morrowind e Bloodmoon&lt;/p&gt;
+
+&lt;h3 id=&quot;mirror-1&quot;&gt;Mirror 1&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.skyflash.it/download/8164/&quot;&gt;Traduzione di Morrowind e BloodMoon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.skyflash.it/download/8167/&quot;&gt;Traduzione di Tribunal&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;mirror-2&quot;&gt;Mirror 2&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Skyflash/morrowind-italian-itp-translation/blob/master/assets/morrowind/Morrowind_Bloodmoon_ITA_WinXP2K.zip&quot;&gt;Traduzione di Morrowind e BloodMoon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Skyflash/morrowind-italian-itp-translation/blob/master/assets/tribunal/Tribunal.zip&quot;&gt;Traduzione di Tribunal&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;riferimenti&quot;&gt;Riferimenti:&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.skyflash.it/traduzione-italiano-morrowind-tribunal-bloodmoon/3581/&quot;&gt;skyflash.it - La traduzione in Italiano di Morrowind, Tribunal e Bloodmoon&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 05 Apr 2018 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/blog/games/la-traduzione-di-morrowind-e-bloodmoon/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/games/la-traduzione-di-morrowind-e-bloodmoon/</guid>
+        
+        <category>Morrowind</category>
+        
+        <category>ITP</category>
+        
+        <category>Games</category>
+        
+        
+        <category>Games</category>
+        
+      </item>
+    
+      <item>
+        <title>[K1000 Scripting] Find and report all PCs with a smartcard reader installed</title>
+        <description>&lt;h1 id=&quot;target&quot;&gt;Target&lt;/h1&gt;
+
+&lt;p&gt;Find and report all managed Windows PCs in K1000 Inventory with a smartcard reader installed.&lt;/p&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;The script does not depend on K1000, so if you don’t have KACE SMA in your environment don’t worry: the script is still useful!&lt;/p&gt;
+
+&lt;h2 id=&quot;components&quot;&gt;Components&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[The Query] This script&lt;/li&gt;
+  &lt;li&gt;[The Automation] Kace Systems Management Appliance (AKA ‘K1000’)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The vbs script executes a WMI query over the target device(s) and saves an output file named &lt;em&gt;smartcard.txt&lt;/em&gt; (see below in the &lt;a href=&quot;#setup&quot;&gt;Setup section&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;The vbs script is scheduled and deployed to the target device(s) via K1000 &lt;a href=&quot;#the-kscript&quot;&gt;&lt;em&gt;Online KScript&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;A K1000 &lt;a href=&quot;#the-custom-inventory-rule&quot;&gt;&lt;em&gt;Custom Inventory Rule&lt;/em&gt;&lt;/a&gt; reads the output file for every inventoried device and stores the information in the database&lt;/li&gt;
+  &lt;li&gt;A scheduled &lt;a href=&quot;#the-report&quot;&gt;Report&lt;/a&gt; (choose your favorite format between HTML, CSV, PDF or Excel) returns only PCs with a smart card reader installed&lt;/li&gt;
+  &lt;li&gt;Done!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
+
+&lt;h3 id=&quot;the-kscript-smarcardvbs&quot;&gt;The KScript (smarcard.vbs)&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Download &lt;a href=&quot;/static/assets/files/blog/kace-smartcard/smartcard.vbs&quot;&gt;the script&lt;/a&gt; or copy &amp;amp; paste the following code:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;strComputer &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;.&quot;&lt;/span&gt;
+Dim log
+Set log &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Wscript.CreateObject&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Scripting.Filesystemobject&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Set f &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; log.CreateTextFile&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;C:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\T&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;ools&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;martcard.txt&quot;&lt;/span&gt;, 2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+Set objWMIService &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; GetObject&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;winmgmts:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &amp;amp; strComputer &amp;amp; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\r&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;oot&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\C&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;IMV2&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
+Set colItems &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; objWMIService.ExecQuery&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; _
+    &lt;span class=&quot;s2&quot;&gt;&quot;SELECT * FROM Win32_PnPSignedDriver Where DeviceClass = 'SMARTCARDREADER'&quot;&lt;/span&gt;,,48&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; 
+For Each objItem &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;colItems 
+    f.WriteLine &lt;span class=&quot;s2&quot;&gt;&quot;DeviceClass: &quot;&lt;/span&gt; &amp;amp; objItem.DeviceClass
+Next
+f.Close
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Edit &lt;strong&gt;line 4&lt;/strong&gt; with the path where you want to save the output file. In our environment every PC has a &lt;em&gt;“C:\Tools”&lt;/em&gt; directory for service purpose, so I decided to save the output there.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Set f = log.CreateTextFile(&quot;C:\Tools\smartcard.txt&quot;, 2)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Go to your &lt;em&gt;K1000 Dashboard&lt;/em&gt;, then go to &lt;em&gt;Scripting&lt;/em&gt; and create a &lt;strong&gt;New Script&lt;/strong&gt; (&lt;em&gt;Choose Action / New&lt;/em&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Name the script as your wish (for example: Check Smart Card Reader) and follow these steps:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;script-basic-settings&quot;&gt;Script Basic Settings&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Type: &lt;strong&gt;Online KScript&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Enabled: &lt;strong&gt;Yes&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Deploy: one or some devices, all devices or to a Device Label, according to your needs in your environment&lt;/li&gt;
+  &lt;li&gt;Windows Run As: &lt;strong&gt;Local System&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Upload the smartcard.vbs as &lt;strong&gt;New Dependecy&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;tasks&quot;&gt;Tasks&lt;/h4&gt;
+
+&lt;p&gt;We want the script to run once in every PC, so we’ll use a “checkmark” (the smartcard.txt) to verify that…&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Verify: &lt;strong&gt;Verify a file exists…&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;C:\Tools\smartcard.txt&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Remediation: &lt;strong&gt;Launch a program…&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Directory: &lt;strong&gt;$(KACE_SYS_DIR)&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;File: &lt;strong&gt;cscript.exe $(KACE_DEPENDENCY_DIR)\smartcard.vbs&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;Wait for completion: &lt;strong&gt;Yes&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;On Remediation Success: &lt;strong&gt;Upload a file…&lt;/strong&gt; (note: this step is not necessary and only for archiving purpose)
+    &lt;ul&gt;
+      &lt;li&gt;Directory: &lt;strong&gt;C:\Tools&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;File: &lt;strong&gt;smartcard.txt&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;…and &lt;strong&gt;Save&lt;/strong&gt; your brand new script.&lt;/p&gt;
+
+&lt;p&gt;The Task and its steps are summarized in the following image. When you’re ready, let’s jump to the &lt;a href=&quot;#the-custom-inventory-rule&quot;&gt;Step 4!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/smartcard/screenshot1.png&quot; alt=&quot;Screenshot 1&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;the-custom-inventory-rule&quot;&gt;The Custom Inventory Rule&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;In the K100 Dashboard, now go to &lt;em&gt;Inventory&lt;/em&gt; section, then go to &lt;em&gt;Software&lt;/em&gt; and create a &lt;strong&gt;new Software entry&lt;/strong&gt; (&lt;em&gt;Choose Action / New&lt;/em&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Name the rule as your wish (for example: IT Dep — Check Smart Card Reader) and follow these steps:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Publisher: &lt;strong&gt;IT Department&lt;/strong&gt; (it’s useful for further searches into the &lt;em&gt;Software Inventory&lt;/em&gt;)&lt;/li&gt;
+  &lt;li&gt;Supported Operating Systems: &lt;strong&gt;All the Windows OSs in your Inventory&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Custom Inventory Rule: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ShellCommandTextReturn(cmd /c type C:\Tools\smartcard.txt)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;…and &lt;strong&gt;Save&lt;/strong&gt; your new Custom Inventory Rule.&lt;/p&gt;
+
+&lt;p&gt;Here’s the summary image&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/smartcard/screenshot2.png&quot; alt=&quot;Screenshot 1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now we need all our devices complete their inventory. The new Custom Inventory Rule creates a new entry in every device record managed by the K1000.&lt;/p&gt;
+
+&lt;p&gt;If a smart card reader has been discovered we’ll have at least one “DeviceClass: SMARTCARDREADER” text iside the &lt;strong&gt;Custom Inventory Fields&lt;/strong&gt; section into every device record in &lt;em&gt;Inventory / Devices&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/smartcard/screenshot3.png&quot; alt=&quot;Screenhot 3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Otherwise, if a smart card reader has not been discovered, we’ll have no text&lt;/p&gt;
+
+&lt;p&gt;When all your devices has been inventoried and you’re ready, jump to the &lt;a href=&quot;#the-report&quot;&gt;next section&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;the-report&quot;&gt;The Report&lt;/h3&gt;
+
+&lt;p&gt;In the K100 Dashboard, now go to &lt;em&gt;Reporting&lt;/em&gt; section, then in &lt;em&gt;Reports&lt;/em&gt; and create a new Report (&lt;em&gt;Choose Action / New&lt;/em&gt;)&lt;/p&gt;
+
+&lt;p&gt;Name the Report as your wish (for example: PCs with Smart Card Reader) and follow these steps:&lt;/p&gt;
+
+&lt;h4 id=&quot;title-and-topic&quot;&gt;Title and Topic&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Category: &lt;strong&gt;Inventory&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Topic: &lt;strong&gt;Device&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;fields-to-display&quot;&gt;Fields to Display&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Device: &lt;strong&gt;System Name&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Operating System Info: &lt;strong&gt;Name&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;User Information: &lt;strong&gt;User Name&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Manufacturer and BIOS: &lt;strong&gt;System Model&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Feel free to add and modify any other field, according to your needings.&lt;/p&gt;
+
+&lt;h4 id=&quot;filters&quot;&gt;Filters&lt;/h4&gt;
+
+&lt;p&gt;Delete the default filter and create this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/assets/img/blog/kace/smartcard/report1.png&quot; alt=&quot;Filter&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Save&lt;/strong&gt; your new report and try it.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 14 Feb 2018 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/blog/kace/k1000-report-pc-with-smartcard-reader/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/kace/k1000-report-pc-with-smartcard-reader/</guid>
+        
+        <category>kace</category>
+        
+        <category>script</category>
+        
+        <category>vbs</category>
+        
+        <category>smartcard</category>
+        
+        <category>security</category>
+        
+        <category>encryption</category>
+        
+        
+        <category>Kace</category>
+        
+      </item>
+    
+      <item>
+        <title>code snippet test</title>
+        <description>&lt;p&gt;This is a raw snippet:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;hello world
+123
+This is a text snippet
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This is a JavaScript snippet:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const add = (a, b) =&amp;gt; a + b
+const minus = (a, b) =&amp;gt; a - b
+
+console.log(add(100,200))  // 300
+console.log(minus(100,200))  // -100
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This is a Python snippet:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def say_hello():
+    print(&quot;hello world!&quot;)
+
+say_hello()   // &quot;hello world!&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Side note comment: applied a bug fix similar to &lt;a href=&quot;https://github.com/Atlas7/atlas7.github.io/commit/6659f4a47f6ec66987adb0f683a9c6f3842252ae#diff-818954a41dbfb01af70050a459c603b9&quot;&gt;this commit&lt;/a&gt; to ensure code snippet does not collapse unexpectly upon clicking on it. This issue is tracked &lt;a href=&quot;https://github.com/jarrekk/Jalpc/issues/97&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 21 Dec 2017 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/blog/html/test-code-snippets/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/html/test-code-snippets/</guid>
+        
+        <category>Jalpc</category>
+        
+        <category>Jekyll</category>
+        
+        
+        <category>HTML</category>
+        
+      </item>
+    
+      <item>
+        <title>Identificare e terminare processi zombie su Linux</title>
+        <description>&lt;p&gt;Recentemente ho avuto necessità di eseguire un pò di tuning su un server Linux, spesso infestato da processi zombie che lo portavano a raggiungere elevatissimi carichi operativi. Dalla descrizione di Wikipedia:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Nei sistemi operativi Unix e Unix-like, un processo zombie o processo defunto è un processo informatico che, nonostante abbia terminato la propria esecuzione, possiede ancora un PID ed un process control block, necessario per permettere al proprio processo padre di leggerne il valore di uscita.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Girovagando alla ricerca di informazioni utili, mi sono imbattuto in un ottimo script, da copiare sui vostri server, in grado di identificare e killare lo zombie, oltre a lasciarne una traccia un un file di log apposito.&lt;/p&gt;
+
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#lo-script-kill-zombie&quot; id=&quot;markdown-toc-lo-script-kill-zombie&quot;&gt;LO SCRIPT KILL-ZOMBIE&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#funzionamento&quot; id=&quot;markdown-toc-funzionamento&quot;&gt;FUNZIONAMENTO&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#inserimento-nel-crontab&quot; id=&quot;markdown-toc-inserimento-nel-crontab&quot;&gt;INSERIMENTO NEL CRONTAB&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;lo-script-kill-zombie&quot;&gt;LO SCRIPT KILL-ZOMBIE&lt;/h2&gt;
+
+&lt;p&gt;Come prima cosa, creeremo (con i permessi di root) un nuovo file kill-zombie&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /root
+vi kill-zombies
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In seguito copiamo il seguente codice ed incolliamolo nel file appena creato&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#! /bin/bash&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Zombie processes killing script. Must be run under root.&lt;/span&gt;
+ 
+&lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;stat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;ps ax | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print $1}'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;PID&quot;&lt;/span&gt; | xargs &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; 1 ps lOp | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;UID&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print&quot;pid: &quot;$3&quot; *** parent_pid: &quot;$4&quot; *** status: &quot;$10&quot; *** process: &quot;$13}'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;: Z&quot;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+ 
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${#&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;stat&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; 0&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;then
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;zombie processes found:
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+ps ax | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print $1}'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;PID&quot;&lt;/span&gt; | xargs &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; 1 ps lOp | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;UID&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print&quot;pid: &quot;$3&quot; *** parent_pid: &quot;$4&quot; *** status: &quot;$10&quot; *** process: &quot;$13}'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;: Z&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Kill zombies? [y/n]: &quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;keyb
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$keyb&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'y'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;then
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;killing zombies..
+ps ax | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print $1}'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;PID&quot;&lt;/span&gt; | xargs &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; 1 ps lOp | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;UID&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print$4&quot; status:&quot;$10}'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;status:Z&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print $1}'&lt;/span&gt; | xargs &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; 1 &lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-9&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;fi
+else
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;no zombies found!
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;--cron&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;stat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;ps ax | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print $1}'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;PID&quot;&lt;/span&gt; | xargs &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; 1 ps lOp | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;UID&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print&quot;pid: &quot;$3&quot; *** parent_pid: &quot;$4&quot; *** status: &quot;$10&quot; *** process: &quot;$13}'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;: Z&quot;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${#&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;stat&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; 0&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;then
+&lt;/span&gt;ps ax | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print $1}'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;PID&quot;&lt;/span&gt; | xargs &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; 1 ps lOp | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;UID&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print$4&quot; status:&quot;$10}'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;status:Z&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print $1}'&lt;/span&gt; | xargs &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; 1 &lt;span class=&quot;nb&quot;&gt;kill&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-9&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;: killed some zombie processes!&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; /var/log/zombies.log
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'usage: kill-zombies {--cron|--admin}'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ora rendiamolo eseguibile e spostiamolo in /usr/bin&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x kill-zombies
+&lt;span class=&quot;nb&quot;&gt;mv &lt;/span&gt;kill-zombies /usr/bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;funzionamento&quot;&gt;FUNZIONAMENTO&lt;/h3&gt;
+
+&lt;p&gt;Lo script viene evocato con un flag, che ne modifica il comportamento:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kill-zombies &lt;span class=&quot;nt&quot;&gt;--admin&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;L’esecuzione avviene manualmente. Se vengono rilevati processi zombie l’utente ne viene informato e deve confermare l’operazione&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kill-zombies &lt;span class=&quot;nt&quot;&gt;--cron&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Lo script &lt;strong&gt;dovrà essere inserito nel crontab&lt;/strong&gt; e richiamato quindi a cadenze regolari dal server. I processi vengono killati in automatico e ne viene lasciata traccia in /var/log/zombies.log&lt;/p&gt;
+
+&lt;h3 id=&quot;inserimento-nel-crontab&quot;&gt;INSERIMENTO NEL CRONTAB&lt;/h3&gt;
+
+&lt;p&gt;Richiamiamo l’editor del crontab con questo comando&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;crontab &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ed inseriamo questa riga:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/10 &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; /usr/bin/kill-zombies &lt;span class=&quot;nt&quot;&gt;--cron&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In questo modo, lo script verrà eseguito ogni 10 minuti a cadenza regolare. In caso si voglia modificare l’intervallo di tempo, sarà sufficiente cambiare ad esempio */10 in */5 (per 5 minuti)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.skyflash.it/download/8205/&quot;&gt;Download zombies.sh (1 KB)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Riferimenti:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.skyflash.it/computer/linux-os/identificare-ed-uccidere-processi-zombie-in-un-server-linux/6076/&quot;&gt;Identificare ed uccidere processi zombie in un server Linux&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.ubuntu.com/community/CronHowto&quot;&gt;CronHowTo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 25 Oct 2015 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/blog/linux/idenficare-processi-zombie-linux/</link>
+        <guid isPermaLink="true">http://localhost:4000/blog/linux/idenficare-processi-zombie-linux/</guid>
+        
+        <category>Linux</category>
+        
+        <category>Scripting</category>
+        
+        <category>Process</category>
+        
+        <category>sicurezza</category>
+        
+        <category>script</category>
+        
+        
+        <category>Linux</category>
+        
+      </item>
+    
+  </channel>
+</rss>

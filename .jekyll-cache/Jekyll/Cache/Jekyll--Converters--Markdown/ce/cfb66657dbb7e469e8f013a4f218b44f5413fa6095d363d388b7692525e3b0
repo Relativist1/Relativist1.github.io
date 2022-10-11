@@ -1,0 +1,42 @@
+I"�<h2 id="regole-operative-per-la-gestione-dellinfrastruttura-it">Regole operative per la gestione dell’Infrastruttura IT</h2>
+
+<h3 id="agreements">Agreements</h3>
+
+<ol>
+  <li>
+    <p>Non si effettuano attività sull’infrastruttura IT di produzione <u>il Venerdì, il Sabato e la Domenica/Festivi</u> (ed anche il Giovedì dopo le 16:00)</p>
+  </li>
+  <li>
+    <p>Prima di effettuare <strong>qualsiasi attività</strong> sull’infrastruttura IT di test o produzione va inviata <u>una email a tutti i colleghi</u> per informare dell’intervento, <strong>con almeno 24h di anticipo</strong>.<br />
+Il preavviso di 24h si può ridurre al minimo indispensabile in caso di attività da effettuare per risolvere problemi urgenti (la comunicazione va comunque inviata sempre).</p>
+  </li>
+  <li>
+    <p>Nel caso l’attività abbia un impatto sugli utenti, <strong>il preavviso sale ad almeno 72h</strong> per la comunicazione, che va inviata anche a tutti gli utenti coinvolti.</p>
+  </li>
+  <li>
+    <p>Per ciascuna attività va inviata a tutti i soggetti coinvolti (interni ed esterni) una email di inizio attività ed una email di fine attività.</p>
+  </li>
+  <li>
+    <p>Riunioni interne di allineamento che coinvolgono tutto il gruppo:</p>
+
+    <ul>
+      <li>Almeno <strong>una a settimana</strong> il Venerdì mattina.</li>
+      <li>Non pià di <strong>3 a settimana</strong>.</li>
+      <li>Durata MAX di ciascuna riunione <strong>90 minuti</strong><br /></li>
+    </ul>
+  </li>
+  <li>
+    <p>La gestione dei progetti prevede:</p>
+
+    <ul>
+      <li>La condivisione degli obiettivi e delle scadenze con la Direzione IT e con il gruppo di progetto, che prevede la <strong>presenza fissa dei responsabili delle varie BU interessate</strong>.</li>
+      <li>L’approvazione del progetto da parte della Direzione IT, prima di iniziare a lavorare sul progetto stesso.</li>
+      <li>La redazione della documentazione di progetto <strong>prima di iniziare il progetto</strong>.</li>
+      <li>Che gli eventuali acquisti vanno <strong>sempre correlati</strong> ad un progetto approvato<br /></li>
+    </ul>
+  </li>
+  <li>
+    <p>Le decisioni prese in riunione possono essere modificate <strong>solo a seguito di una nuova riunione</strong> che allinei tutti i partecipanti.</p>
+  </li>
+</ol>
+:ET

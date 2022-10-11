@@ -1,0 +1,126 @@
+I"�<p>In questa veloce guida si dà per scontato che il lettore abbia già una buona conoscenza dell’ambiente KACE 1000 (KACE SMA) e del funzionamento delle etichette (<em>Labels</em>)</p>
+
+<ul id="markdown-toc">
+  <li><a href="#il-blocco-delle-applicazioni-tramite-k1000-passo-per-passo" id="markdown-toc-il-blocco-delle-applicazioni-tramite-k1000-passo-per-passo">Il blocco delle applicazioni tramite K1000, passo per passo</a>    <ul>
+      <li><a href="#la-label" id="markdown-toc-la-label">La Label</a>        <ul>
+          <li><a href="#significato-della-label" id="markdown-toc-significato-della-label">Significato della Label</a></li>
+        </ul>
+      </li>
+      <li><a href="#i-software-da-bloccare" id="markdown-toc-i-software-da-bloccare">I software da bloccare</a></li>
+      <li><a href="#i-pc-e-la-loro-label" id="markdown-toc-i-pc-e-la-loro-label">I PC e la loro Label</a></li>
+      <li><a href="#linventario" id="markdown-toc-linventario">L’Inventario</a></li>
+    </ul>
+  </li>
+  <li><a href="#il-risultato-finale" id="markdown-toc-il-risultato-finale">Il risultato finale</a></li>
+</ul>
+
+<h1 id="il-blocco-delle-applicazioni-tramite-k1000-passo-per-passo">Il blocco delle applicazioni tramite K1000, passo per passo</h1>
+
+<p>Il blocco delle applicazioni su Kace funziona con una doppia logica:</p>
+
+<ol>
+  <li>
+    <p>Una <a href="#la-label"><em>Label</em></a>, in grado di controllare e bloccare i software</p>
+  </li>
+  <li>
+    <p>Uno o più Software marcati come <a href="#i-software-da-bloccare"><em>Not Allowed</em></a></p>
+  </li>
+</ol>
+
+<p>Per funzionare, è necessario che <strong>entrambe</strong> le condizioni siano <strong>vere</strong></p>
+
+<h2 id="la-label">La Label</h2>
+
+<p>Kace mette a disposizione una Label già preconfezionata, secondo i parametri di default.</p>
+
+<p>Useremo quindi questa per illustrare il funzionamento del blocco applicativo.</p>
+
+<p><img src="/static/assets/img/blog/kace/appcontrol/K1000_appcontrol.png" alt="Screenshot 1 - Default Application Control Label" /></p>
+
+<ol>
+  <li>
+    <p>Portarsi in <em>Home</em> ed in seguito in <em>Label Management</em> e selezionare <strong>Labels</strong></p>
+  </li>
+  <li>
+    <p>La nostra etichetta di default si chiama <strong>“ApplicationControlDevices”</strong> ed è così impostata:</p>
+  </li>
+</ol>
+
+<p><img src="/static/assets/img/blog/kace/appcontrol/appcontrol_label.png" alt="Screenshot 2 - Appcontrol Label Details" /></p>
+
+<h3 id="significato-della-label">Significato della Label</h3>
+
+<p>Illustriamo velocemente il significato dei vari flag:</p>
+
+<ul>
+  <li>Device Inventory: La Label si applica all’Inventario dei devices (quindi: ai PC)
+    <ul>
+      <li>Allow Application Control:    La Label è in grado di controllare l’avvio delle applicazioni</li>
+    </ul>
+  </li>
+  <li>Resources (Processes, Services, Startup Items):   La Label si può applicare anche a processi e servizi</li>
+  <li>Catalog:  La Label si applica al Catalogo Software (<strong>essenziale</strong> per il buon funzionamento del meccanismo di blocco!)</li>
+  <li>Software: Come sopra, ma per i software non normalizzati dal catalogo</li>
+</ul>
+
+<h2 id="i-software-da-bloccare">I software da bloccare</h2>
+
+<p>Portiamoci nel <strong>Software Catalog</strong> (<em>Inventory</em> -&gt; <em>Software Catalog</em>), che racchiude e “normalizza” tutti i software rilevati e riconosciuti, all’interno di un unico nome. Più chiaramente, avremo ad esempio “iTunes 12.x”, che contiene tutte le revisioni di iTunes 12 (es: 12.1, 12.4, 12.74 e via dicendo).</p>
+
+<p><em>Lavorare nel Catalogo Software ci consente di bloccare o monitorare un software indipendentemente dagli aggiornamenti che riceve.</em></p>
+
+<p><img src="/static/assets/img/blog/kace/appcontrol/appcontrol_software_catalog.png" alt="Screenshot 3" /></p>
+
+<p>Una volta trovato il nostro software (prendiamo sempre ad esempio iTunes 12.x), selezioniamo il checkbox e da menu “Choose Action” scegliamo “<strong>Mark Not Allowed</strong>”</p>
+
+<p>In alternativa, è possibile spuntare “<strong>Not Allowed</strong>” all’interno della pagina del software di nostro interesse. L’autosave è automatico nel momento del cambio di selezione del checkbox.</p>
+
+<p><img src="/static/assets/img/blog/kace/appcontrol/software_catalog_detail.png" alt="Screenshot 4" /></p>
+
+<h2 id="i-pc-e-la-loro-label">I PC e la loro Label</h2>
+
+<p>Ora che abbiamo capito come funzionano sia la Label (che si applica ai PC) che il marker di blocco (relativo ai software), possiamo metterli insieme ed ottenere l’effetto desiderato.</p>
+
+<p><strong>NOTA BENE:</strong> <em>il meccanismo di Kace bloccherà l’apertura dei programmi SOLO sui PC a cui abbiamo applicato la Label “ApplicationControlDevice” e solo a loro</em>. In questa fase sperimentale l’etichetta NON VIENE applicata di default a tutti i device in inventario e l’operazione dovrà quindi essere fatta manualmente.</p>
+
+<p><strong>Un pc che ha un software bloccato ma che non appartiene alla Label continuerà ad eseguire quel software come se nulla fosse, senza alcun problema.</strong></p>
+
+<ul>
+  <li>1 Otteniamo il nome od i nomi dei PC che ci interessa inserire nella Label. Per fare ciò abbiamo diverse strade, tutte corrette:
+    <ol>
+      <li>Lo conosciamo e lo troviamo direttamente in Inventario</li>
+      <li>Dal Catalogo Software clicchiamo sul numero nella colonna “Installed”, che ci porterà alla lista di tutti i PC con quel software</li>
+    </ol>
+  </li>
+</ul>
+
+<p><img src="/static/assets/img/blog/kace/appcontrol/appcontrol_locked.png" alt="Screenshot 5" /></p>
+
+<ul>
+  <li>2 Selezioniamo il checkbox a fianco del o dei PC di nostro interesse e da menu “<strong>Choose Action</strong>” facciamo click su “<strong>Apply Labels</strong>”</li>
+</ul>
+
+<p><img src="/static/assets/img/blog/kace/appcontrol/apply_label.png" alt="Screenshot 6" /></p>
+
+<ul>
+  <li>3 Scegliamo quindi la Label “<strong>ApplicationControlDevices</strong>” e trasciniamola nella parte destra della finestra, cliccando poi su “<strong>Apply Labels</strong>”</li>
+</ul>
+
+<p><img src="/static/assets/img/blog/kace/appcontrol/labels_list.png" alt="Screenshot 7" /></p>
+
+<h2 id="linventario">L’Inventario</h2>
+
+<p>Abbiamo fatto le regole. Abbiamo applicato le Labels. Manca ancora qualcosa?</p>
+
+<p>Uno dei punti di forza dell’agente Kace è quello di lavorare sostanzialmente offline: si collega una volta al server, riceve tutte le regole, le informazioni e gli script e poi continua a lavorare, da solo, senza più bisogno di dialogare col server. E continua a fare tutto ciò che gli è stato detto di fare fino a prova contraria. Questo meccanismo si chiama “Inventario” e nel nostro caso viene eseguito una volta ogni 8 ore (almeno) da ogni singolo computer inventariato.</p>
+
+<p><em>Le nuove regole di blocco, quindi, verranno applicate al PC al suo prossimo contatto (cioè al prossimo inventario)</em>. Le potremo forzare manualmente (click sul box del device e poi “<strong>Force Inventory</strong>”) ma, in condizioni normali, il frutto delle nostre regole si vedrà solo dopo alcune ore (ed un riavvio del PC) e non in tempo reale.</p>
+
+<h1 id="il-risultato-finale">Il risultato finale</h1>
+
+<p><img src="/static/assets/img/blog/kace/appcontrol/final_result.png" alt="Screenshot 8" /></p>
+
+<p>In seguito alla creazione della lista di blocco (alcuni software in questa immagine sono solo puramente a scopo di esempio e non si intende veramente bloccarli), all’assegnazione della Label al PC ed al propagarsi delle regole tramite inventario, una volta che l’utente tenterà di aprire il software riceverà un alert nell’angolo basso a destra dello schermo, come questo:</p>
+
+<p><img src="/static/assets/img/blog/kace/appcontrol/messagebox.png" alt="Screenshot 9" /></p>
+:ET

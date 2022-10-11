@@ -1,0 +1,104 @@
+I"�"<p>Recentemente ho avuto necessità di eseguire un pò di tuning su un server Linux, spesso infestato da processi zombie che lo portavano a raggiungere elevatissimi carichi operativi. Dalla descrizione di Wikipedia:</p>
+
+<blockquote>
+  <p>Nei sistemi operativi Unix e Unix-like, un processo zombie o processo defunto è un processo informatico che, nonostante abbia terminato la propria esecuzione, possiede ancora un PID ed un process control block, necessario per permettere al proprio processo padre di leggerne il valore di uscita.</p>
+</blockquote>
+
+<p>Girovagando alla ricerca di informazioni utili, mi sono imbattuto in un ottimo script, da copiare sui vostri server, in grado di identificare e killare lo zombie, oltre a lasciarne una traccia un un file di log apposito.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#lo-script-kill-zombie" id="markdown-toc-lo-script-kill-zombie">LO SCRIPT KILL-ZOMBIE</a>    <ul>
+      <li><a href="#funzionamento" id="markdown-toc-funzionamento">FUNZIONAMENTO</a></li>
+      <li><a href="#inserimento-nel-crontab" id="markdown-toc-inserimento-nel-crontab">INSERIMENTO NEL CRONTAB</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="lo-script-kill-zombie">LO SCRIPT KILL-ZOMBIE</h2>
+
+<p>Come prima cosa, creeremo (con i permessi di root) un nuovo file kill-zombie</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /root
+vi kill-zombies
+</code></pre></div></div>
+
+<p>In seguito copiamo il seguente codice ed incolliamolo nel file appena creato</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#! /bin/bash</span>
+<span class="c">#</span>
+<span class="c"># Zombie processes killing script. Must be run under root.</span>
+ 
+<span class="k">case</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="k">in</span>
+<span class="nt">--admin</span><span class="p">)</span>
+<span class="nb">stat</span><span class="o">=</span><span class="sb">`</span>ps ax | <span class="nb">awk</span> <span class="s1">'{print $1}'</span> | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s2">"PID"</span> | xargs <span class="nt">-n</span> 1 ps lOp | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s2">"UID"</span> | <span class="nb">awk</span> <span class="s1">'{print"pid: "$3" *** parent_pid: "$4" *** status: "$10" *** process: "$13}'</span> | <span class="nb">grep</span> <span class="s2">": Z"</span><span class="sb">`</span>
+ 
+<span class="k">if</span> <span class="o">((</span><span class="k">${#</span><span class="nv">stat</span><span class="k">}</span> <span class="o">&gt;</span> 0<span class="o">))</span><span class="p">;</span><span class="k">then
+</span><span class="nb">echo </span>zombie processes found:
+<span class="nb">echo</span> <span class="nb">.</span>
+ps ax | <span class="nb">awk</span> <span class="s1">'{print $1}'</span> | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s2">"PID"</span> | xargs <span class="nt">-n</span> 1 ps lOp | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s2">"UID"</span> | <span class="nb">awk</span> <span class="s1">'{print"pid: "$3" *** parent_pid: "$4" *** status: "$10" *** process: "$13}'</span> | <span class="nb">grep</span> <span class="s2">": Z"</span>
+<span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"Kill zombies? [y/n]: "</span>
+<span class="nb">read </span>keyb
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$keyb</span> <span class="o">==</span> <span class="s1">'y'</span> <span class="o">]</span><span class="p">;</span><span class="k">then
+</span><span class="nb">echo </span>killing zombies..
+ps ax | <span class="nb">awk</span> <span class="s1">'{print $1}'</span> | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s2">"PID"</span> | xargs <span class="nt">-n</span> 1 ps lOp | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s2">"UID"</span> | <span class="nb">awk</span> <span class="s1">'{print$4" status:"$10}'</span> | <span class="nb">grep</span> <span class="s2">"status:Z"</span> | <span class="nb">awk</span> <span class="s1">'{print $1}'</span> | xargs <span class="nt">-n</span> 1 <span class="nb">kill</span> <span class="nt">-9</span>
+<span class="k">fi
+else
+</span><span class="nb">echo </span>no zombies found!
+<span class="k">fi</span>
+<span class="p">;;</span>
+<span class="nt">--cron</span><span class="p">)</span>
+<span class="nb">stat</span><span class="o">=</span><span class="sb">`</span>ps ax | <span class="nb">awk</span> <span class="s1">'{print $1}'</span> | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s2">"PID"</span> | xargs <span class="nt">-n</span> 1 ps lOp | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s2">"UID"</span> | <span class="nb">awk</span> <span class="s1">'{print"pid: "$3" *** parent_pid: "$4" *** status: "$10" *** process: "$13}'</span> | <span class="nb">grep</span> <span class="s2">": Z"</span><span class="sb">`</span>
+<span class="k">if</span> <span class="o">((</span><span class="k">${#</span><span class="nv">stat</span><span class="k">}</span> <span class="o">&gt;</span> 0<span class="o">))</span><span class="p">;</span><span class="k">then
+</span>ps ax | <span class="nb">awk</span> <span class="s1">'{print $1}'</span> | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s2">"PID"</span> | xargs <span class="nt">-n</span> 1 ps lOp | <span class="nb">grep</span> <span class="nt">-v</span> <span class="s2">"UID"</span> | <span class="nb">awk</span> <span class="s1">'{print$4" status:"$10}'</span> | <span class="nb">grep</span> <span class="s2">"status:Z"</span> | <span class="nb">awk</span> <span class="s1">'{print $1}'</span> | xargs <span class="nt">-n</span> 1 <span class="nb">kill</span> <span class="nt">-9</span>
+<span class="nb">echo</span> <span class="sb">`</span><span class="nb">date</span><span class="sb">`</span><span class="s2">": killed some zombie processes!"</span> <span class="o">&gt;&gt;</span> /var/log/zombies.log
+<span class="k">fi</span>
+<span class="p">;;</span>
+<span class="k">*</span><span class="p">)</span> <span class="nb">echo</span> <span class="s1">'usage: kill-zombies {--cron|--admin}'</span>
+<span class="p">;;</span>
+<span class="k">esac</span>
+<span class="nb">exit </span>0
+</code></pre></div></div>
+
+<p>Ora rendiamolo eseguibile e spostiamolo in /usr/bin</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod</span> +x kill-zombies
+<span class="nb">mv </span>kill-zombies /usr/bin
+</code></pre></div></div>
+
+<h3 id="funzionamento">FUNZIONAMENTO</h3>
+
+<p>Lo script viene evocato con un flag, che ne modifica il comportamento:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kill-zombies <span class="nt">--admin</span>
+</code></pre></div></div>
+
+<p>L’esecuzione avviene manualmente. Se vengono rilevati processi zombie l’utente ne viene informato e deve confermare l’operazione</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kill-zombies <span class="nt">--cron</span>
+</code></pre></div></div>
+
+<p>Lo script <strong>dovrà essere inserito nel crontab</strong> e richiamato quindi a cadenze regolari dal server. I processi vengono killati in automatico e ne viene lasciata traccia in /var/log/zombies.log</p>
+
+<h3 id="inserimento-nel-crontab">INSERIMENTO NEL CRONTAB</h3>
+
+<p>Richiamiamo l’editor del crontab con questo comando</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab <span class="nt">-e</span>
+</code></pre></div></div>
+
+<p>Ed inseriamo questa riga:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">*</span>/10 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /usr/bin/kill-zombies <span class="nt">--cron</span>
+</code></pre></div></div>
+
+<p>In questo modo, lo script verrà eseguito ogni 10 minuti a cadenza regolare. In caso si voglia modificare l’intervallo di tempo, sarà sufficiente cambiare ad esempio */10 in */5 (per 5 minuti)</p>
+
+<p><a href="https://www.skyflash.it/download/8205/">Download zombies.sh (1 KB)</a></p>
+
+<p>Riferimenti:</p>
+
+<ul>
+  <li><a href="https://www.skyflash.it/computer/linux-os/identificare-ed-uccidere-processi-zombie-in-un-server-linux/6076/">Identificare ed uccidere processi zombie in un server Linux</a></li>
+  <li><a href="https://help.ubuntu.com/community/CronHowto">CronHowTo</a></li>
+</ul>
+:ET

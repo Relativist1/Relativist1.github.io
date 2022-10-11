@@ -1,0 +1,168 @@
+I"@<h1 id="target">Target</h1>
+
+<p>Find and report all managed Windows PCs in K1000 Inventory with a smartcard reader installed.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>The script does not depend on K1000, so if you don’t have KACE SMA in your environment don’t worry: the script is still useful!</p>
+
+<h2 id="components">Components</h2>
+
+<ul>
+  <li>[The Query] This script</li>
+  <li>[The Automation] Kace Systems Management Appliance (AKA ‘K1000’)</li>
+</ul>
+
+<h2 id="how-it-works">How it works</h2>
+
+<ol>
+  <li>The vbs script executes a WMI query over the target device(s) and saves an output file named <em>smartcard.txt</em> (see below in the <a href="#setup">Setup section</a>)</li>
+  <li>The vbs script is scheduled and deployed to the target device(s) via K1000 <a href="#the-kscript"><em>Online KScript</em></a></li>
+  <li>A K1000 <a href="#the-custom-inventory-rule"><em>Custom Inventory Rule</em></a> reads the output file for every inventoried device and stores the information in the database</li>
+  <li>A scheduled <a href="#the-report">Report</a> (choose your favorite format between HTML, CSV, PDF or Excel) returns only PCs with a smart card reader installed</li>
+  <li>Done!</li>
+</ol>
+
+<h2 id="setup">Setup</h2>
+
+<h3 id="the-kscript-smarcardvbs">The KScript (smarcard.vbs)</h3>
+
+<ul>
+  <li>Download <a href="/static/assets/files/blog/kace-smartcard/smartcard.vbs">the script</a> or copy &amp; paste the following code:</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>strComputer <span class="o">=</span> <span class="s2">"."</span>
+Dim log
+Set log <span class="o">=</span> Wscript.CreateObject<span class="o">(</span><span class="s2">"Scripting.Filesystemobject"</span><span class="o">)</span>
+Set f <span class="o">=</span> log.CreateTextFile<span class="o">(</span><span class="s2">"C:</span><span class="se">\T</span><span class="s2">ools</span><span class="se">\s</span><span class="s2">martcard.txt"</span>, 2<span class="o">)</span>
+Set objWMIService <span class="o">=</span> GetObject<span class="o">(</span><span class="s2">"winmgmts:</span><span class="se">\\</span><span class="s2">"</span> &amp; strComputer &amp; <span class="s2">"</span><span class="se">\r</span><span class="s2">oot</span><span class="se">\C</span><span class="s2">IMV2"</span><span class="o">)</span> 
+Set colItems <span class="o">=</span> objWMIService.ExecQuery<span class="o">(</span> _
+    <span class="s2">"SELECT * FROM Win32_PnPSignedDriver Where DeviceClass = 'SMARTCARDREADER'"</span>,,48<span class="o">)</span> 
+For Each objItem <span class="k">in </span>colItems 
+    f.WriteLine <span class="s2">"DeviceClass: "</span> &amp; objItem.DeviceClass
+Next
+f.Close
+</code></pre></div></div>
+
+<ul>
+  <li>Edit <strong>line 4</strong> with the path where you want to save the output file. In our environment every PC has a <em>“C:\Tools”</em> directory for service purpose, so I decided to save the output there.</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Set f = log.CreateTextFile("C:\Tools\smartcard.txt", 2)
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>Go to your <em>K1000 Dashboard</em>, then go to <em>Scripting</em> and create a <strong>New Script</strong> (<em>Choose Action / New</em>)</p>
+  </li>
+  <li>
+    <p>Name the script as your wish (for example: Check Smart Card Reader) and follow these steps:</p>
+  </li>
+</ul>
+
+<h4 id="script-basic-settings">Script Basic Settings</h4>
+
+<ul>
+  <li>Type: <strong>Online KScript</strong></li>
+  <li>Enabled: <strong>Yes</strong></li>
+  <li>Deploy: one or some devices, all devices or to a Device Label, according to your needs in your environment</li>
+  <li>Windows Run As: <strong>Local System</strong></li>
+  <li>Upload the smartcard.vbs as <strong>New Dependecy</strong></li>
+</ul>
+
+<h4 id="tasks">Tasks</h4>
+
+<p>We want the script to run once in every PC, so we’ll use a “checkmark” (the smartcard.txt) to verify that…</p>
+
+<ul>
+  <li>Verify: <strong>Verify a file exists…</strong>
+    <ul>
+      <li>C:\Tools\smartcard.txt</li>
+    </ul>
+  </li>
+  <li>Remediation: <strong>Launch a program…</strong>
+    <ul>
+      <li>Directory: <strong>$(KACE_SYS_DIR)</strong></li>
+      <li>File: <strong>cscript.exe $(KACE_DEPENDENCY_DIR)\smartcard.vbs</strong></li>
+      <li>Wait for completion: <strong>Yes</strong></li>
+    </ul>
+  </li>
+  <li>On Remediation Success: <strong>Upload a file…</strong> (note: this step is not necessary and only for archiving purpose)
+    <ul>
+      <li>Directory: <strong>C:\Tools</strong></li>
+      <li>File: <strong>smartcard.txt</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p>…and <strong>Save</strong> your brand new script.</p>
+
+<p>The Task and its steps are summarized in the following image. When you’re ready, let’s jump to the <a href="#the-custom-inventory-rule">Step 4!</a></p>
+
+<p><img src="/static/assets/img/blog/kace/smartcard/screenshot1.png" alt="Screenshot 1" /></p>
+
+<h3 id="the-custom-inventory-rule">The Custom Inventory Rule</h3>
+
+<ol>
+  <li>
+    <p>In the K100 Dashboard, now go to <em>Inventory</em> section, then go to <em>Software</em> and create a <strong>new Software entry</strong> (<em>Choose Action / New</em>)</p>
+  </li>
+  <li>
+    <p>Name the rule as your wish (for example: IT Dep — Check Smart Card Reader) and follow these steps:</p>
+  </li>
+</ol>
+
+<ul>
+  <li>Publisher: <strong>IT Department</strong> (it’s useful for further searches into the <em>Software Inventory</em>)</li>
+  <li>Supported Operating Systems: <strong>All the Windows OSs in your Inventory</strong></li>
+  <li>Custom Inventory Rule: <code class="language-plaintext highlighter-rouge">ShellCommandTextReturn(cmd /c type C:\Tools\smartcard.txt)</code></li>
+</ul>
+
+<p>…and <strong>Save</strong> your new Custom Inventory Rule.</p>
+
+<p>Here’s the summary image</p>
+
+<p><img src="/static/assets/img/blog/kace/smartcard/screenshot2.png" alt="Screenshot 1" /></p>
+
+<p>Now we need all our devices complete their inventory. The new Custom Inventory Rule creates a new entry in every device record managed by the K1000.</p>
+
+<p>If a smart card reader has been discovered we’ll have at least one “DeviceClass: SMARTCARDREADER” text iside the <strong>Custom Inventory Fields</strong> section into every device record in <em>Inventory / Devices</em></p>
+
+<p><img src="/static/assets/img/blog/kace/smartcard/screenshot3.png" alt="Screenhot 3" /></p>
+
+<p>Otherwise, if a smart card reader has not been discovered, we’ll have no text</p>
+
+<p>When all your devices has been inventoried and you’re ready, jump to the <a href="#the-report">next section</a></p>
+
+<h3 id="the-report">The Report</h3>
+
+<p>In the K100 Dashboard, now go to <em>Reporting</em> section, then in <em>Reports</em> and create a new Report (<em>Choose Action / New</em>)</p>
+
+<p>Name the Report as your wish (for example: PCs with Smart Card Reader) and follow these steps:</p>
+
+<h4 id="title-and-topic">Title and Topic</h4>
+
+<ul>
+  <li>Category: <strong>Inventory</strong></li>
+  <li>Topic: <strong>Device</strong></li>
+</ul>
+
+<h4 id="fields-to-display">Fields to Display</h4>
+
+<ul>
+  <li>Device: <strong>System Name</strong></li>
+  <li>Operating System Info: <strong>Name</strong></li>
+  <li>User Information: <strong>User Name</strong></li>
+  <li>Manufacturer and BIOS: <strong>System Model</strong></li>
+</ul>
+
+<p>Feel free to add and modify any other field, according to your needings.</p>
+
+<h4 id="filters">Filters</h4>
+
+<p>Delete the default filter and create this:</p>
+
+<p><img src="/static/assets/img/blog/kace/smartcard/report1.png" alt="Filter" /></p>
+
+<p><strong>Save</strong> your new report and try it.</p>
+:ET

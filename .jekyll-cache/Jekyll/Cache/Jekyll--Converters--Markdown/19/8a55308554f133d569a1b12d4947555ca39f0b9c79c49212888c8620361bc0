@@ -1,0 +1,114 @@
+I"0<p>Per installare certificati in maniera trasparente possiamo usare diversi metodi, il più ovvio e diffuso dei quali è senza dubbio una <em>GPO</em>. Ma non è sempre detto che la GPO sia la soluzione più veloce (ad esempio: chi deve eseguire il deploy dei certificati non ha i permessi per lavorare sulle GPO, o il certificato deve essere installato su un numero esiguo di PC per cui chi dovrebbe fare la GPO non considera questa un’attività primaria da svolgere ed i tempi rischiano di allungarsi)</p>
+
+<p>Andiamo quindi a vedere come <strong>distribuire un certificato CA self-signed tramite KACE 1000</strong>. In seguito andremo anche ad installare sui client, con la stessa procedura, un secondo certificato intermedio, validato a sua volta dalla CA.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#lutility-certutilexe" id="markdown-toc-lutility-certutilexe">L’utility certutil.exe</a>    <ul>
+      <li><a href="#definizioni" id="markdown-toc-definizioni">Definizioni</a></li>
+      <li><a href="#importazione-della-ca-tramite-certutilexe" id="markdown-toc-importazione-della-ca-tramite-certutilexe">Importazione della CA tramite certutil.exe</a></li>
+      <li><a href="#importazione-del-certificato-intermedio" id="markdown-toc-importazione-del-certificato-intermedio">Importazione del certificato intermedio</a></li>
+    </ul>
+  </li>
+  <li><a href="#lo-script-kscript-su-kace" id="markdown-toc-lo-script-kscript-su-kace">Lo script (kscript) su Kace</a>    <ul>
+      <li><a href="#riassunto-delle-attività" id="markdown-toc-riassunto-delle-attività">Riassunto delle Attività</a></li>
+      <li><a href="#realizzazione" id="markdown-toc-realizzazione">Realizzazione</a></li>
+      <li><a href="#schedulazione" id="markdown-toc-schedulazione">Schedulazione</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="lutility-certutilexe">L’utility certutil.exe</h1>
+<p>certutil.exe è una utility, presente in tutti i sistemi Windows, che ci permette di fare tante cose con i certificati.
+Possiamo convertirli in caso il formato che abbiamo non sia quello che ci serve, possiamo importarli ed esportarli (sia in locale che su Active Directory), verificare la validità delle coppie di chiavi privata/pubblica eccetera.</p>
+
+<p>Si usa da riga di comando e per la sintassi completa vi rimando <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil" target="_blank">all’apposita pagina</a> sulla Knowledge Base Micorosoft</p>
+
+<h2 id="definizioni">Definizioni</h2>
+
+<ul>
+  <li>Entrambi i nostri certificati sono già in formato .cer</li>
+  <li>Il certificato CA si chiama NGIRootCA01</li>
+  <li>Il certificato intermedio si chiama NGISSLCA01.cer</li>
+</ul>
+
+<h2 id="importazione-della-ca-tramite-certutilexe">Importazione della CA tramite certutil.exe</h2>
+
+<p>Il comando di importazione, che possiamo eseguire da un qualsiasi prompt amministrativo, è il seguente</p>
+
+<div class="language-batch highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">start</span> <span class="na">/wait </span><span class="nb">certutil</span> <span class="na">-addstore </span><span class="kd">Root</span> <span class="kd">NGIRootCA01</span>.cer
+</code></pre></div></div>
+
+<p>Il parametro -addstore deifnisce il datastore in cui andremo ad installare il certificato. <em>Root</em> corrisponde a “<strong>Autorità di certificazione radice attendibili</strong>”</p>
+
+<h2 id="importazione-del-certificato-intermedio">Importazione del certificato intermedio</h2>
+
+<p>Il certificato intermedio (che chiameremo SSLCA01.cer) a cui si faceva riferimento poco fa si importerà nella stessa maniera, cambiando solamente il datastore di riferimento:</p>
+
+<pre><code class="language-msdos">start /wait certutil -addstore CA NGISSLCA01.cer
+</code></pre>
+
+<h1 id="lo-script-kscript-su-kace">Lo script (kscript) su Kace</h1>
+
+<p>Andiamo ora a riportare tutto su Kace 1000, creando uno script apposito.</p>
+
+<h2 id="riassunto-delle-attività">Riassunto delle Attività</h2>
+
+<ul>
+  <li>Impostazione dei parametri di base</li>
+  <li>Importazione dei due certificati come dipendenze</li>
+  <li>Creazione di un batch file</li>
+  <li>Schedulazione</li>
+</ul>
+
+<h2 id="realizzazione">Realizzazione</h2>
+
+<ol>
+  <li>Portiamoci in <em>Scripting / Scripts</em> e creiamo un novo kscript (“<em>New</em>”)</li>
+  <li>Una volta definito un nome, portiamoci nella sezione <em>Operating Systems</em> e clicchiamo su <strong>Manage Operating Systems</strong>, andando a selezionare tutti i SO Windows (e, visto che andremo a creare un batch file, <strong>solo</strong> quelli Windows) di nostro interesse<br />
+  <img src="/static/assets/img/blog/kace/cassl/oss.png" alt="kscript Manage Operating Systems" /></li>
+  <li>Verifichiamo che <em>Windows Run As</em> sia impostato a <strong>Local System</strong><br />
+  <img src="/static/assets/img/blog/kace/cassl/runas.png" alt="kscript Run As" /></li>
+  <li>
+    <p>Nella sezione <strong>Dependencies</strong> facciamo click su <strong>+New Dependency…</strong> e carichiamo:</p>
+
+    <ol>
+      <li>Il certificato Root</li>
+      <li>Il certificato Intermedio<br />
+<img src="/static/assets/img/blog/kace/cassl/certificati.png" alt="kscript Certificati" /></li>
+    </ol>
+  </li>
+  <li>
+    <p>Facciamo ora click su <strong>+Task…</strong> nella sezione sottostante ed impostiamo i seguenti passi:</p>
+
+    <ol>
+      <li><strong>Verify</strong> that the file “C:\Tools\certificato.ok” exists (questo ci servirà per fare un check sull’applicazione del certificato, che andremo a schedulare e qundi ad eseguire ad intervalli regolari; se il file <em>certificato.ok</em> esiste allora lo script si interrompe). Per riferimento sul percorso scelto, potete vedere <a href="/blog/kace/k1000-report-pc-with-smartcard-reader/" target="_blank">questo mio precedente articolo</a></li>
+      <li><strong>On Success</strong>: nulla</li>
+      <li><strong>Remediation</strong>: Run the batch file “<em>Install_CA_Root_Script</em>” with params “”<br />
+ <img src="/static/assets/img/blog/kace/cassl/script.png" alt="kscript Script" /><br />
+ Codice:
+        <div class="language-dosbatch highlighter-rouge"><div class="highlight"><pre class="highlight"><code> @echo <span class="na">off</span>
+ <span class="nb">start</span> <span class="na">/wait </span><span class="nb">certutil</span> <span class="na">-addstore </span><span class="kd">Root</span> <span class="kd">NGIRootCA01</span>.cer
+ <span class="nb">start</span> <span class="na">/wait </span><span class="nb">certutil</span> <span class="na">-addstore </span><span class="kd">CA</span> <span class="kd">NGISSLCA01</span>.cer
+ <span class="k">exit</span>
+</code></pre></div>        </div>
+      </li>
+      <li><strong>On Remediaton Success</strong> Launch a program…<br />
+ <img src="/static/assets/img/blog/kace/cassl/remediation.png" alt="kscript Remediation" /></li>
+    </ol>
+  </li>
+  <li>Clicchiamo su <strong>Save</strong> per completare la creazione del kscript</li>
+</ol>
+
+<h2 id="schedulazione">Schedulazione</h2>
+
+<p>In caso volessimo schedulare lo script, sarà sufficiente, una volta tornati in editing, andare ad impostare la finestra desiderata.
+Ad esempio, nel nostro caso lo script verrà eseguito sui devices desiderati ogni tre ore secondo questa logica:</p>
+
+<ol>
+  <li>Lo script viene eseguito la prima volta</li>
+  <li>Al termine, lascia un file “<em>certificato.ok</em>”, di dimensione 0 bytes, in C:\Tools\</li>
+  <li>Dalla volta seguente (ogni tre ore…) se trova il file “certificato.ok” allora si interrompe e non fa null’altro</li>
+</ol>
+
+<p><img src="/static/assets/img/blog/kace/cassl/schedule.png" alt="kscript Schedule" /></p>
+:ET

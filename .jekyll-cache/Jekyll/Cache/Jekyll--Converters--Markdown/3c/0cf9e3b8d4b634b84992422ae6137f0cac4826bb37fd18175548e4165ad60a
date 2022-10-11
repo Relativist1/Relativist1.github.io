@@ -1,0 +1,132 @@
+I"s)<ul id="markdown-toc">
+  <li><a href="#lhotlinking-danneggia-il-tuo-sito" id="markdown-toc-lhotlinking-danneggia-il-tuo-sito">L’HOTLINKING DANNEGGIA IL TUO SITO</a></li>
+  <li><a href="#come-proteggersi-da-hotlinking" id="markdown-toc-come-proteggersi-da-hotlinking">COME PROTEGGERSI DA HOTLINKING</a>    <ul>
+      <li><a href="#spiegazione" id="markdown-toc-spiegazione">SPIEGAZIONE</a>        <ul>
+          <li><a href="#concedere-laccesso-a-bing-yahoo-e-facebook" id="markdown-toc-concedere-laccesso-a-bing-yahoo-e-facebook">CONCEDERE L’ACCESSO A BING, YAHOO E FACEBOOK</a></li>
+        </ul>
+      </li>
+      <li><a href="#conclusioni" id="markdown-toc-conclusioni">CONCLUSIONI</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="lhotlinking-danneggia-il-tuo-sito">L’HOTLINKING DANNEGGIA IL TUO SITO</h1>
+
+<p>Facciamo un esempio. L’immagine che vedete qui sotto è stata caricata direttamente su un mio sito (ospite originale di questo articolo). Il server web non fa altro che andare a caricare una risorsa interna (l’immagine stessa) e mostrarla al visitatore, senza alcun carico elaborativo extra.</p>
+
+<p><img src="/static/assets/img/blog/hotlinking-htaccess/kenny-mccormick.jpg" alt="Kenny" /></p>
+
+<p>Il codice dell’immagine è il seguente:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/wp-content/uploads/2012/05/kenny-mccormick.jpg"</span> <span class="na">alt=</span><span class="s">""</span> <span class="na">border=</span><span class="s">"0"</span> <span class="na">width=</span><span class="s">"320"</span> <span class="na">height=</span><span class="s">"240"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Un sito esterno, invece di effettuare il download dell’immagine e di caricarla sul proprio server (cosa che, oltretutto, è sempre consigliabile in quanto migliora moltissimo i tempi di caricamento e le prestazioni generali del sito), ottiene il collegamento diretto alla risorsa e lo include all’interno di una propria pagina.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://www.skyflash.it/wp-content/uploads/2012/05/kenny-mccormick.jpg"</span> <span class="na">alt=</span><span class="s">""</span> <span class="na">border=</span><span class="s">"0"</span> <span class="na">width=</span><span class="s">"320"</span> <span class="na">height=</span><span class="s">"240"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Il risultato sarà che il secondo sito, eterno al nostro, sfrutta l’immagine senza però sacrificare il proprio spazio web, mentre il nostro sito, su cui risiede l’immagine, sarà sottoposto ad un carico eccessivo (ed assolutamente non richiesto nè tanto meno gradito) sia per quanto riguarda la propria banda passante che per le risorse del server.</p>
+
+<h1 id="come-proteggersi-da-hotlinking">COME PROTEGGERSI DA HOTLINKING</h1>
+
+<p>Sono sufficienti alcune righe da aggiungere al proprio, immancabile, file <em>.htaccess</em> e, se volete, un’immagine preparata per lo scopo, che servirà per sbattere in faccia al webmaster antipatico la dura verità :smile:</p>
+
+<p><strong>ATTENZIONE:</strong> la modifica di .htaccess, se fatta da persone non esperte e non particolarmente attente, può generare molti problemi al vostro sito WordPress, fino a <strong>renderlo inaccessibile</strong>. Assicuratevi quindi di fare <strong>SEMPRE una copia di sicurezza</strong> di .htaccess prima di cominciare le modifiche</p>
+
+<p>Aprite in un qualsaisi editor di testo il vostro file <em>.htaccess</em> ed in coda (se usate WordPress, dovrebbero esserci solo le direttive di default) e <strong>dopo ### END WordPress ###</strong> aggiungete il seguente codice:</p>
+
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">### Blocca l'hotlinking - Webmaster cattivo pussa via</span>
+RewriteEngineon
+<span class="nc">RewriteCond</span>%{HTTP_REFERER}!^$
+<span class="nc">RewriteCond</span>%{HTTP_REFERER}!^http(s)?://(www\.)?skyflash.it[NC]
+<span class="nc">RewriteCond</span>%{HTTP_REFERER}!^http(s)?://(www\.)?google.com[NC]
+<span class="nc">RewriteCond</span>%{HTTP_USER_AGENT}!googlebot[NC]
+<span class="nc">RewriteCond</span>%{REQUEST_URI}!^hotlink.jpg$
+<span class="nc">RewriteRule</span>\.(jpg|jpeg|png|gif|js|swf)$hotlink.jpg[NC,R,L]
+</code></pre></div></div>
+
+<h2 id="spiegazione">SPIEGAZIONE</h2>
+
+<p>Alla <strong>terza riga</strong> trovate:</p>
+
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">RewriteCond</span>%{HTTP_REFERER}!^$
+</code></pre></div></div>
+
+<p>Questa istruzione consente ai referrer che non forniscono informazioni di accedere al contenuto. Ciò è reso necessario in quanto molti visitatori (soprattutto quelli che si connettono dall’ufficio e si trovano dietro a proxy) sono protetti da un firewall che non rilascia informazioni al server per ragioni di sicurezza.</p>
+
+<p><strong>Righe 4, 5 e 6:</strong></p>
+
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">RewriteCond</span>%{HTTP_REFERER}!^http(s)?://(www\.)?skyflash.it[NC]
+<span class="nc">RewriteCond</span>%{HTTP_REFERER}!^http(s)?://(www\.)?google.com[NC]
+<span class="nc">RewriteCond</span>%{HTTP_USER_AGENT}!googlebot[NC]
+</code></pre></div></div>
+
+<p>specificano i domini che invece possono effettuare l’hotlinking e quindi visualizzare le immagini presenti sul server. Quindi scriveremo il nostro dominio internet e, in caso vogliate farvi indicizzare le immagini, Google. Tutti gli altri sono fuori.</p>
+
+<p><strong>Riga 7:</strong></p>
+
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">RewriteCond</span>%{REQUEST_URI}!^hotlink.jpg$
+</code></pre></div></div>
+
+<p>Se proprio qualcuno vuole rubare qualche immagine, allora lasciamogli prendere quella che abbiamo preparato per segnalare gli hotlinker. Questa riga ci assicura che l’immagine sia sempre visualizzabile.</p>
+
+<p><strong>Riga 8:</strong></p>
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">RewriteRule</span>\.(jpg|jpeg|png|gif|js|swf)$hotlink.jpg[NC,R,L]
+</code></pre></div></div>
+
+<p>Specifica il formato dei file protetti dall’hotlinking (non solo le immagini ne sono soggette) e sostituisce le richieste con un’immagine statica.</p>
+
+<p>Ovviamente potrete specificare l’immagine che desiderate, ma assicuratevi che questa non sia protetta (vedi riga precedente) oppure, ancora meglio, caricatela su una risorsa esterna come <a href="http://db.tt/wgafhzXi">Dropbox</a>, o il risultato sarà un loop infinito!</p>
+
+<h3 id="concedere-laccesso-a-bing-yahoo-e-facebook">CONCEDERE L’ACCESSO A BING, YAHOO E FACEBOOK</h3>
+
+<p>Esattamente come abbiamo fatto per Google, aggiungiamo al nostro <em>.htaccess</em> le seguenti direttive:</p>
+
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">RewriteCond</span>%{HTTP_REFERER}!msn.[NC]
+<span class="nc">RewriteCond</span>%{HTTP_REFERER}!yahoo.[NC]
+<span class="nc">RewriteCond</span>%{HTTP_REFERER}!^https?://(www\.)?facebook\.com[NC]
+<span class="nc">RewriteCond</span>%{HTTP_USER_AGENT}!facebookplatform[NC]
+<span class="nc">RewriteCond</span>%{HTTP_USER_AGENT}!msnbot[NC]
+<span class="nc">RewriteCond</span>${HTTP_USER_AGENT}!slurp[NC]
+</code></pre></div></div>
+
+<h2 id="conclusioni">CONCLUSIONI</h2>
+
+<p>Il risultato finale sarà quindi il seguente:</p>
+
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">### Blocca l'hotlinking - Webmaster cattivo pussa via</span>
+
+RewriteEngineon
+<span class="nc">RewriteCond</span>%{HTTP_REFERER}!^$
+<span class="nc">RewriteCond</span>%{HTTP_REFERER}!^http(s)?://(www\.)?skyflash.it[NC]
+<span class="nc">RewriteCond</span>%{HTTP_REFERER}!^http(s)?://(www\.)?google.com[NC]
+<span class="nc">RewriteCond</span>%{HTTP_REFERER}!msn.[NC]
+<span class="nc">RewriteCond</span>%{HTTP_REFERER}!yahoo.[NC]
+<span class="nc">RewriteCond</span>%{HTTP_REFERER}!^https?://(www\.)?facebook\.com[NC]
+<span class="nc">RewriteCond</span>%{HTTP_USER_AGENT}!googlebot[NC]
+<span class="nc">RewriteCond</span>%{HTTP_USER_AGENT}!facebookplatform[NC]
+<span class="nc">RewriteCond</span>%{HTTP_USER_AGENT}!msnbot[NC]
+<span class="nc">RewriteCond</span>${HTTP_USER_AGENT}!slurp[NC]
+<span class="nc">RewriteCond</span>%{REQUEST_URI}!^hotlink.jpg$
+<span class="nc">RewriteRule</span>\.(jpg|jpeg|png|gif|js|swf)$hotlink.jpg[NC,R,L]
+</code></pre></div></div>
+
+<p>Chi dovesse linkare ad una risorsa con estensione jpg, jpeg, png, gif, js o swf sul sito così “trattato”, come unico risultato avrà la visualizzazione della seguente immagine</p>
+
+<p><img src="/static/assets/img/blog/hotlinking-htaccess/hotlink.jpg" alt="Hotlink-Monkey" /></p>
+
+<p>Se guardando le statistiche del vostro spazio web avete notato un consumo eccessivo di banda in uscita o se state rilevando una grande quantità di accessi esterni alle stesse immagini, probabilmente siete hotlinkati da qualcuno. Ora sapete come difendervi.</p>
+
+<p>Risorse esterne:</p>
+
+<ul>
+  <li><a href="http://www.istanto.net/stop-bandwith-thief-using-rewrite-rules-on-htaccess-file.html">Stop bandwith thief using rewrite rules on .htaccess file</a></li>
+  <li><a href="http://www.htaccesstools.com/hotlink-protection/">Prevent hotlinking of images – how to hotlink protect</a></li>
+  <li><a href="http://www.hongkiat.com/blog/smarter-way-to-prevent-image-hotlinking-with-htaccess/">Smarter Way To Prevent Image Hotlinking With .Htaccess</a></li>
+  <li><a href="http://gabrieleromanato.com/2012/03/impedire-hotlinking-immagini-htaccess/">Impedire l’hotlinking delle immagini con il file .htaccess</a></li>
+  <li><a href="http://vincenzodibiaggio.it/2008/07/11/proteggiamoci-dallhotlinking-con-un-semplice-file-htaccess/">Proteggiamoci dall’hotlinking con un semplice file</a></li>
+  <li><a href="http://www.thewebsqueeze.com/web-design-tutorials/stop-image-hotlinking-with-htaccess.html">Stop image hotlinking with .htaccess</a></li>
+  <li><a href="https://www.skyflash.it/internet-reti/sicurezza/come-bloccare-lhotlinking-delle-immagini-tramite-htaccess/6552/">Il post originale</a></li>
+</ul>
+:ET
