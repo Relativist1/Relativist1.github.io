@@ -13,3 +13,17 @@
 
   icon: fa-plus-square
   present: true
+
+- name:
+    detail: University of Delhi
+
+  desc:
+    detail: 
+
+  date:
+    detail: July, 2017 - August, 2020
+  job:
+    detail: B.Sc. Physics Hons.
+
+  icon: fa-plus-square
+  

@@ -4,10 +4,7 @@
 ####################################
 #
 title: Home  
-description: "Astrophysics graduate student, Philosophy of Science, Science Communicator. 
-              I work on Black hole shadows, accretion modelling and imaging from both which includes both, theoretical and numerical perspective 
-              (General Relativity + Astrophysics + Radio Astronomy). My current research interests are testing general 
-              relativity and other compact objects with shadow imaging, and modelling X-ray binaries as potential VLBI targets."
+description: "Astrophysics graduate student and a philosopher of science."
 keywords: Saurabh, relativist1, blog, jekyll, gh-pages, github, wordpress
 baseurl:  '' # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
 url: https://relativist1.github.io  # url should be 'http://<github_username>.github.io/homepage' as before
@@ -36,7 +33,7 @@ kramdown:
 ####################################
 #
 permalink: /blog/:categories/:title/
-permalink: /simulations/:categories/:title/
+
 social:
   name: Saurabh 
   links:
@@ -78,7 +75,12 @@ author:  # change following line to your infomation.
   skill_icon2:
     - name: fa-apple
     - name: fa-code
-  desc: 
+  desc: "Astrophysics graduate student, Philosophy of Science, Science Communicator. 
+        I work on Black hole shadows, accretion modelling and imaging from both which includes both, 
+        theoretical and numerical perspective (General Relativity + Astrophysics + Radio Astronomy). 
+        My current research interests are testing general relativity and other compact objects with shadow imaging, 
+        and modelling X-ray binaries as potential VLBI targets."
+
 
 # comment
 # disqus:  # if you wanna comment feature, go to https://disqus.com/ to get your configuration; if not, comment following two lines.
