@@ -25,9 +25,9 @@
   css: project
 
 - id: simulations
-  i18n: nav.simulation
+  i18n: nav.simulations
   name: Simulations
-  tpl: simulation.html
+  tpl: simulations.html
   page: simulations/
 
 #  css: testimonials navy-section
