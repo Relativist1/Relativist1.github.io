@@ -1,0 +1,13 @@
+# main links
+main:
+  - title: "Stellar Universe"
+    url: /stellar
+  - title: "Simulations"
+    url: /simulations
+  - title: "Publications"
+    url: /pubs
+  - title: "Gallifray"
+    url: /gallifray
+  - title: "Brahma"
+    url: /brahma
+

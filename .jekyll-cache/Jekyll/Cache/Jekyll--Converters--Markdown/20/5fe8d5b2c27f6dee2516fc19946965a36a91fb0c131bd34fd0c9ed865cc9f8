@@ -1,0 +1,32 @@
+I"<!-- <table>
+    <tr>
+        <td><img src="/static/assets/img/landing/hotspot.gif" alt="Hotspot model" width="480" height="400"></td>
+        <td><img src="/static/assets/img/landing/riaf.gif" alt="RIAF Model" width="290" height=" 320"></td>
+        <td><img src="/static/assets/img/landing/thindisk.gif" alt="RIAF Model" width="400" height=" 410"></td>
+    </tr>
+    <tr>
+        <td><img src="/static/assets/img/landing/m87_powerlaw.png" alt="Hotspot model" width="400" height="400"></td>
+        <td><img src="/static/assets/img/landing/rec_average_m87.png" alt="RIAF Model" width="400" height="400"></td>
+      </tr>
+</table> -->
+
+<h3 id="hotspot-model">Hotspot Model</h3>
+
+<p><img align="up" width="310" height="260" src="/static/assets/img/landing/hotspot.gif" /></p>
+
+<blockquote>
+  <p>A shearing hotspot around a Schwarzschild Black hole. Recent observations o four galactic center’s Supermassive Black hole, Satittarius A* displays strong variability through flaring events. These can be explained by a region of localised medium of plasma, or hotspot in the accretion disk.
+<br /></p>
+  <h3 id="riaf-model">RIAF Model</h3>
+</blockquote>
+
+<p><img align="up" width="190" height=" 220" src="/static/assets/img/landing/riaf.gif" /></p>
+
+<blockquote>
+  <p>Radiatively Inefficient Accretion Flows (RIAF) model for accretion.</p>
+</blockquote>
+
+<!-- <img src="/static/assets/img/landing/hotspot.gif" alt="Hotspot model" width="480" height="400">
+<img src="/static/assets/img/landing/hotspot.gif" alt="Hotspot model" width="480" height="400"> -->
+
+:ET

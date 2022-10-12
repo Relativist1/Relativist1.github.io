@@ -1,0 +1,46 @@
+I"<!-- <table>
+    <tr>
+        <td><img src="/static/assets/img/landing/hotspot.gif" alt="Hotspot model" width="480" height="400"></td>
+        <td><img src="/static/assets/img/landing/riaf.gif" alt="RIAF Model" width="290" height=" 320"></td>
+        <td><img src="/static/assets/img/landing/thindisk.gif" alt="RIAF Model" width="400" height=" 410"></td>
+    </tr>
+    <tr>
+        <td><img src="/static/assets/img/landing/m87_powerlaw.png" alt="Hotspot model" width="400" height="400"></td>
+        <td><img src="/static/assets/img/landing/rec_average_m87.png" alt="RIAF Model" width="400" height="400"></td>
+      </tr>
+</table> -->
+<p>Here are some of my simulations that I have been doing for my current research work.</p>
+
+<h3 id="hotspot-model">Hotspot Model</h3>
+<p><img align="up" width="410" height="340" src="/static/assets/img/landing/hotspot.gif" /></p>
+<blockquote>
+  <p>A shearing hotspot around a Schwarzschild Black hole. Recent observations o four galactic center’s Supermassive Black hole, Satittarius A* displays strong variability through flaring events. These can be explained by a region of localised medium of plasma, or hotspot in the accretion disk. Here, the position of hotspot changes with time.</p>
+</blockquote>
+
+<h3 id="riaf-model">RIAF Model</h3>
+<p>                      
+<img align="up" width="250" height=" 270" src="/static/assets/img/landing/riaf.gif" /></p>
+<blockquote>
+  <p>Radiatively Inefficient Accretion Flows (RIAF) model for accretion where the disk is geometrically thin and optically thin. Here the observer’s angle or the inclination angle is changing from 0° to 360°.</p>
+</blockquote>
+
+<h3 id="novikon-thorne-think-accretion-disk">Novikon-Thorne Think Accretion Disk</h3>
+<p>           
+<img align="up" width="330" height=" 370" src="/static/assets/img/landing/thindisk.gif" /></p>
+<blockquote>
+  <p>Novikov-Thorne Accretion disk which is geometrically thin and optically thin accretion disk model. Here the observer’s angle or the inclination angle is changing from 0° to 360°.</p>
+</blockquote>
+
+<h3 id="m87-model-image-and-vlbi-reconstructed-image">M87 model image and VLBI reconstructed image</h3>
+<p>    
+<img align="up" width="400" height=" 415" src="/static/assets/img/landing/m87_powerlaw.png" /> 
+       
+<img align="up" width="400" height=" 415" src="/static/assets/img/landing/rec_average_m87.png" /></p>
+<blockquote>
+  <p>Novikov-Thorne Accretion disk which is geometrically thin and optically thin accretion disk model. Here the observer’s angle or the inclination angle is changing from 0° to 360°.</p>
+</blockquote>
+
+<!-- <img src="/static/assets/img/landing/hotspot.gif" alt="Hotspot model" width="480" height="400">
+<img src="/static/assets/img/landing/hotspot.gif" alt="Hotspot model" width="480" height="400"> -->
+
+:ET

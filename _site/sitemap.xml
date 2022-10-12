@@ -156,7 +156,7 @@
     <url>
       <loc>http://localhost:4000/404.html</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -171,7 +171,7 @@
     <url>
       <loc>http://localhost:4000/apache/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -186,7 +186,22 @@
     <url>
       <loc>http://localhost:4000/blog/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/brahma/</loc>
+      
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -201,7 +216,7 @@
     <url>
       <loc>http://localhost:4000/static/css/custom.css</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -216,7 +231,7 @@
     <url>
       <loc>http://localhost:4000/database/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -244,9 +259,24 @@
   
     
     <url>
+      <loc>http://localhost:4000/gallifray/</loc>
+      
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
       <loc>http://localhost:4000/games/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -261,7 +291,7 @@
     <url>
       <loc>http://localhost:4000/html/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -276,7 +306,22 @@
     <url>
       <loc>http://localhost:4000/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/index1/</loc>
+      
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -291,7 +336,7 @@
     <url>
       <loc>http://localhost:4000/itil/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -306,7 +351,7 @@
     <url>
       <loc>http://localhost:4000/kace/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -321,7 +366,7 @@
     <url>
       <loc>http://localhost:4000/life/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -336,7 +381,7 @@
     <url>
       <loc>http://localhost:4000/linux/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -351,7 +396,7 @@
     <url>
       <loc>http://localhost:4000/mac/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -381,7 +426,7 @@
     <url>
       <loc>http://localhost:4000/publications/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -396,7 +441,7 @@
     <url>
       <loc>http://localhost:4000/python/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -411,7 +456,7 @@
     <url>
       <loc>http://localhost:4000/robots.txt</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -426,7 +471,7 @@
     <url>
       <loc>http://localhost:4000/search.json</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -441,7 +486,7 @@
     <url>
       <loc>http://localhost:4000/simulations/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -458,7 +503,7 @@
     <url>
       <loc>http://localhost:4000/stellar/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -473,7 +518,7 @@
     <url>
       <loc>http://localhost:4000/tools/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -488,7 +533,7 @@
     <url>
       <loc>http://localhost:4000/wordpress/</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -503,7 +548,7 @@
     <url>
       <loc>http://localhost:4000/redirects.json</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -518,7 +563,7 @@
     <url>
       <loc>http://localhost:4000/static/css/custom.css.map</loc>
       
-        <lastmod>2022-10-11T20:22:35+05:30</lastmod>
+        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
