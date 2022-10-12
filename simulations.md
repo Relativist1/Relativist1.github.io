@@ -48,7 +48,7 @@ header:
 <img align="up" width="400" height=" 415" src="{{ site.baseurl }}/static/assets/img/landing/m87_powerlaw.png"> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img align="up" width="400" height=" 415" src="{{ site.baseurl }}/static/assets/img/landing/rec_average_m87.png">
-> Novikov-Thorne Accretion disk which is geometrically thin and optically thin accretion disk model. Here the observer's angle or the inclination angle is changing from 0° to 360°. 
+> A RIAF based model (left side) for the supermassive Black hole at the center of M87 galaxy and the reconstructed image of the same model using EHT VLBI 2017 configuration of telescopes.
 
 <!-- <img src="{{ site.baseurl }}/static/assets/img/landing/hotspot.gif" alt="Hotspot model" width="480" height="400">
 <img src="{{ site.baseurl }}/static/assets/img/landing/hotspot.gif" alt="Hotspot model" width="480" height="400"> -->

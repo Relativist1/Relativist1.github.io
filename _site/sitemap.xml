@@ -3,7 +3,7 @@
   
     
     <url>
-      <loc>http://localhost:4000/blog/itil/black-cat-agreement/</loc>
+      <loc>https://relativist1.github.io/blog/itil/black-cat-agreement/</loc>
       
         <lastmod>2022-08-10T10:00:00+05:30</lastmod>
       
@@ -18,7 +18,7 @@
   
     
     <url>
-      <loc>http://localhost:4000/blog/kace/aggiornare-windows10-k1000/</loc>
+      <loc>https://relativist1.github.io/blog/kace/aggiornare-windows10-k1000/</loc>
       
         <lastmod>2019-12-16T11:30:00+05:30</lastmod>
       
@@ -33,7 +33,7 @@
   
     
     <url>
-      <loc>http://localhost:4000/blog/tools/ipui-to-ipei/</loc>
+      <loc>https://relativist1.github.io/blog/tools/ipui-to-ipei/</loc>
       
         <lastmod>2019-01-24T12:30:00+05:30</lastmod>
       
@@ -48,7 +48,7 @@
   
     
     <url>
-      <loc>http://localhost:4000/blog/kace/distribuzione-certificati_ca-kace1000/</loc>
+      <loc>https://relativist1.github.io/blog/kace/distribuzione-certificati_ca-kace1000/</loc>
       
         <lastmod>2018-09-17T11:30:00+05:30</lastmod>
       
@@ -63,7 +63,7 @@
   
     
     <url>
-      <loc>http://localhost:4000/blog/kace/blocco-applicativo-k1000/</loc>
+      <loc>https://relativist1.github.io/blog/kace/blocco-applicativo-k1000/</loc>
       
         <lastmod>2018-07-11T00:00:00+05:30</lastmod>
       
@@ -78,7 +78,7 @@
   
     
     <url>
-      <loc>http://localhost:4000/blog/wordpress/bloccare-hotlinking-immagini/</loc>
+      <loc>https://relativist1.github.io/blog/wordpress/bloccare-hotlinking-immagini/</loc>
       
         <lastmod>2018-04-13T00:00:00+05:30</lastmod>
       
@@ -93,7 +93,7 @@
   
     
     <url>
-      <loc>http://localhost:4000/blog/games/la-traduzione-di-morrowind-e-bloodmoon/</loc>
+      <loc>https://relativist1.github.io/blog/games/la-traduzione-di-morrowind-e-bloodmoon/</loc>
       
         <lastmod>2018-04-05T00:00:00+05:30</lastmod>
       
@@ -108,7 +108,7 @@
   
     
     <url>
-      <loc>http://localhost:4000/blog/kace/k1000-report-pc-with-smartcard-reader/</loc>
+      <loc>https://relativist1.github.io/blog/kace/k1000-report-pc-with-smartcard-reader/</loc>
       
         <lastmod>2018-02-14T00:00:00+05:30</lastmod>
       
@@ -123,7 +123,7 @@
   
     
     <url>
-      <loc>http://localhost:4000/blog/html/test-code-snippets/</loc>
+      <loc>https://relativist1.github.io/blog/html/test-code-snippets/</loc>
       
         <lastmod>2017-12-21T00:00:00+05:30</lastmod>
       
@@ -138,7 +138,7 @@
   
     
     <url>
-      <loc>http://localhost:4000/blog/linux/idenficare-processi-zombie-linux/</loc>
+      <loc>https://relativist1.github.io/blog/linux/idenficare-processi-zombie-linux/</loc>
       
         <lastmod>2015-10-25T00:00:00+05:30</lastmod>
       
@@ -154,24 +154,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/404.html</loc>
+      <loc>https://relativist1.github.io/404.html</loc>
       
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/apache/</loc>
-      
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -184,24 +169,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/blog/</loc>
+      <loc>https://relativist1.github.io/apache/</loc>
       
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/brahma/</loc>
-      
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -214,24 +184,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/static/css/custom.css</loc>
+      <loc>https://relativist1.github.io/blog/</loc>
       
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/database/</loc>
-      
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -244,7 +199,52 @@
   
     
     <url>
-      <loc>http://localhost:4000/about/disclaimer/</loc>
+      <loc>https://relativist1.github.io/brahma/</loc>
+      
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://relativist1.github.io/static/css/custom.css</loc>
+      
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://relativist1.github.io/database/</loc>
+      
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://relativist1.github.io/about/disclaimer/</loc>
       
         <lastmod>2021-02-16T00:00:00+05:30</lastmod>
       
@@ -259,24 +259,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/gallifray/</loc>
+      <loc>https://relativist1.github.io/gallifray/</loc>
       
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/games/</loc>
-      
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -289,24 +274,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/html/</loc>
+      <loc>https://relativist1.github.io/games/</loc>
       
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/</loc>
-      
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -319,24 +289,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/index1/</loc>
+      <loc>https://relativist1.github.io/html/</loc>
       
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/itil/</loc>
-      
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -349,24 +304,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/kace/</loc>
+      <loc>https://relativist1.github.io/</loc>
       
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/life/</loc>
-      
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -379,24 +319,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/linux/</loc>
+      <loc>https://relativist1.github.io/index1/</loc>
       
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/mac/</loc>
-      
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -409,7 +334,82 @@
   
     
     <url>
-      <loc>http://localhost:4000/about/privacy/</loc>
+      <loc>https://relativist1.github.io/itil/</loc>
+      
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://relativist1.github.io/kace/</loc>
+      
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://relativist1.github.io/life/</loc>
+      
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://relativist1.github.io/linux/</loc>
+      
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://relativist1.github.io/mac/</loc>
+      
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://relativist1.github.io/about/privacy/</loc>
       
         <lastmod>2021-02-12T00:00:00+05:30</lastmod>
       
@@ -424,24 +424,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/publications/</loc>
+      <loc>https://relativist1.github.io/publications/</loc>
       
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/python/</loc>
-      
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -454,24 +439,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/robots.txt</loc>
+      <loc>https://relativist1.github.io/python/</loc>
       
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/search.json</loc>
-      
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -484,9 +454,39 @@
   
     
     <url>
-      <loc>http://localhost:4000/simulations/</loc>
+      <loc>https://relativist1.github.io/robots.txt</loc>
       
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://relativist1.github.io/search.json</loc>
+      
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://relativist1.github.io/simulations/</loc>
+      
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -501,24 +501,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/stellar/</loc>
+      <loc>https://relativist1.github.io/stellar/</loc>
       
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/tools/</loc>
-      
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -531,24 +516,9 @@
   
     
     <url>
-      <loc>http://localhost:4000/wordpress/</loc>
+      <loc>https://relativist1.github.io/tools/</loc>
       
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
-      
-      
-        <changefreq>monthly</changefreq>
-      
-      
-        <priority>0.3</priority>
-      
-    </url>
-    
-  
-    
-    <url>
-      <loc>http://localhost:4000/redirects.json</loc>
-      
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -561,9 +531,39 @@
   
     
     <url>
-      <loc>http://localhost:4000/static/css/custom.css.map</loc>
+      <loc>https://relativist1.github.io/wordpress/</loc>
       
-        <lastmod>2022-10-12T18:34:37+05:30</lastmod>
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://relativist1.github.io/redirects.json</loc>
+      
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.3</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>https://relativist1.github.io/static/css/custom.css.map</loc>
+      
+        <lastmod>2022-10-12T18:41:13+05:30</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -575,7 +575,7 @@
     
   
     <url>
-      <loc>http://localhost:4000/ipui2ipei/</loc>
+      <loc>https://relativist1.github.io/ipui2ipei/</loc>
       <changefreq>monthly</changefreq>
       <priority>0.3</priority>
     </url>
