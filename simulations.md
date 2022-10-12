@@ -34,7 +34,7 @@ header:
 ## RIAF Model
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img align="up" width="250" height=" 270" src="{{ site.baseurl }}/static/assets/img/landing/riaf.gif">
-> Radiatively Inefficient Accretion Flows (RIAF) model for accretion where the disk is geometrically thin and optically thin. Here the observer's angle or the inclination angle is changing from 0° to 360°. 
+> Radiatively Inefficient Accretion Flows (RIAF) is semi-analytic model for accretion where the disk is geometrically thin and optically thin. Here the observer's angle or the inclination angle is changing from 0° to 360°. 
 
 
 ## Novikon-Thorne Think Accretion Disk
