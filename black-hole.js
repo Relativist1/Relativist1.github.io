@@ -108,7 +108,7 @@ window.BlackHoleSolver = {};
     }
     var angleTable = {};
     var photonPaths = angles.map(function (angle) {
-      return getBlackHoleSolution(angle, startRadius, 0, 20 * Math.PI, optionalNumIterations);
+      return getBlackHoleSolution(angle, startRadius, 0, 40 * Math.PI, optionalNumIterations);
     }).map(function (sol) {
       return getXYPhotonPathFromSolution(sol);
     });
@@ -209,14 +209,14 @@ window.BlackHole = {};
     canvas.draw(texture).update().replace(placeholder);
     opt = opt || {};
     var distanceFromBlackHole = opt['distanceFromBlackHole'] || 80;
-    var polynomialDegree = opt['polynomialDegree'] || 2;
+    var polynomialDegree = opt['polynomialDegree'] || 3;
     var numAngleTableEntries = opt['numAngleTableEntries'] || 1000;
     var fovAngleInDegrees = opt['fovAngleInDegrees'] || 73;
     var fovAngleInRadians = fovAngleInDegrees * Math.PI / 180;
 
     var blackHoleAngleFn = BlackHoleSolver.computeBlackHoleAngleFunction(distanceFromBlackHole, polynomialDegree, numAngleTableEntries, fovAngleInDegrees);
 
-    var blackHoleVisible = false;
+    var blackHoleVisible = true;
     $(canvas).mousemove(function (evt) {
       var offset = $(canvas).offset();
       var x = evt.pageX - offset.left;
@@ -227,7 +227,7 @@ window.BlackHole = {};
     $(canvas).mouseleave(function (evt) {
       if (blackHoleVisible) {
         canvas.draw(texture).update();
-        blackHoleVisible = false;
+        blackHoleVisible = true;
       }
     });
   }
