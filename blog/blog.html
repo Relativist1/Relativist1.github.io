@@ -1,19 +1,18 @@
 ---
 layout: blog
 title: Blog
-description: "Il mio blog personale - Cristian Castellari: Tecnico e Manager IT, nel tempo libero mi dedico alla famiglia e gioco con PS4 e Switch"
+description: "Saurabh"
 permalink: /blog/
 custom_css: blogmenu.css
-lang: it_IT
 seo:
-    name: Il Blog di Cristian Castellari
+    name: Saurabh
     type: WebPage
 ---
 
 <div class="row">
     <div class="col-lg-12 text-center">
         <div class="navy-line"></div>
-        <h1>Articoli Recenti</h1>
+        <h1>Recent Articles</h1>
     </div>
 </div>
 
@@ -44,7 +43,7 @@ seo:
                         {% unless words contains "-" %} 
                             <i class="fa fa-clock-o"></i> <a>{{ post.date | date: "%-d %b %Y" }}</a>
                             <i class="fa fa-user"></i> <a>{{ site.author.name }}</a>
-                            <i class="fa fa-clock-o"></i> <a>Tempo di lettura: {{ post.content | number_of_words | divided_by: 180 | append: " minuti" }}</a>
+                            </a>
                         {% endunless %}
                         </div>
                     </div>

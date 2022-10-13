@@ -15,6 +15,20 @@
   present: true
 
 - name:
+    detail: Stellar Universe
+
+  desc:
+    detail: Founder
+
+  date:
+    detail: November, 2017 - present
+  job:
+    detail: Student organisation for astronomy and astrophysics outreach activities
+
+  icon: fa-plus-square
+  present: true
+
+- name:
     detail: University of Delhi
 
   desc:

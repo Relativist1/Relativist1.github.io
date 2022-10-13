@@ -3,90 +3,9 @@
     "data" : [
      
     {
-        "title" : "Regole operative per la gestione dell’Infrastruttura IT: Il Black Cat Agreement - 2022-08-10",
-        "url" : "/blog/itil/black-cat-agreement/",
-        "description" : "Non si effettuano attività sull’infrastruttura IT di produzione il Venerdì, il Sabato e la Domenica/Festivi (ed anche il giovedì dopo le 16:00)"
-    }
-    
-    ,
-    
-    
-    {
-        "title" : "Distribuire un aggiornamento di build di Windows 10 via Kace - 2019-12-16",
-        "url" : "/blog/kace/aggiornare-windows10-k1000/",
-        "description" : "Usiamo Kace per aggiornare un PC da Windows 7/8/10 all'ultima build di Windows 10"
-    }
-    
-    ,
-    
-    
-    {
-        "title" : "IPUI to IPEI - 2019-01-24",
-        "url" : "/blog/tools/ipui-to-ipei/",
-        "description" : "Cosa è un codice IPUI e come convertirlo facilmente in IPEI per registrare un telefono DECT Siemens su un centralino di un altro produttore."
-    }
-    
-    ,
-    
-    
-    {
-        "title" : "Come importare un certificato CA su PC Windows con Kace 1000 - 2018-09-17",
-        "url" : "/blog/kace/distribuzione-certificati_ca-kace1000/",
-        "description" : "Vediamo insieme come distribuire certificati Windows usando KACE 1000"
-    }
-    
-    ,
-    
-    
-    {
-        "title" : "Blocco delle applicazioni con K1000 - 2018-07-11",
-        "url" : "/blog/kace/blocco-applicativo-k1000/",
-        "description" : "Come utilizzare KACE 1000 per il controllo ed il blocco dei software non autorizzati sui PC - Una breve guida."
-    }
-    
-    ,
-    
-    
-    {
-        "title" : "Come bloccare l'hotlinking delle immagini con .htaccess - 2018-04-13",
-        "url" : "/blog/wordpress/bloccare-hotlinking-immagini/",
-        "description" : "L'hotlinking consiste nel mostrare una o più risorse (tipicamente immagini) all’interno di una pagina web, ad insaputa del proprietario del sito originale. Vediamo come impedirla, usando .htaccess e Apache"
-    }
-    
-    ,
-    
-    
-    {
-        "title" : "La traduzione in italiano di Morrowind, Tribunal e Bloodmoon - 2018-04-05",
-        "url" : "/blog/games/la-traduzione-di-morrowind-e-bloodmoon/",
-        "description" : "La storia della traduzione di Morrowind in Italiano creata dal team ITP - Contiene i link per scaricare la traduzione in Italiano di Morrowind"
-    }
-    
-    ,
-    
-    
-    {
-        "title" : "[K1000 Scripting] Find and report all PCs with a smartcard reader installed - 2018-02-14",
-        "url" : "/blog/kace/k1000-report-pc-with-smartcard-reader/",
-        "description" : "Find and report all managed Windows PCs in K1000 Inventory with a smartcard reader installed."
-    }
-    
-    ,
-    
-    
-    {
-        "title" : "code snippet test - 2017-12-21",
-        "url" : "/blog/html/test-code-snippets/",
-        "description" : ""
-    }
-    
-    ,
-    
-    
-    {
-        "title" : "Identificare e terminare processi zombie su Linux - 2015-10-25",
-        "url" : "/blog/linux/idenficare-processi-zombie-linux/",
-        "description" : "Vediamo come uccidere, con un semplice script, eventuali processi zombie rimasti attivi sul nostro server Linux"
+        "title" : "Geodesics - 2022-10-13",
+        "url" : "/blog/theory/geodesics/",
+        "description" : "Geodesics in General Relativist"
     }
     
     

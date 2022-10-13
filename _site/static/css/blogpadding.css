@@ -6,7 +6,7 @@
     visibility: hidden;
 }
 #markdown-toc::before {
-    content: "Sommario";
+    content: "Content";
     font-weight: bold;
     visibility: visible;
     margin-bottom: -35px;

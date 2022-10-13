@@ -12,11 +12,6 @@
   tpl: career.html
   css: timeline
   
-- id: stellar
-  i18n: nav.stellar
-  name: Stellar Universe
-  tpl: stellar.html
-  page: stellar/
 
 - id: projects
   i18n: nav.projects
@@ -30,12 +25,17 @@
   tpl: skills.html
   css: team
 
+- id: stellar
+  i18n: nav.stellar
+  name: Stellar Universe
+  tpl: stellar.html
+  page: stellar/
+
 - id: simulations
   i18n: nav.simulations
   name: Simulations
   tpl: simulations.html
   page: simulations/
-
 
 - id: brahma
   i18n: nav.brahma
@@ -55,7 +55,11 @@
   tpl: pubs.html
   page: publications/
 
-
+- id: blog
+  i18n: nav.blog
+  name: Blog
+  tpl: blog.html
+  page: blog/
 
 #  css: testimonials navy-section
 

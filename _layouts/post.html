@@ -21,8 +21,8 @@ custom_css:
                             {{ page.title }}
                         </h1>
                      <div class="vote-info">
-                        <i class="fa fa-book"></i> <a>{{ page.content | number_of_words | append: " Parole" }}</a>
-                        <i class="fa fa-clock-o"></i> <a>Tempo di lettura: {{ page.content | number_of_words | divided_by: 180 | append: " minuti" }}</a>
+                        <i class="fa fa-book"></i> <a>{{ page.content | number_of_words | append: " Words" }}</a>
+                        <i class="fa fa-clock-o"></i> <a>Reading time: {{ page.content | number_of_words | divided_by: 180 | append: " minutes" }}</a>
                      </div>
                     </div>
                     <div class="desc">
@@ -60,7 +60,7 @@ custom_css:
                             {% include social.html %}
                             <br>
                                 <div class="related-container">
-                                <h4 class="relh4">Potrebbe Interessarti Anche...</h4>    
+                                <h4 class="relh4">You might also be interested in...</h4>    
                                             <div class="rect">                                        
                                             {% assign maxRelated = 4 %}
                                             {% assign minCommonTags =  1 %}
