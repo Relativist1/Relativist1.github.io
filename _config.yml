@@ -40,6 +40,7 @@ social:
     - https://www.facebook.com/saurabh.cosmos 
     - https://github.com/Relativist1
     - https://instagram.com/relativist1
+    - https://inspirehep.net/authors/1853355
 
 # twitter:
 #   card: summary
@@ -63,6 +64,7 @@ author:  # change following line to your infomation.
   github_username: Relativist1  # Leave blank if you don't have now
   linkedin_id:  # Leave blank if you don't have now
   facebook_username: saurabh.cosmos  # Leave blank if you don't have now
+  inspirehep_id: 1853355
   twitter: 
   email: sbhkmr1999@gmail.com  # Leave blank if you don't have now
   cv: https://relativist1.github.ip/static/assets/cv/CV_academia.pdf  # An online CV can be printed as PDF, leave blank if you don't have now
