@@ -13,6 +13,9 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.5"
 ---
+* **Saurabh**, and Sourabh Nampalliwar,  ‘GALLIFRAY - A geometric modeling and
+parameter estimation framework for black hole images using bayesian techniques’, 2022.[_arXiv:2212.06827_](https://arxiv.org/abs/2212.06827)
+
 
 * **Saurabh**, P. Bambhaniya, and Pankaj S. Joshi,  'Probing the Shadow Image of the Sagittarius A* with Event Horizon Telescope', 2022.[_arXiv:2202.00588_](https://arxiv.org/abs/2202.00588)
 
