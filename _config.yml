@@ -15,7 +15,7 @@ img_path: /static/assets/img/blog  # url should be '/homepage/static/assets/img/
 # Jekyll configuration
 ####################################
 #
-timezone: Asia/Kolkata
+timezone: Europe/Germany
 highlighter: rouge
 markdown: kramdown
 excerpt_separator: <!--more-->
@@ -64,8 +64,9 @@ author:  # change following line to your infomation.
   github_username: Relativist1  # Leave blank if you don't have now
   linkedin_id:  # Leave blank if you don't have now
   facebook_username: saurabh.cosmos  # Leave blank if you don't have now
+  instagram_username: relativist1  # Leave blank if you don't have now
   twitter: 
-  email: sbhkmr1999@gmail.com  # Leave blank if you don't have now
+  email: saurabh@mpifr-bonn.mpg.de  # Leave blank if you don't have now
   cv: https://relativist1.github.ip/static/assets/cv/CV_academia.pdf  # An online CV can be printed as PDF, leave blank if you don't have now
 
 
