@@ -60,7 +60,7 @@ author:  # change following line to your infomation.
   name: Saurabh # Be used at blog posts' author.
   first_name: Saurabh  # Be used at index page about me section.
   last_name:  # Be used at index page about me section.
-  avatar: /static/assets/img/landing/my_pic.png  # upload your avatar at directory and edit it.
+  avatar: /static/assets/img/landing/my_pic.jpeg  # upload your avatar at directory and edit it.
   github_username: Relativist1  # Leave blank if you don't have now
   linkedin_id:  # Leave blank if you don't have now
   facebook_username: saurabh.cosmos  # Leave blank if you don't have now
