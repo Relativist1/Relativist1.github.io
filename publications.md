@@ -13,9 +13,9 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.5"
 ---
-* **Saurabh** and Yosuke Mizuno 'Brahma - General Relativistic Ray-tracing and Radiative Transfer code for arbitrary spacetime' 2023. [_submitted_]()
+* **Saurabh** and Yosuke Mizuno 'Brahma - General Relativistic Ray-tracing and Radiative Transfer code for arbitrary spacetime', 2023. [_submitted_]()
 
-* Ayzenberg, D., Blackburn, .....**Saurabh**,... ,et al. 'Fundamental Physics Opportunities with the Next-Generation Event Horizon Telescope'  2023. [_arXiv:2312.02130_](https://arxiv.org/abs/2312.02130)
+* Ayzenberg, D., Blackburn, ..**Saurabh**.. ,et al. 'Fundamental Physics Opportunities with the Next-Generation Event Horizon Telescope', 2023. [_arXiv:2312.02130_](https://arxiv.org/abs/2312.02130)
   
 * **Saurabh**, Parth Bambhaniya and Pankaj Joshi,  ‘Imaging ultra-compact objects with radiatively inefficient accretion flows’, 2024, A&A, 682, A113.[_arXiv:2308.14519_](https://arxiv.org/abs/2308.14519) [_doi:10.1051/0004-6361/202347941_](https://doi.org/10.1051/0004-6361/202347941)
 
