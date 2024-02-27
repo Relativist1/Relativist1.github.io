@@ -13,14 +13,18 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.5"
 ---
-* **Saurabh**, Parth Bambhaniya and Pankaj Joshi,  ‘Imaging ultra-compact objects with radiative inefficient accretion flows’, 2023.[_arXiv:2308.14519_](https://arxiv.org/abs/2308.14519)
+* **Saurabh** and Yosuke Mizuno 'Brahma - General Relativistic Ray-tracing and Radiative Transfer code for arbitrary spacetime' 2023. [_arXiv:2312.02130_](https://arxiv.org/abs/2312.02130)
+
+* Ayzenberg, D., Blackburn, .....**Saurabh**,... ,et al. 'Fundamental Physics Opportunities with the Next-Generation Event Horizon Telescope'  2023. [_arXiv:2312.02130_](https://arxiv.org/abs/2312.02130)
+  
+* **Saurabh**, Parth Bambhaniya and Pankaj Joshi,  ‘Imaging ultra-compact objects with radiatively inefficient accretion flows’, 2024, A&A, 682, A113.[_arXiv:2308.14519_](https://arxiv.org/abs/2308.14519) [_doi:10.1051/0004-6361/202347941_](https://doi.org/10.1051/0004-6361/202347941)
 
 * **Saurabh**, and Sourabh Nampalliwar,  ‘GALLIFRAY - A geometric modeling and
-parameter estimation framework for black hole images using bayesian techniques’, 2022.[_arXiv:2212.06827_](https://arxiv.org/abs/2212.06827)
+parameter estimation framework for black hole images using bayesian techniques’, 2023 ApJ 947 43.[_arXiv:2212.06827_](https://arxiv.org/abs/2212.06827) [_doi:10.3847/1538-4357/acc6d3_](https://iopscience.iop.org/article/10.3847/1538-4357/acc6d3)
 
 * **Saurabh**, P. Bambhaniya, and Pankaj S. Joshi,  'Probing the Shadow Image of the Sagittarius A* with Event Horizon Telescope', 2022.[_arXiv:2202.00588_](https://arxiv.org/abs/2202.00588)
 
-* Parth Bambhaniya, **Saurabh**, Kimet Jusufi Pankaj S. Joshi,  'Thin accretion disk in the Simpson-Visser black-bounce and wormhole spacetimes', Phys. Rev. D 105, 023021, 2022. [_doi:10.1103/PhysRevD.105.023021_](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.023021) [_arXiv:109.15054_](https://arxiv.org/abs/2109.15054)
+* Parth Bambhaniya, **Saurabh**, Kimet Jusufi Pankaj S. Joshi,  'Thin accretion disk in the Simpson-Visser black-bounce and wormhole spacetimes', Phys. Rev. D 105, 023021, 2022. [_arXiv:109.15054_](https://arxiv.org/abs/2109.15054) [_doi:10.1103/PhysRevD.105.023021_](https://journals.aps.org/prd/abstract/10.1103/PhysRevD.105.023021) 
 
 * S. Nampalliwar & **Saurabh K.**, 'Theory-agnostic tests of gravity with black hole shadows', 2021. [_arXiv:2108.01190_](https://arxiv.org/abs/2108.01190)
 
