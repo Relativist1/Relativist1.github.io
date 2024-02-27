@@ -13,7 +13,7 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.5"
 ---
-* **Saurabh** and Yosuke Mizuno 'Brahma - General Relativistic Ray-tracing and Radiative Transfer code for arbitrary spacetime', 2023. [_submitted_]()
+* **Saurabh** and Yosuke Mizuno, 'Brahma - General Relativistic Ray-tracing and Radiative Transfer code for arbitrary spacetime', 2023. [_submitted_]()
 
 * Ayzenberg, D., Blackburn, ..**Saurabh**.. ,et al. 'Fundamental Physics Opportunities with the Next-Generation Event Horizon Telescope', 2023. [_arXiv:2312.02130_](https://arxiv.org/abs/2312.02130)
   
