@@ -1,7 +1,7 @@
 # careers section data
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 - name:
-    detail: Max-Planck-Institute for Radio Astronomy
+    detail: Max-Planck-Institute for Radio Astronomy, Bonn, Germany
 
   desc:
     detail: 
