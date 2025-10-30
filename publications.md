@@ -16,8 +16,6 @@ header:
 
 # FIRST-AUTHOR PUBLICATIONS
 
-## Accepted/Published
-
 - Saurabh, Hendrik Müller, Sebastiao v. Fellenberg + EHT Collaboration, “Probing jet base emission of M87* with the 2021 Event Horizon Telescope Observations”, accepted Astronomy & Astrophysics (2025)  
 I investigated the data for analysis, carried out the modeling, and drafted the paper.
 
