@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="description" content="Saurabh, astrophysicist: Postdoctoral Research Associate in AI³ at the BASP lab, Heriot-Watt University, and member of the Event Horizon Telescope Collaboration. Black-hole imaging, simulations and the philosophy of science."><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>How to Simulate Black Hole Accretion · Saurabh</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Alegreya+Sans:wght@400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23050506%22/%3E%3Cellipse cx=%2216%22 cy=%2216%22 rx=%2214%22 ry=%225%22 fill=%22none%22 stroke=%22%23d9a566%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23050506%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="site.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['$$','$$']]},svg:{fontCache:'global',scale:1.15},options:{enableMenu:false}};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg-full.js" async></script>
+<style>html,body{margin:0}:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+</head><body>
+<div id="scene" aria-hidden="true"><canvas id="view"></canvas></div>
+<div id="scrim" aria-hidden="true"></div>
+<header class="top"><div class="top-in">
+  <a class="wordmark" href="index.html">Saurabh</a>
+  <button class="menu" type="button" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Sections"><a href="research.html">Research</a><div class="dd"><button type="button" class="dd-btn here" aria-expanded="false" aria-controls="dd-sim">Simulations</button><div class="dd-menu" id="dd-sim"><a href="simulations.html">Overview</a><a href="simulate-accretion.html" class="here" aria-current="page">How to simulate black hole accretion</a></div></div><a href="index.html#press">Press</a><a href="index.html#outreach">Outreach</a><a href="index.html#about">Journey</a><a href="writing.html">Out of the Box</a><a href="index.html#contact">Contact</a></nav>
+</div></header>
+<main data-stop="3">
+<section class="page"><div class="col"><article class="article">
+  <p class="crumb"><a href="simulations.html">← Simulations</a></p>
+  <h1 class="ptitle">How to simulate black hole accretion</h1>
+  <div class="lede">
+    <p>Every black-hole image you have seen, including the one behind this page, is made the same way. Pick a spacetime, follow light through it, and add up what that light picks up on its way to the camera. This page walks through those steps in the simplest setting: a non-rotating black hole and a thin disk of glowing gas.</p>
+    <p class="units">Throughout, \(G = c = 1\), and distances are measured in units of the black hole's mass \(M\). For M87*, \(M\) is about 64 times the Earth–Sun distance.</p>
+  </div>
+
+  <h2 class="sub"><span class="sn">1</span>Spacetime is the stage</h2>
+  <p>A non-rotating black hole is described by the Schwarzschild metric. It tells us how to measure time and distance at every point around a mass \(M\):</p>
+  <div class="eq">$$ds^2 = -\left(1-\frac{2M}{r}\right)dt^2 + \left(1-\frac{2M}{r}\right)^{-1}dr^2 + r^2\left(d\theta^2 + \sin^2\theta\,d\phi^2\right)$$</div>
+  <p>At \(r = 2M\) the first term vanishes: this is the event horizon. Nothing that crosses it, light included, comes back out.</p>
+
+  <h2 class="sub"><span class="sn">2</span>Light follows geodesics</h2>
+  <p>Light travels along the straightest possible paths in this curved spacetime, called null geodesics. They obey the geodesic equation, together with the condition that light has zero interval:</p>
+  <div class="eq">$$\frac{d^2x^\mu}{d\lambda^2} + \Gamma^\mu_{\alpha\beta}\,\frac{dx^\alpha}{d\lambda}\frac{dx^\beta}{d\lambda} = 0, \qquad g_{\mu\nu}\frac{dx^\mu}{d\lambda}\frac{dx^\nu}{d\lambda} = 0$$</div>
+  <p>The Christoffel symbols \(\Gamma^\mu_{\alpha\beta}\) encode how the metric bends the path. Because the spacetime does not change in time and is the same in every direction, each photon keeps a constant energy \(E\) and angular momentum \(L\). Their ratio is the <em>impact parameter</em>, \(b = L/E\): how far from the black hole the ray would pass if gravity were switched off.</p>
+  <p>With \(u = 1/r\), the whole path of a photon in its orbital plane reduces to one equation:</p>
+  <div class="eq">$$\frac{d^2u}{d\phi^2} + u = 3Mu^2$$</div>
+  <p>Without the right-hand side, the solutions are straight lines. The term \(3Mu^2\) is general relativity: it is small far away and dominant close in.</p>
+
+  <figure class="lab">
+    <canvas id="rays" aria-label="Diagram of light rays bending around a black hole"></canvas>
+    <div class="lab-ctl"><label for="bslider">Impact parameter <i>b</i></label><input type="range" id="bslider" min="0.5" max="10" step="0.05" value="5.6"><output id="bout" for="bslider">5.60 M</output></div>
+    <figcaption>Rays arrive from the left, each with its own impact parameter. The black disk is the horizon, \(r = 2M\); the dashed circle is the photon sphere, \(r = 3M\). Move the slider to follow a single ray. Near \(b \approx 5.2M\) it can circle the black hole before escaping or falling in.</figcaption>
+  </figure>
+
+  <p>The diagram shows the key number in black-hole imaging. Rays with</p>
+  <div class="eq">$$b < b_c = 3\sqrt{3}\,M \approx 5.2\,M$$</div>
+  <p>fall into the horizon; rays with larger \(b\) escape, deflected. Rays very close to \(b_c\) wind around the photon sphere at \(r = 3M\), possibly several times, before they leave. Seen from far away, the captured rays form the dark <em>shadow</em>, and the winding ones pile up into a thin, bright <em>photon ring</em> at its edge.</p>
+
+  <h2 class="sub"><span class="sn">3</span>Ray tracing: run the light backwards</h2>
+  <p>Most rays leaving the disk never reach us, so we do not trace light forwards from the gas. We start at the camera instead. Each pixel of the image defines one ray, with coordinates \((\alpha, \beta)\) on the sky and an impact parameter</p>
+  <div class="eq">$$b = \sqrt{\alpha^2 + \beta^2}$$</div>
+  <p>We integrate the geodesic equation backwards in time from the camera, and stop at the first thing the ray meets:</p>
+  <ul class="fates">
+    <li><b>The horizon.</b> The pixel is black.</li>
+    <li><b>The disk.</b> Record the radius \(r\) where the ray crosses it, and how fast the gas there is moving.</li>
+    <li><b>Infinity.</b> The pixel shows the background sky.</li>
+  </ul>
+  <p>In code, the whole method is a loop over pixels:</p>
+<pre class="code"><code>for each pixel (alpha, beta):
+    b = sqrt(alpha**2 + beta**2)          # impact parameter
+    start the ray at the camera, heading back towards the black hole
+    repeat:
+        take a small step along   d²u/dφ² = 3 M u² − u
+        if r &lt; 2M:                 pixel = black;           stop
+        if the ray crosses the disk: pixel = intensity(r);  stop
+        if r &gt; r_far:              pixel = sky;             stop</code></pre>
+
+  <h2 class="sub"><span class="sn">4</span>From a hit to a brightness</h2>
+  <p>The light that reaches the camera is not the light the gas emitted. Its frequency is shifted by the ratio</p>
+  <div class="eq">$$g = \frac{\nu_{\rm obs}}{\nu_{\rm em}}$$</div>
+  <p>Along a ray, the quantity \(I_\nu/\nu^3\) is conserved, so the observed intensity follows directly from the emitted one:</p>
+  <div class="eq">$$I_{\rm obs} = g^3\, I_{\rm em}$$</div>
+  <p>Two effects set \(g\). Climbing out of the black hole's gravity costs energy: for gas at rest, \(g = \sqrt{1 - 2M/r}\), which falls to zero at the horizon. Gas in the disk also orbits, at angular velocity \(\Omega = \sqrt{M/r^3}\), so light sent towards us from the side moving our way is boosted. For a circular orbit,</p>
+  <div class="eq">$$g = \frac{\sqrt{1 - 3M/r}}{1 - \Omega\,\lambda}$$</div>
+  <p>where \(\lambda\) is the photon's angular momentum per unit energy about the black hole's axis, positive when the light leaves in the direction the gas is moving. With \(g^3\) applied, one side of the disk outshines the other, the inner edge reddens and dims, and the image takes on its familiar lopsided ring.</p>
+
+  <h2 class="sub"><span class="sn">5</span>What this leaves out</h2>
+  <p>This is the skeleton of a real calculation. Research codes add the black hole's spin (the Kerr metric), let the gas be thick and partly transparent so intensity builds up along the whole ray (radiative transfer), take the gas from GRMHD simulations, and finally pass the image through a model of the telescope array. Each of those is a page of its own, to come.</p>
+  <hr class="close">
+</article></div></section>
+
+<script>
+(()=>{const cv=document.getElementById('rays'),sl=document.getElementById('bslider'),out=document.getElementById('bout');if(!cv)return;
+const ctx=cv.getContext('2d'),M=1;
+function trace(b){const r0=60,pts=[];let u=1/r0,w=Math.sqrt(Math.max(0,1/(b*b)-u*u*(1-2*M*u))),phi=Math.asin(b*u),h=.004,fate='escape';
+  const f=(u,w)=>[w,3*M*u*u-u];
+  for(let i=0;i<20000;i++){pts.push([-Math.cos(phi)/u,Math.sin(phi)/u]);
+    const k1=f(u,w),k2=f(u+h/2*k1[0],w+h/2*k1[1]),k3=f(u+h/2*k2[0],w+h/2*k2[1]),k4=f(u+h*k3[0],w+h*k3[1]);
+    u+=h/6*(k1[0]+2*k2[0]+2*k3[0]+k4[0]);w+=h/6*(k1[1]+2*k2[1]+2*k3[1]+k4[1]);phi+=h;
+    if(u>=1/(2*M)){fate='capture';pts.push([-Math.cos(phi)*2*M,Math.sin(phi)*2*M]);break}
+    if(u<=1/r0&&w<0)break;if(phi>12*Math.PI){fate='orbit';break}}
+  return{pts,fate}}
+let W=0,H=0,S=1,dpr=1,family=[];
+for(let b=.5;b<=10.01;b+=.5)family.push(trace(b));
+function size(){const w=cv.clientWidth;W=w;H=Math.round(Math.min(w*.56,520));dpr=Math.min(devicePixelRatio||1,2);cv.width=W*dpr;cv.height=H*dpr;cv.style.height=H+'px';S=Math.min(W/32,H/18);draw()}
+function path(p){ctx.beginPath();p.forEach((q,i)=>{const x=W/2+q[0]*S,y=H/2-q[1]*S;i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.stroke()}
+function draw(){const b=+sl.value;out.textContent=b.toFixed(2)+' M';ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
+  ctx.lineWidth=1;for(const r of family){ctx.strokeStyle=r.fate==='capture'?'rgba(154,148,136,.28)':'rgba(236,230,216,.32)';path(r.pts)}
+  ctx.setLineDash([4,5]);ctx.strokeStyle='rgba(217,165,102,.7)';ctx.beginPath();ctx.arc(W/2,H/2,3*M*S,0,7);ctx.stroke();ctx.setLineDash([]);
+  ctx.fillStyle='#000';ctx.strokeStyle='rgba(217,165,102,.9)';ctx.beginPath();ctx.arc(W/2,H/2,2*M*S,0,7);ctx.fill();ctx.stroke();
+  const r=trace(b);ctx.lineWidth=2.2;ctx.strokeStyle='#efd3a4';path(r.pts);
+  ctx.font='13px "Alegreya Sans",sans-serif';ctx.fillStyle='rgba(236,230,216,.85)';ctx.textAlign='left';
+  ctx.fillText(r.fate==='capture'?'falls into the horizon':r.fate==='orbit'?'circling the photon sphere':'escapes',12,H-14)}
+sl.addEventListener('input',draw);addEventListener('resize',size);size()})();
+</script>
+</main>
+<footer class="foot">© 2026 Saurabh</footer>
+<script src="bh.js"></script>
+<script src="site.js"></script>
+</body></html>

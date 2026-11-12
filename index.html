@@ -1,83 +1,165 @@
----
-layout: blog
-title: Saurabh
-permalink: /
----
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Saurabh, astrophysicist: Postdoctoral Research Associate in AI³ at the BASP lab, Heriot-Watt University, and member of the Event Horizon Telescope Collaboration. Black-hole imaging, simulations and the philosophy of science.">
+<meta property="og:title" content="Saurabh · Astrophysicist"><meta property="og:description" content="Saurabh, astrophysicist: Postdoctoral Research Associate in AI³ at the BASP lab, Heriot-Watt University, and member of the Event Horizon Telescope Collaboration. Black-hole imaging, simulations and the philosophy of science."><meta property="og:image" content="img/poster.jpg"><meta property="og:type" content="website">
+<meta name="theme-color" content="#050506">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23050506%22/%3E%3Cellipse cx=%2216%22 cy=%2216%22 rx=%2214%22 ry=%225%22 fill=%22none%22 stroke=%22%23d9a566%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23050506%22/%3E%3C/svg%3E">
+<title>Saurabh · Astrophysicist</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Alegreya+Sans:wght@400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>html,body{margin:0}:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+</head><body>
+<div id="scene" aria-hidden="true"><canvas id="view"></canvas></div>
+<div id="scrim" aria-hidden="true"></div>
+<header class="top"><div class="top-in">
+  <a class="wordmark" href="#home">Saurabh</a>
+  <button class="menu" type="button" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Sections"><a href="research.html">Research</a><div class="dd"><button type="button" class="dd-btn" aria-expanded="false" aria-controls="dd-sim">Simulations</button><div class="dd-menu" id="dd-sim"><a href="simulations.html">Overview</a><a href="simulate-accretion.html">How to simulate black hole accretion</a></div></div><a href="#press">Press</a><a href="#outreach">Outreach</a><a href="#about">Journey</a><a href="#writing">Out of the Box</a><a href="#contact">Contact</a></nav>
+</div></header>
+<div class="gauge" aria-hidden="true"><span>Camera</span><i></i><b id="fov">–</b></div>
+<main>
+<section class="stop first" id="home" data-stop><div class="col bare"><div class="hero narrow" style="max-width:1080px">
+  <figure class="figure"><img src="img/o_talk.jpg" alt="Saurabh in front of the Max Planck Institute for Radio Astronomy sign in Bonn"></figure>
+  <div class="hero-text">
+    <h1>Saurabh</h1>
+    <p class="role">Postdoctoral Research Associate · AI<sup>3</sup>, BASP lab, Heriot-Watt University</p>
+    <p class="intro">I am a Postdoctoral Research Associate in AI<sup>3</sup>, a new group within the BASP lab at Heriot-Watt University in Edinburgh. I am part of the TomoGrav project, which is developing dynamic gravitational tomography: a way of combining radio observations of black holes with AI-driven imaging to reconstruct how the hot plasma around M87* and Sagittarius A* moves in three dimensions over time. The goal is to produce the first 3D movies of black holes (<a href="https://ai-cubed.org/" target="_blank" rel="noopener">group website</a>). I am also a member of the Event Horizon Telescope Collaboration, and I completed my PhD at the Max Planck Institute for Radio Astronomy in Bonn.</p>
+    <p class="intro">My work is about seeing black holes. I use very long baseline interferometry (VLBI), which links radio telescopes across the Earth into one planet-sized telescope. I reconstruct images from its sparse data. I predict what those images should look like, by tracing light through curved spacetime and simulating the hot gas with general-relativistic magnetohydrodynamics (GRMHD). And I ask what the images reveal about the giant black holes at the centres of galaxies, like the one at the centre of our own.</p>
+    <div class="links"><a class="arrow" href="#research">Research ↓</a><a class="arrow" href="#writing">Out of the Box ↓</a></div>
+  </div>
+</div></div></section>
 
+<div class="dive" data-dive aria-hidden="true"></div>
 
-<div class="navbar-wrapper">
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#page-top" id="i18_title"><span data-i18n="website.title">{{ site.title }}</span></a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right" id="i18_navbar">
-          {% for section in site.data.landing %}
-          <li>
-            {% if section.page %}
-              <a class="page-scroll" href="{{ section.page}} ">
-            {% else %}
-              <a class="page-scroll" href="{{ section.id | prepend: '#'}} ">
-            {% endif %}
-              <span data-i18n="{{ section.i18n }}">{{ section.name }}</span>
-            </a>
-          </li>
-          {% endfor %}
-          {% for language in site.data.index.language %}
-          <li>
-            <a id="set_lang_{{ language.locale }}" class="btn btn-sm set_{{ language.locale }}" data-locale="{{ language.locale }}">
-              <img src="{{ language.flag | prepend: site.baseurl }}" height="16" width="16">
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
+<section class="stop" id="research" data-stop><div class="col">
+  <div class="head"><h2>Selected research</h2><a href="research.html">All research ↗</a></div>
+  <div class="works">
+    <article class="work">
+      <figure class="figure"><img src="img/o_jet.jpg" alt="M87* at 86 GHz and 230 GHz, with the region of the detected jet-base component marked"><figcaption>M87* with the newly detected region marked. MPIfR press image, 2026</figcaption></figure>
+      <div><h3>Where the jet of M87* begins</h3><p>The 2021 EHT observations hold more than the bright ring. We found a faint, compact component about 0.09 light-years from the black hole, along the jet direction: a candidate for the jet's launching point.</p><a class="arrow" href="https://doi.org/10.1051/0004-6361/202557022" target="_blank" rel="noopener">Read the paper ↗</a></div>
+    </article>
+    <article class="work">
+      <figure class="figure"><img src="img/o_accr.jpg" alt="A ray-traced accretion model with polarization ticks beside the EHT 2017 image of M87*"><figcaption>A semi-analytic model (left) beside the EHT 2017 image of M87* (right)</figcaption></figure>
+      <div><h3>Accretion flows and magnetic fields</h3><p>How do the shape of the disk, the motion of the plasma and the geometry of the magnetic field set the ring we see? We compare polarized model images against EHT measurements to narrow down which configurations M87* allows.</p><a class="arrow" href="https://doi.org/10.1051/0004-6361/202556880" target="_blank" rel="noopener">Read the paper ↗</a></div>
+    </article>
+    <article class="work">
+      <figure class="figure"><img src="img/o_jmn.jpg" alt="GRMHD snapshot images of accretion onto a black hole and onto the horizonless JMN-1 object"><figcaption>GRMHD snapshots: a black hole (left) and the horizonless JMN-1 object (right)</figcaption></figure>
+      <div><h3>Is M87* really a black hole?</h3><p>General relativity does not demand that collapse ends in an event horizon. It also allows horizonless objects, with no point of no return at all. I ran the first 3D GRMHD simulation of gas accreting onto one, the JMN-1 spacetime. At today's EHT resolution its image is almost indistinguishable from a black hole's. The difference hides inside the shadow, where the next generation of telescopes could look.</p><a class="arrow" href="https://arxiv.org/abs/2604.15430" target="_blank" rel="noopener">Read the preprint ↗</a></div>
+    </article>
+  </div>
+</div></section>
+
+<div class="dive" data-dive aria-hidden="true"></div>
+
+<section class="stop" id="simulations" data-stop><div class="col">
+  <h2>Simulations</h2>
+  <div class="sim-top">
+    <div>
+      <p>How do you simulate matter falling onto a black hole, and what a telescope would see of it? I build up from simple analytic disks to full GRMHD, ray tracing each model through curved spacetime. The black hole behind this page is traced live in your browser.</p>
+      <a class="arrow" href="simulate-accretion.html">How to simulate black hole accretion ↗</a>
     </div>
-  </nav>
-</div>
-<div id="canvas_placeholder"></div>
-{% if site.index_carousel %}
-{% include carousel.html %}
-{% endif %}
+    <div class="controls" id="controls">
+      <div class="control"><label for="incl">Inclination</label><input type="range" id="incl" min="2" max="89" step="1" value="80"><output id="incl-out" for="incl">80°</output></div>
+      <div class="control"><label for="dist">Distance</label><input type="range" id="dist" min="0" max="100" step="1" value="41"><output id="dist-out" for="dist">30 M</output></div>
+      <button class="reset" type="button" id="reset">Reset camera</button>
+    </div>
+  </div>
+  <div class="strip">
+    <figure class="figure"><img src="img/s_hotspot.webp" alt="Animated hotspot orbiting a Schwarzschild black hole" loading="lazy"><figcaption>Orbiting hotspot</figcaption></figure>
+    <figure class="figure"><img src="img/s_thindisk.webp" alt="Animated thin disk seen at changing inclination" loading="lazy"><figcaption>Novikov–Thorne thin disk</figcaption></figure>
+    <figure class="figure"><img src="img/s_riaf.webp" alt="Animated ray-traced radiatively inefficient accretion flow" loading="lazy"><figcaption>Semi-analytic RIAF</figcaption></figure>
+    <figure class="figure"><img src="img/s_grmhd.webp" alt="Animated GRMHD simulation of accretion onto a Schwarzschild black hole" loading="lazy"><figcaption>GRMHD simulation</figcaption></figure>
+  </div>
+  <hr class="close">
+</div></section>
 
-{% for section in site.data.landing %}
-{% assign loopindex = forloop.index | modulo: 2 %}
-<section id="{{ section.id }}" class="features {% if loopindex != 1 %} gray-section {% endif %} {{ section.css }}" style="margin-top: 0;">
+<div class="dive" data-dive aria-hidden="true"></div>
 
-  {% if section.id != 'blog' %}
-  {% include sections/{{section.tpl}} %}
-  {% endif %}
-  
-</section>
-{% endfor %}
+<section class="stop" id="press" data-stop><div class="col">
+  <h2>In the press</h2>
+  <div class="press">
+    <a class="story" href="https://www.scientificamerican.com/article/3-000-light-year-long-jet-offers-new-clues-to-first-black-hole-ever-imaged/" target="_blank" rel="noopener">
+      <span class="outlet"><b>Scientific American</b><span>30 January 2026 · Jackie Flynn Mogensen</span></span>
+      <span><h3>3,000-light-year-long jet offers new clues to first black hole ever imaged</h3>
+      <p>On how our team traced where the enormous jet of M87* originates, using the 2021 Event Horizon Telescope observations.</p></span>
+      <span class="go" aria-hidden="true">↗</span></a>
+    <a class="story" href="https://eventhorizontelescope.org/news/2026/01/probing-jet-base-m87s-supermassive-black-hole-0" target="_blank" rel="noopener">
+      <span class="outlet"><b>Event Horizon Telescope</b><span>28 January 2026 · Press release</span></span>
+      <span><h3>Probing the jet base of M87's supermassive black hole</h3>
+      <p>The collaboration's announcement of the study I co-led: a compact radio-emitting region about 0.09 light-years from the black hole, which may mark where its jet begins.</p></span>
+      <span class="go" aria-hidden="true">↗</span></a>
+    <a class="story" href="https://www.sci.news/astronomy/event-horizon-telescope-origin-messier-87s-black-hole-jet-14527.html" target="_blank" rel="noopener">
+      <span class="outlet"><b>Sci.News</b><span>2 February 2026</span></span>
+      <span><h3>Event Horizon Telescope pinpoints possible origin of Messier 87's black hole jet</h3>
+      <p>Why the bright ring alone cannot account for all of the radio emission from M87*, and where the missing light comes from.</p></span>
+      <span class="go" aria-hidden="true">↗</span></a>
+    <a class="story" href="https://www.spektrum.de/news/aktive-galaxien-spurensuche-am-schwarzen-loch/2307159" target="_blank" rel="noopener">
+      <span class="outlet"><b>Spektrum der Wissenschaft</b><span>2026 · in German</span></span>
+      <span><h3>Aktive Galaxien: Spurensuche am Schwarzen Loch</h3>
+      <p>New EHT data give the clearest indication so far of where the powerful jet of the active galaxy M 87 begins.</p></span>
+      <span class="go" aria-hidden="true">↗</span></a>
+  </div>
+</div></section>
 
-<style>
-iframe {
-  -moz-transform: scale(0.25, 0.25);
-  -webkit-transform: scale(0.25, 0.25);
-  -o-transform: scale(0.25, 0.25);
-  -ms-transform: scale(0.25, 0.25);
-  transform: scale(0.25, 0.25);
-  -moz-transform-origin: top left;
-  -webkit-transform-origin: top right;
-  -o-transform-origin: top right;
-  -ms-transform-origin: top right;
-  transform-origin: top right;
-}
-img{
-  object-fit: cover;
-}
-</style>
-<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js"></script>
-<script src="./black-hole.min.js"></script>
-<script>
-  var corsOkImageUrl = 'https://images.unsplash.com/photo-1543985041-cdbf9389b36f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80';
-  BlackHole.blackHoleifyImage('canvas_placeholder', corsOkImageUrl)</script>
+<div class="dive" data-dive aria-hidden="true"></div>
+
+<section class="stop" id="outreach" data-stop><div class="col">
+  <h2>Science outreach</h2>
+  <div class="outreach">
+    <figure class="figure"><img src="img/o_talkwide.jpg" alt="Saurabh giving a talk on black-hole images at the Universitätsclub Bonn" loading="lazy"><figcaption>A talk on black-hole images at the Universitätsclub Bonn</figcaption>
+      <blockquote class="sher">“Besharmi dekho zaraa humari,<br>na door jaati hai, na fanaa hoti hai,<br>is bande ki pehli aur aakhri namaaz<br>aaj bhi wahin adaa hoti hai.”<cite>— <a href="https://divyanshmansukhani.com/" target="_blank" rel="noopener">the.philosophy.guy</a></cite></blockquote></figure>
+    <ul class="ol">
+      <li><h3>Stellar Universe</h3><p>In 2017, with fellow students at Dyal Singh College, University of Delhi, I founded Stellar Universe to bring astrophysics and general relativity to students from the undergraduate level on, whatever their background. It grew from a group of friends into a network of more than 500 science enthusiasts in India and abroad, running free lectures, courses in general relativity, programming workshops and sky-watching sessions, with support from the Nehru Planetarium, Delhi.</p></li>
+      <li><h3>Event Horizon Telescope</h3><p>I contribute to the EHT Collaboration's outreach and social-media work, and to the public communication of results on M87*.</p></li>
+      <li><h3>Talks and short videos</h3><p>I give public and invited talks, and make short videos explaining how we image black holes.</p><a class="arrow" href="https://www.instagram.com/relativist1/" target="_blank" rel="noopener">Watch on Instagram ↗</a></li>
+    </ul>
+  </div>
+  <hr class="close">
+</div></section>
+
+<div class="dive" data-dive aria-hidden="true"></div>
+
+<section class="stop" id="about" data-stop><div class="col">
+  <h2>Journey</h2>
+  <ol class="cv" style="margin-top:6px">
+    <li><time>December 2026 – present</time><h3>Postdoctoral Research Associate</h3><p><a href="https://basp.site.hw.ac.uk" target="_blank" rel="noopener">AI<sup>3</sup>–BASP Laboratory</a>, Heriot-Watt University, Edinburgh, United Kingdom</p></li>
+    <li><time>August – November 2026</time><h3>Postdoctoral Fellow</h3><p>Max Planck Institute for Radio Astronomy, Bonn, Germany</p></li>
+    <li><time>2023 – 2026</time><h3>PhD in Astrophysics<span class="spec">magna cum laude</span></h3><div><p>Max Planck Institute for Radio Astronomy, Bonn, Germany</p><a class="arrow" href="https://kups.ub.uni-koeln.de/81033/" target="_blank" rel="noopener">Read my thesis ↗</a></div></li>
+    <li><time>2021 – 2023</time><h3>MSc in Physics<span class="spec">Specialisation in Astrophysics and Cosmology</span></h3><p>International Centre for Cosmology (ICC), PDPIAS, CHARUSAT, Gujarat, India</p></li>
+    <li><time>2017 – 2020</time><h3>BSc (Hons) in Physics</h3><p>Dyal Singh College, University of Delhi, India</p></li>
+  </ol>
+</div></section>
+
+<div class="dive" data-dive aria-hidden="true"></div>
+
+<section class="stop" id="writing" data-stop><div class="col bare"><div class="narrow right">
+  <h2>Out of the Box</h2>
+  <p class="note">It may seem that my world revolves around black holes. In a sense, it does. I spend much of my time either lost in thought or lost in the experience of living, though I have never been particularly good at separating the two. Curiously, my thoughts often lead me beyond the very science that inspires them. What does it mean to observe something whose defining boundary permits no light to return? If two fundamentally different spacetimes cast the same shadow, have we discovered the truth, or merely found an explanation that fits? Where does observation end and interpretation begin? That is where I find myself dancing on the thin line between science and philosophy, and, on braver days, dangling off the edge. Perhaps that is what draws me to the philosophy of science: the suspicion that understanding the universe and understanding what we <em>can know</em> about it are not quite the same endeavour.</p>
+  <p class="note">But life cannot be lived entirely in thought (or maybe it can?), and not everything worth expressing lends itself to an equation.</p>
+  <p class="note">Somewhere in the final months of my PhD, amid the rather complicated relationship with my thesis writing, I taught myself to play the bansuri, the Indian bamboo flute. It began as a modest escape from stress and gradually became something of a refuge. I make no claims to understanding the intricacies of classical music; I know little of its grammar, only something of its language. My encounters with the ghazal and the qawwali have turned music from something I hear into something I feel. Put simply: the ghazal is a medicine for the pain and misery of life; the qawwali is the ecstasy that carries one beyond them.</p>
+  <p class="note">Whatever spills out of all this lands here: essays, poetry, photographs and more.</p>
+  <div class="links"><a class="arrow" href="writing.html">Essays, poetry and more ↗</a></div>
+  <hr class="close">
+</div></div></section>
+
+<div class="dive" data-dive aria-hidden="true"></div>
+
+<section class="stop last" id="contact" data-stop><div class="col">
+  <h2>Feel free to get in touch</h2><p style="margin-top:18px">I usually reply faster than light can cross the event horizon of Sgr A*.</p>
+  <div class="emails">
+    <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="1.5"/><path d="M3 6l9 7 9-7"/></svg>sbhkmr1999@gmail.com</span>
+    <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="1.5"/><path d="M3 6l9 7 9-7"/></svg>saurabh@mpifr-bonn.mpg.de</span>
+  </div>
+  <div class="icons">
+    <a href="https://github.com/Relativist1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#ece6d8" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3"/></svg>GitHub</a>
+    <a href="https://orcid.org/0000-0001-7156-4848" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#a6ce39"/><path fill="#fff" d="M7.4 9.9h1.5v7.3H7.4zm.75-3a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8zM10.6 9.9h3.1c2.6 0 4 1.7 4 3.65 0 2.05-1.5 3.65-4 3.65h-3.1zm1.5 1.35v4.6h1.5c1.8 0 2.5-1.15 2.5-2.3 0-1.25-.8-2.3-2.5-2.3z"/></svg>ORCID</a>
+    <a href="https://inspirehep.net/authors/1853355" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#ece6d8" stroke-width="1.3"><circle cx="12" cy="12" r="1.6" fill="#ece6d8"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>INSPIRE-HEP</a>
+    <a href="https://www.instagram.com/relativist1/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#ece6d8" stroke-width="1.7"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.6" cy="6.4" r=".6" fill="#ece6d8"/></svg>Instagram</a>
+  </div>
+  <hr class="close">
+  <p class="colophon" style="margin-top:22px">© 2026 Saurabh</p>
+</div></section>
+</main>
+<script src="bh.js"></script>
+<script src="site.js"></script>
+</body></html>

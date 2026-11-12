@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="description" content="Saurabh, astrophysicist: Postdoctoral Research Associate in AI³ at the BASP lab, Heriot-Watt University, and member of the Event Horizon Telescope Collaboration. Black-hole imaging, simulations and the philosophy of science."><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Research · Saurabh</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Alegreya+Sans:wght@400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23050506%22/%3E%3Cellipse cx=%2216%22 cy=%2216%22 rx=%2214%22 ry=%225%22 fill=%22none%22 stroke=%22%23d9a566%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23050506%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="site.css">
+<style>html,body{margin:0}:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+</head><body>
+<div id="scene" aria-hidden="true"><canvas id="view"></canvas></div>
+<div id="scrim" aria-hidden="true"></div>
+<header class="top"><div class="top-in">
+  <a class="wordmark" href="index.html">Saurabh</a>
+  <button class="menu" type="button" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Sections"><a href="research.html" class="here" aria-current="page">Research</a><div class="dd"><button type="button" class="dd-btn" aria-expanded="false" aria-controls="dd-sim">Simulations</button><div class="dd-menu" id="dd-sim"><a href="simulations.html">Overview</a><a href="simulate-accretion.html">How to simulate black hole accretion</a></div></div><a href="index.html#press">Press</a><a href="index.html#outreach">Outreach</a><a href="index.html#about">Journey</a><a href="writing.html">Out of the Box</a><a href="index.html#contact">Contact</a></nav>
+</div></header>
+<main data-stop="1">
+<section class="page"><div class="col">
+  <p class="crumb"><a href="index.html#research">← Home</a></p>
+  <h1 class="ptitle">Research</h1>
+  <div class="lede">
+    <p>General relativity has passed every test we have put to it, and black holes are its most extreme prediction. Near the event horizon, gravity, magnetized plasma and radiation are tangled together, and the Event Horizon Telescope now resolves that region directly in M87* and Sagittarius A*.</p>
+    <p>My work is about untangling them. I trace light through curved spacetime, model the accreting plasma from semi-analytic flows to full GRMHD, and compare the results with EHT data, asking each time which features of an image come from the astrophysics and which from the spacetime itself.</p>
+  </div>
+  <h2 class="sub">Questions I work on</h2>
+  <ol class="qs">
+    <li><h3>Where does the jet begin?</h3><p>The 2021 EHT observations added intermediate baselines that earlier campaigns lacked. With them we found a compact component about 0.09 light-years from M87*, along the jet: an upper limit on where the jet is launched.</p></li>
+    <li><h3>What sets the ring we see?</h3><p>Disk thickness, plasma motion and magnetic-field geometry all shape the image. Fitting polarized models to the EHT data of M87* points to a partially infalling, sub-Keplerian flow, and separates toroidal from poloidal fields.</p></li>
+    <li><h3>Does it have to be a black hole?</h3><p>General relativity also allows collapse to end without a horizon. I ran the first 3D GRMHD simulation of sustained accretion onto such an object, the JMN-1 spacetime, and found that at current resolution it is almost indistinguishable from a black hole.</p></li>
+    <li><h3>What could the next telescopes tell apart?</h3><p>The remaining differences sit inside the shadow: a smaller inner shadow and extra light near the centre. Arrays such as the ngEHT and the Black Hole Explorer could turn these into real observational tests.</p></li>
+  </ol>
+  <hr class="close">
+</div></section>
+</main>
+<footer class="foot">© 2026 Saurabh</footer>
+<script src="bh.js"></script>
+<script src="site.js"></script>
+</body></html>
