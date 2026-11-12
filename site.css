@@ -164,6 +164,8 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
   .cv li{grid-template-columns:1fr;gap:4px}.cv p,.cv div{grid-column:1}
   .journey{grid-template-columns:1fr;gap:28px}}
 @media (max-width:760px){
+  .top{background:rgba(5,5,6,.94);border-bottom:1px solid var(--rule);backdrop-filter:blur(6px)}
+  .hero .figure{max-width:200px}
   .sher{font-size:1.45rem}
   .narrow.right .note{font-size:1.14rem}
   #scrim{background:rgba(5,5,6,.42)}
@@ -227,11 +229,11 @@ footer.foot{padding-block:28px 40px;padding-left:max(7vw,env(safe-area-inset-lef
 .article>p,.article .lede p,.article .fates{max-width:none;text-align:justify;hyphens:auto}
 .article .lede{max-width:none}
 .article>p{margin-top:16px}
-.article .sub{justify-content:flex-start}
+.article .sub{justify-content:flex-start;flex-wrap:nowrap;align-items:baseline}
 .sn{display:inline-block;min-width:1.6em;color:var(--amber)}
 .units{color:#b9b2a4;font-size:1rem}
 .eq{margin:24px 0;padding:20px 22px;border-left:1px solid var(--rule);overflow-x:auto;color:var(--ivory);font-size:1.5rem}
-@media (max-width:760px){.eq{font-size:1.15rem;padding:14px 12px}}
+@media (max-width:760px){.eq{font-size:1rem;padding:12px 8px}.code{font-size:13px;padding:14px}.article>p,.article .lede p{text-align:left;hyphens:manual}}
 .eq mjx-container{margin:0!important}
 .fates{margin:14px 0 0;padding-left:22px;display:grid;gap:8px;max-width:64ch}
 .code{margin:20px 0;padding:20px 22px;background:var(--panel);border:1px solid var(--rule);border-radius:4px;overflow-x:auto;font:15px/1.6 ui-monospace,Menlo,Consolas,monospace;color:#e9dcc2;text-shadow:none}
