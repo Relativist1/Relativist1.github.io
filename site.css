@@ -140,7 +140,7 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
 .outreach{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:start;margin-top:30px}
 .ol{list-style:none;margin:0;padding:0}
 .ol li{padding:0 0 22px;margin-bottom:22px;border-bottom:1px solid var(--rule)}
-.ol li:last-child{margin-bottom:0}
+.ol li:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}
 .ol p{margin-top:8px;color:#d6cfc0}
 .ol .arrow{margin-top:12px}
 
