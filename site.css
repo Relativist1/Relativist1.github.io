@@ -167,7 +167,7 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
   .journey{grid-template-columns:1fr;gap:28px}}
 @media (max-width:760px){
   .top{background:rgba(5,5,6,.94);border-bottom:1px solid var(--rule);backdrop-filter:blur(6px)}
-  .hero .figure{max-width:200px}
+  .hero .figure{max-width:260px}
   .sher{font-size:1.45rem}
   .narrow.right .note{font-size:1.14rem}
   #scrim{background:rgba(5,5,6,.42)}
