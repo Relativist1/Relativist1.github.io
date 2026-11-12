@@ -62,7 +62,7 @@ if(incl&&dist){const io=$('incl-out'),dout=$('dist-out'),distR=v=>8*Math.pow(200
 /* fit the home portrait (3:4) to the height of the intro text beside it */
 const hero=document.querySelector('.hero'),heroText=document.querySelector('.hero-text');
 function fitPortrait(){if(!hero)return;if(innerWidth<=900){hero.style.removeProperty('--pw');return}
-  let w=300;for(let i=0;i<6;i++){hero.style.setProperty('--pw',w+'px');const nw=clamp(heroText.offsetHeight*.75,220,hero.clientWidth*.3);if(Math.abs(nw-w)<1)break;w=w+.6*(nw-w)}
+  let w=300;for(let i=0;i<6;i++){hero.style.setProperty('--pw',w+'px');const nw=clamp(heroText.offsetHeight*.8,240,hero.clientWidth*.36);if(Math.abs(nw-w)<1)break;w=w+.6*(nw-w)}
   hero.style.setProperty('--pw',Math.round(w)+'px')}
 fitPortrait();addEventListener('resize',fitPortrait);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitPortrait);
 
