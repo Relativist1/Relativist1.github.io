@@ -1,3 +1,6 @@
+---
+permalink: /writing.html
+---
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="description" content="Saurabh, astrophysicist: Postdoctoral Research Associate in AI³ at the BASP lab, Heriot-Watt University, and member of the Event Horizon Telescope Collaboration. Black-hole imaging, simulations and the philosophy of science."><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Out of the Box · Saurabh</title>
@@ -21,7 +24,11 @@
   <p class="note">These are essays and shorter notes on that side of science: what counts as an observation, how much of a result is nature and how much is the model we brought to it, and when we are entitled to say we know something.</p>
   <h2 class="sub">Essays and blog</h2>
   <ul class="posts">
-    <li><a href="essay-template.html"><span class="pd">Draft</span><span><b>Essay title</b><span class="px">A starting page for the first essay. The layout is ready; the words are still to come.</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+  {% for post in site.posts %}
+    <li><a href="{{ post.url }}"><span class="pd">{{ post.date | date: "%b %Y" }}</span><span><b>{{ post.title }}</b><span class="px">{% if post.kind %}{{ post.kind }} · {% endif %}{{ post.summary }}</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+  {% else %}
+    <li class="empty-note">The first pieces are on their way.</li>
+  {% endfor %}
   </ul>
   <hr class="close">
 </div></div></section>

@@ -260,3 +260,16 @@ footer.foot{padding-block:28px 40px;padding-left:max(7vw,env(safe-area-inset-lef
 .lead-in{margin-top:28px;font-size:1.25rem;line-height:1.55}
 blockquote{margin:28px 0;padding:6px 0 6px 24px;border-left:2px solid var(--amber);font-style:italic;font-size:1.2rem;color:var(--ivory)}
 @media (max-width:760px){.guide{grid-template-columns:1fr;padding:22px}.g-k,.g-go{grid-row:auto;grid-column:auto}.g-d{grid-column:auto}.posts a{grid-template-columns:1fr;gap:6px}.lab-ctl{grid-template-columns:1fr 64px}.lab-ctl label{grid-column:1/-1}}
+
+/* posts written in Markdown (_posts) */
+.post-body{margin-top:28px}
+.post-body p{margin:0 0 18px;font-size:1.12rem;line-height:1.7;max-width:none}
+.post-body h2{margin:44px 0 14px;font-size:1.7rem;padding-bottom:10px;border-bottom:1px solid var(--rule)}
+.post-body h3{margin:30px 0 10px}
+.post-body blockquote{margin:28px 0;padding:6px 0 6px 24px;border-left:2px solid var(--amber);font-style:italic;font-size:1.2rem}
+.post-body ul,.post-body ol{margin:0 0 18px;padding-left:24px;font-size:1.12rem;line-height:1.7}
+.post-body img{display:block;max-width:100%;height:auto;margin:24px auto;border:1px solid var(--rule)}
+.post-body pre{padding:16px 18px;background:var(--panel);border:1px solid var(--rule);border-radius:4px;overflow-x:auto;font:15px/1.6 ui-monospace,Menlo,monospace}
+.post-body .poem{white-space:pre-line;font-style:italic;font-size:1.3rem;line-height:1.6}
+.post-image{margin-top:26px}.post-image img{width:100%;height:auto}
+.empty-note{padding:24px 0;color:#b9b2a4;font-style:italic;border-bottom:1px solid var(--rule)}
