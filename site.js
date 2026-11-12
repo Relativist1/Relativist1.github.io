@@ -29,7 +29,7 @@ let engine=null,view=$('view'),mode='live Kerr';
 function freshCanvas(){const c=document.createElement('canvas');c.id='view';view.replaceWith(c);view=c;return c}
 function showPoster(){engine=null;mode='still image';wrap.classList.add('poster','ready');view.hidden=true}
 function startFallback(){try{engine=new BH.FallbackRenderer(freshCanvas());engine.resize(vw,vh);mode='live, light';return true}catch(e){console.warn('No WebGL renderer available, showing a still image',e);showPoster();return false}}
-try{engine=new BH.BlackHoleEngine(view,{spin:.9,diskOuter:22,pixelRatio:Math.min(devicePixelRatio||1,1),liveScale:coarse?.25:.32});engine.resize(vw,vh)}
+try{engine=new BH.BlackHoleEngine(view,{spin:.9,diskOuter:22,pixelRatio:Math.min(devicePixelRatio||1,1),liveScale:coarse?.28:.38});engine.resize(vw,vh)}
 catch(e){console.warn('Kerr renderer unavailable, using fallback',e);startFallback()}
 
 const navLinks=[...document.querySelectorAll('#nav a[href^="#"]')];
