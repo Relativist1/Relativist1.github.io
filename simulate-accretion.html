@@ -3,7 +3,7 @@
 <title>How to Simulate Black Hole Accretion · Saurabh</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Alegreya+Sans:wght@400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23050506%22/%3E%3Cellipse cx=%2216%22 cy=%2216%22 rx=%2214%22 ry=%225%22 fill=%22none%22 stroke=%22%23d9a566%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23050506%22/%3E%3C/svg%3E">
-<link rel="stylesheet" href="site.css?v=1794568457">
+<link rel="stylesheet" href="site.css?v=1794569066">
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['$$','$$']]},svg:{fontCache:'global',scale:1.15},options:{enableMenu:false}};</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg-full.js" async></script>
 <style>html,body{margin:0}:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -32,7 +32,7 @@
   <h2 class="sub"><span class="sn">2</span>Light follows geodesics</h2>
   <p>Light travels along the straightest possible paths in this curved spacetime, called null geodesics. They obey the geodesic equation, together with the condition that light has zero interval:</p>
   <div class="eq">$$\frac{d^2x^\mu}{d\lambda^2} + \Gamma^\mu_{\alpha\beta}\,\frac{dx^\alpha}{d\lambda}\,\frac{dx^\beta}{d\lambda} = 0, \qquad\qquad g_{\mu\nu}\,\frac{dx^\mu}{d\lambda}\,\frac{dx^\nu}{d\lambda} = 0$$</div>
-  <p>The Christoffel symbols \(\Gamma^\mu_{\alpha\beta}\) encode how the metric bends the path. Because the spacetime does not change in time and is the same in every direction, each photon keeps a constant energy \(E\) and angular momentum \(L\). Their ratio is the <em>impact parameter</em>, \(b = L/E\): how far from the black hole the ray would pass if gravity were switched off.</p>
+  <p>The Christoffel symbols \(\Gamma^\mu_{\alpha\beta}\) encode how the metric bends the path. The spacetime does not change in time and is the same in every direction, so each photon keeps a constant energy \(E\) and angular momentum \(L\). Their ratio is the <em>impact parameter</em>, \(b = L/E\): how far from the black hole the ray would pass if gravity were switched off.</p>
   <p>With \(u = 1/r\), the whole path of a photon in its orbital plane reduces to one equation:</p>
   <div class="eq">$$\frac{d^2u}{d\phi^2} + u = 3Mu^2$$</div>
   <p>Without the right-hand side, the solutions are straight lines. The term \(3Mu^2\) is general relativity: it is small far away and dominant close in.</p>
@@ -106,6 +106,6 @@ sl.addEventListener('input',draw);addEventListener('resize',size);size()})();
 </script>
 </main>
 <footer class="foot">© 2026 Saurabh</footer>
-<script src="bh.js?v=1794568457"></script>
-<script src="site.js?v=1794568457"></script>
+<script src="bh.js?v=1794569066"></script>
+<script src="site.js?v=1794569066"></script>
 </body></html>
