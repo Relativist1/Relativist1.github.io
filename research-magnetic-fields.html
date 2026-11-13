@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="description" content="Saurabh, astrophysicist: Postdoctoral Research Associate in AI³ at the BASP lab, Heriot-Watt University, and member of the Event Horizon Telescope Collaboration. Black-hole imaging, simulations and the philosophy of science."><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Magnetic Fingerprints of M87* · Saurabh</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Alegreya+Sans:wght@400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23050506%22/%3E%3Cellipse cx=%2216%22 cy=%2216%22 rx=%2214%22 ry=%225%22 fill=%22none%22 stroke=%22%23d9a566%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23050506%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="site.css?v=1794572467">
+<style>html,body{margin:0}:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+</head><body>
+<div id="scene" aria-hidden="true"><canvas id="view"></canvas></div>
+<div id="scrim" aria-hidden="true"></div>
+<header class="top"><div class="top-in">
+  <a class="wordmark" href="index.html">Saurabh</a>
+  <button class="menu" type="button" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Sections"><a href="index.html">Home</a><a href="research.html" class="here" aria-current="page">Research</a><div class="dd"><button type="button" class="dd-btn" aria-expanded="false" aria-controls="dd-sim">Simulations</button><div class="dd-menu" id="dd-sim"><a href="simulations.html">Overview</a><a href="simulate-accretion.html">How to simulate black hole accretion</a></div></div><a href="index.html#press">Press</a><a href="index.html#outreach">Outreach</a><a href="index.html#about">Journey</a><a href="writing.html">Out of the Box</a><a href="index.html#contact">Contact</a><a class="cv" href="cv.pdf" target="_blank" rel="noopener">CV</a></nav>
+</div></header>
+<main data-stop="1">
+<section class="page"><div class="col"><article class="article narrow" style="max-width:760px">
+  <p class="crumb"><a href="research.html">← My Research</a></p>
+  <h1 class="ptitle">Reading the Magnetic Fingerprints of M87*</h1>
+  <p class="kicker" style="margin-top:14px">How gas and magnetic fields shape the first image of a black hole</p>
+  <p>When the first image of M87* appeared in 2019, most people saw a glowing ring. I saw a crime scene with too many suspects. The ring is bright, lopsided and slightly polarised, and any of half a dozen culprits could have arranged it that way: the thickness of the disk of gas, the way that gas moves, the spin of the black hole, or the shape of the magnetic field threaded through it all.</p>
+  <figure class="figure post-image"><img src="img/o_accr.jpg" alt="A ray-traced model of the gas around M87* beside the EHT 2017 image, both with polarisation marks"><figcaption>A model (left) beside the real image of M87* from 2017 (right). The short lines show the direction of polarisation.</figcaption></figure>
+  <h2 class="sub">The question</h2>
+  <p>Light from near a black hole carries a quiet signature: its polarisation, the direction in which its waves vibrate. That direction is set by the magnetic field the light was born in, then twisted by gravity on its way out. If we could read it properly, we would learn not just <em>that</em> there is gas around M87*, but <em>how</em> it is organised.</p>
+  <h2 class="sub">How we went about it</h2>
+  <p>We built a large family of model black holes, varying one ingredient at a time:</p>
+  <ul class="plain">
+    <li><b>Thickness:</b> how thick the disk of gas is.</li>
+    <li><b>Motion:</b> whether the gas orbits neatly or slowly falls inward.</li>
+    <li><b>Magnetic field:</b> whether the field wraps around the black hole like thread on a spool, or runs outward from it like the spokes of a wheel.</li>
+    <li><b>Spin:</b> how fast the black hole itself rotates.</li>
+  </ul>
+  <p>For each combination we traced the light through curved spacetime, computed the image the Event Horizon Telescope would see, polarisation included, and compared it with the real data. It is a bit like trying every key on a very large ring until one turns.</p>
+  <h2 class="sub">What we found</h2>
+  <ul class="plain">
+    <li><b>Thickness hardly matters.</b> A thin disk and a thick one leave nearly the same fingerprint: good news, since it is one fewer thing to worry about.</li>
+    <li><b>The field’s shape matters, and it can be read.</b> Wrapped and outward-running fields leave distinctly different polarisation patterns, so the data can tell them apart.</li>
+    <li><b>Motion matters most.</b> The images favour gas that does not simply orbit but slowly spirals inward, moving more lazily than a neat orbit would allow.</li>
+  </ul>
+  <p>The black hole, it turns out, is not just spinning its gas around; it is quietly reeling it in.</p>
+  <h2 class="sub">A personal note</h2>
+  <p>This work taught me a lesson I keep relearning: in astrophysics, the interesting part is rarely the answer, but which questions the data are actually able to answer. Half of this paper is about what the image <em>cannot</em> tell us, and I have come to think that half is just as valuable.</p>
+  <p class="paper"><a class="arrow" href="https://doi.org/10.1051/0004-6361/202556880" target="_blank" rel="noopener">Read the paper ↗</a><span>Astronomy &amp; Astrophysics 705, A166 (2026)</span></p>
+  <hr class="close">
+</article></div></section>
+</main>
+<footer class="foot">© 2026 Saurabh</footer>
+<script src="bh.js?v=1794572467"></script>
+<script src="site.js?v=1794572467"></script>
+</body></html>

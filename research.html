@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="description" content="Saurabh, astrophysicist: Postdoctoral Research Associate in AI³ at the BASP lab, Heriot-Watt University, and member of the Event Horizon Telescope Collaboration. Black-hole imaging, simulations and the philosophy of science."><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Research · Saurabh</title>
+<title>My Research · Saurabh</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Alegreya+Sans:wght@400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23050506%22/%3E%3Cellipse cx=%2216%22 cy=%2216%22 rx=%2214%22 ry=%225%22 fill=%22none%22 stroke=%22%23d9a566%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23050506%22/%3E%3C/svg%3E">
-<link rel="stylesheet" href="site.css?v=1794572067">
+<link rel="stylesheet" href="site.css?v=1794572467">
 <style>html,body{margin:0}:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
 </head><body>
 <div id="scene" aria-hidden="true"><canvas id="view"></canvas></div>
@@ -14,24 +14,38 @@
   <nav id="nav" aria-label="Sections"><a href="index.html">Home</a><a href="research.html" class="here" aria-current="page">Research</a><div class="dd"><button type="button" class="dd-btn" aria-expanded="false" aria-controls="dd-sim">Simulations</button><div class="dd-menu" id="dd-sim"><a href="simulations.html">Overview</a><a href="simulate-accretion.html">How to simulate black hole accretion</a></div></div><a href="index.html#press">Press</a><a href="index.html#outreach">Outreach</a><a href="index.html#about">Journey</a><a href="writing.html">Out of the Box</a><a href="index.html#contact">Contact</a><a class="cv" href="cv.pdf" target="_blank" rel="noopener">CV</a></nav>
 </div></header>
 <main data-stop="1">
-<section class="page"><div class="col">
+<section class="page"><div class="col"><article class="article">
   <p class="crumb"><a href="index.html#research">← Home</a></p>
-  <h1 class="ptitle">Research</h1>
-  <div class="lede">
-    <p>General relativity has passed every test we have put to it, and black holes are its most extreme prediction. Near the event horizon, gravity, magnetized plasma and radiation are tangled together, and the Event Horizon Telescope now resolves that region directly in M87* and Sagittarius A*.</p>
-    <p>My work is about untangling them. I trace light through curved spacetime, model the accreting plasma from semi-analytic flows to full GRMHD, and compare the results with EHT data, asking each time which features of an image come from the astrophysics and which from the spacetime itself.</p>
-  </div>
-  <h2 class="sub">Questions I work on</h2>
-  <ol class="qs">
-    <li><h3>Where does the jet begin?</h3><p>The 2021 EHT observations added intermediate baselines that earlier campaigns lacked. With them we found a compact component about 0.09 light-years from M87*, along the jet: an upper limit on where the jet is launched.</p></li>
-    <li><h3>What sets the ring we see?</h3><p>Disk thickness, plasma motion and magnetic-field geometry all shape the image. Fitting polarized models to the EHT data of M87* points to a partially infalling, sub-Keplerian flow, and separates toroidal from poloidal fields.</p></li>
-    <li><h3>Does it have to be a black hole?</h3><p>General relativity also allows collapse to end without a horizon. I ran the first 3D GRMHD simulation of sustained accretion onto such an object, the JMN-1 spacetime, and found that at current resolution it is almost indistinguishable from a black hole.</p></li>
-    <li><h3>What could the next telescopes tell apart?</h3><p>The remaining differences sit inside the shadow: a smaller inner shadow and extra light near the centre. Arrays such as the ngEHT and the Black Hole Explorer could turn these into real observational tests.</p></li>
-  </ol>
+  <h1 class="ptitle">My Research</h1>
+  <blockquote class="epigraph">“It is the theory which decides what we can observe.”<cite>— Albert Einstein, in conversation with Werner Heisenberg, 1926</cite></blockquote>
+
+  <h2 class="sub">On the questions I pursue</h2>
+  <p>Black holes are the most extreme prediction of Einstein’s theory of gravity, and for decades they could only be studied indirectly. Today, a telescope as large as the Earth can resolve the region right at their edge. That raises a simple question with a difficult answer:</p>
+  <p class="big-q">What can we actually learn about the dark object at the centre of a galaxy by looking at it?</p>
+  <p>The difficulty is that we never see the object itself. What reaches us is light from hot gas swirling around it. That light has been bent by gravity, and then recorded by a telescope that captures only fragments of the picture. Every image is therefore three things mixed together: the shape of spacetime, the behaviour of the gas, and the limits of the instrument. When a prediction and an observation disagree, we cannot tell at first which of the three is responsible.</p>
+  <p>So the large question has to be broken into smaller ones, each narrow enough to be answered on its own, and taken in a sensible order.</p>
+<figure class="tree" aria-label="How the main question breaks down into four smaller ones"><div class="t-root">What can we learn about the dark object at a galaxy’s centre by looking at it?</div><div class="t-cols"><div class="t-col"><div class="tn t-head"><b>Spacetime</b><span>What kind of object is it?</span></div><div class="tn"><span>Both can cast similar shadows, so look for where they differ</span></div><div class="tn t-leaf"><span>Following light, simulating gas</span></div></div><div class="t-col"><div class="tn t-head"><b>The gas</b><span>What is shining, and how?</span></div><div class="tn"><span>Different flows can draw the same ring, so untangle motion and magnetic fields</span></div><div class="tn t-leaf"><span>Models of the gas, compared with the light's polarisation</span></div></div><div class="t-col"><div class="tn t-head"><b>The telescope</b><span>What does the data allow us to say?</span></div><div class="tn"><span>Images are rebuilt from fragments, so check each feature against the data</span></div><div class="tn t-leaf"><span>Rebuilding images, testing many approaches</span></div></div><div class="t-col"><div class="tn t-head"><b>Time</b><span>How does it change?</span></div><div class="tn"><span>One picture fits many stories, so follow the motion in 3D</span></div><div class="tn t-leaf"><span>Movies of the gas (TomoGrav)</span></div></div></div><figcaption>From one large question to four smaller ones, each narrow enough to be answered on its own.</figcaption></figure>
+  <h3 class="qh"><span class="sn">1</span>Spacetime: what kind of object is it?</h3>
+  <p>Einstein’s theory allows black holes, but it does not insist on them. The same equations also describe collapsed objects with no event horizon, no point of no return. Seen from afar, both kinds can cast almost the same dark shadow. The question therefore becomes: <em>if the shadow cannot tell them apart, what can?</em> To answer it, I follow light through each kind of spacetime and simulate gas falling onto it, looking for the subtle places where the two pictures stop agreeing.</p>
+  <h3 class="qh"><span class="sn">2</span>The gas: what is shining, and how?</h3>
+  <p>Before the shape of spacetime can be tested, the gas around it has to be understood, since different kinds of flow can draw the same bright ring. How is the gas moving? Is it orbiting or slowly falling in? How are its magnetic fields arranged? Each of these leaves its mark on the light, especially on its polarisation. Untangling them one at a time is what makes a test of gravity possible at all.</p>
+  <h3 class="qh"><span class="sn">3</span>The telescope: what does the data allow us to say?</h3>
+  <p>The Event Horizon Telescope does not take a photograph. It links radio dishes across the planet, each recording a small piece of information, and the image has to be rebuilt from those pieces. Different ways of rebuilding it can produce slightly different pictures. So every feature in an image has to be checked: is it truly in the data, or did the method put it there?</p>
+  <h3 class="qh"><span class="sn">4</span>Time: from a single picture to a moving one</h3>
+  <p>A single picture can often be explained in more than one way; a sequence is much harder to explain away. That is the idea behind TomoGrav: to follow how the gas moves in three dimensions over time, and so watch gravity at work instead of inferring it from one frame.</p>
+
+  <h2 class="sub">What it means to pursue them</h2>
+  <p>The order matters. First the spacetime, then the gas within it, then the telescope that observes both. Only then can we say anything meaningful about what sits at the heart of a galaxy. Each step settles a question small enough to be decided. Together, they turn a question about the nature of black holes into a question about what our evidence can bear, and those are not quite the same.</p>
+
+  <h2 class="sub">Read more</h2>
+  <ul class="posts">
+    <li><a href="research-magnetic-fields.html"><span class="pd">The gas</span><span><b>Reading the Magnetic Fingerprints of M87*</b><span class="px">How the arrangement of the gas and its magnetic field shapes the image.</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+    <li><a href="research-horizonless.html"><span class="pd">Spacetime</span><span><b>A Black Hole Without a Horizon?</b><span class="px">The first simulation of gas falling onto an object with no event horizon.</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+  </ul>
   <hr class="close">
-</div></section>
+</article></div></section>
 </main>
 <footer class="foot">© 2026 Saurabh</footer>
-<script src="bh.js?v=1794572067"></script>
-<script src="site.js?v=1794572067"></script>
+<script src="bh.js?v=1794572467"></script>
+<script src="site.js?v=1794572467"></script>
 </body></html>
