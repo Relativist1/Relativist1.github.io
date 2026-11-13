@@ -1,0 +1,33 @@
+<!doctype html><html><head><style>@font-face{font-family:EBG;src:url(file:///root/.fonts/EBGaramond[wght].ttf)}html,body{margin:0;background:#050506}</style></head><body>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+ <radialGradient id="bg" cx="50%" cy="50%" r="70%"><stop offset="0" stop-color="#0d1414"/><stop offset="1" stop-color="#050506"/></radialGradient>
+ <radialGradient id="ringL" cx="50%" cy="50%" r="50%"><stop offset=".58" stop-color="#e8a25a" stop-opacity="0"/><stop offset=".66" stop-color="#e8a25a" stop-opacity=".95"/><stop offset=".72" stop-color="#e8a25a" stop-opacity=".35"/><stop offset="1" stop-color="#e8a25a" stop-opacity="0"/></radialGradient>
+ <radialGradient id="ringR" cx="50%" cy="50%" r="50%"><stop offset=".58" stop-color="#e8a25a" stop-opacity="0"/><stop offset=".66" stop-color="#e8a25a" stop-opacity=".95"/><stop offset=".72" stop-color="#e8a25a" stop-opacity=".35"/><stop offset="1" stop-color="#e8a25a" stop-opacity="0"/></radialGradient>
+ <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#9ad9d4" stop-opacity=".7"/><stop offset=".35" stop-color="#3fb3ad" stop-opacity=".22"/><stop offset="1" stop-color="#3fb3ad" stop-opacity="0"/></radialGradient>
+ <filter id="soft"><feGaussianBlur stdDeviation="2"/></filter>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<!-- faint grid of spacetime -->
+<g stroke="#3fb3ad" stroke-opacity=".07" stroke-width="1">
+ <path d="M0 450 H1600"/><path d="M800 0 V900"/>
+</g>
+<!-- left: black hole -->
+<g transform="translate(470 450)">
+ <circle r="300" fill="url(#ringL)"/>
+ <circle r="190" fill="#020203"/>
+ <circle r="232" fill="none" stroke="#e2dbcd" stroke-opacity=".35" stroke-width="2" stroke-dasharray="6 10"/>
+ <circle r="130" fill="none" stroke="#e8a25a" stroke-width="3"/>
+</g>
+<!-- right: JMN-1, same ring, light inside -->
+<g transform="translate(1130 450)">
+ <circle r="300" fill="url(#ringR)"/>
+ <circle r="190" fill="#020203"/>
+ <circle r="150" fill="url(#glow)"/>
+ <circle r="232" fill="none" stroke="#e2dbcd" stroke-opacity=".35" stroke-width="2" stroke-dasharray="6 10"/>
+ <circle r="182" fill="none" stroke="#3fb3ad" stroke-width="3"/>
+ <circle r="6" fill="#ffffff"/>
+</g>
+<!-- equals sign with a question -->
+<text x="800" y="472" text-anchor="middle" font-family="EBG" font-size="78" fill="#e2dbcd" fill-opacity=".85">=?</text>
+</svg></body></html>

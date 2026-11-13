@@ -6,6 +6,8 @@ description: "Could M87* have no event horizon? A plain-language explainer of th
 topic: "Spacetime"
 level: "First-year undergraduates"
 date: 2026-11-13
+thumbnail: /img/explainers/jmn-thumbnail.png
+thumbnail_alt: "Two glowing rings side by side: a black hole with an empty dark centre, and JMN-1 with a faint glow and a point at its centre"
 math: true
 breath:
   - "General relativity allows a collapsing star to end without an event horizon, as a dense ball of matter with a singularity at its centre."
