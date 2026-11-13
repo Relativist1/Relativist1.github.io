@@ -43,3 +43,24 @@ Same Markdown as the essays (see `WRITING.md`): `## Heading`, `*italic*`, `**bol
 A good shape is: an opening paragraph, then `## The question`, `## How we went about it`, `## What we found`, `## A personal note`.
 
 Upload figures to the `img` folder first. Click **Commit changes**; the page is live a minute or two later.
+
+## Lengths that matter for search engines and AI tools
+
+| Field | Limit | Used for |
+|---|---|---|
+| `title` | about 60 characters | page title, link previews |
+| `description` | 160 characters | the snippet under the link in Google, link previews (cut at 160 automatically) |
+| `summary` | 300 characters | the text on the explainer cards and in `llms.txt` |
+| `thumbnail` | 16:9 image, about 1600×900 px | the card picture and the link preview (falls back to `image`) |
+
+## For citations
+
+Add these so the page links properly to the paper:
+
+```
+paper_title: "Full title of the paper"
+paper_doi: "10.xxxx/xxxxx"          # leave out if there is no DOI yet
+paper_cite: "Authors (year). Title. Journal volume, page."
+```
+
+Each explainer then ends with a "How to cite" box (with BibTeX), and search engines see that the page is about that paper.

@@ -1,0 +1,33 @@
+{%- comment -%} Search, social and AI metadata for the Markdown pages. Descriptions are cut to 160 characters. {%- endcomment -%}
+{%- assign seo_desc = page.description | default: page.summary | default: site.description | strip_html | normalize_whitespace | truncate: 160 -%}
+{%- assign seo_img = page.thumbnail | default: page.image | default: "/img/poster.jpg" -%}
+<meta name="description" content="{{ seo_desc | escape }}">
+<meta name="author" content="Saurabh">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:site_name" content="Saurabh · Theoretical Astrophysicist">
+<meta property="og:title" content="{{ page.title | escape }}">
+<meta property="og:description" content="{{ seo_desc | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
+<meta property="og:image" content="{{ seo_img | absolute_url }}">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title | escape }}">
+<meta name="twitter:description" content="{{ seo_desc | escape }}">
+<meta name="twitter:image" content="{{ seo_img | absolute_url }}">
+{% if page.date %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+{% include person-ld.html %}
+<script type="application/ld+json">{"@context":"https://schema.org",
+{%- if page.date -%}
+"@type":"{% if page.collection == 'explainers' %}Article{% else %}BlogPosting{% endif %}","headline":{{ page.title | jsonify }},"description":{{ seo_desc | jsonify }},
+"url":{{ page.url | absolute_url | jsonify }},"mainEntityOfPage":{{ page.url | absolute_url | jsonify }},"image":{{ seo_img | absolute_url | jsonify }},
+"datePublished":{{ page.date | date_to_xmlschema | jsonify }},"dateModified":{{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},
+"author":{"@id":"{{ site.url }}/#person"},"publisher":{"@id":"{{ site.url }}/#person"},"inLanguage":"en",
+{%- if page.topic %}"articleSection":{{ page.topic | jsonify }},{% endif -%}
+{%- if page.paper_url %}"about":{"@type":"ScholarlyArticle","headline":{{ page.paper_title | jsonify }},"url":{{ page.paper_url | jsonify }}{% if page.paper_doi %},"identifier":{"@type":"PropertyValue","propertyID":"DOI","value":{{ page.paper_doi | jsonify }}}{% endif %}},"citation":{{ page.paper_url | jsonify }},{% endif -%}
+"isPartOf":{"@id":"{{ site.url }}/#website"}
+{%- else -%}
+"@type":"{% if page.list_type %}CollectionPage{% else %}WebPage{% endif %}","name":{{ page.title | jsonify }},"description":{{ seo_desc | jsonify }},"url":{{ page.url | absolute_url | jsonify }},
+"about":{"@id":"{{ site.url }}/#person"},"isPartOf":{"@id":"{{ site.url }}/#website"},"inLanguage":"en"
+{%- endif -%}
+}</script>

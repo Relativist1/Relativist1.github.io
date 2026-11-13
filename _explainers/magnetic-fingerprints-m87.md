@@ -1,7 +1,11 @@
 ---
 title: "Reading the Magnetic Fingerprints of M87*"
 standfirst: "How gas and magnetic fields shape the first image of a black hole"
-summary: "How the arrangement of the gas and its magnetic field shapes the image."
+summary: "The first image of M87* could have been drawn by many different arrangements of gas and magnetic field. By comparing a large family of models with the polarised light, we found that the gas slowly spirals inward and that the field's shape can be read from the image."
+description: "How gas and magnetic fields shape the image of the black hole M87*: a plain-language explainer of Saurabh et al. (2026), A&A 705, A166."
+paper_title: "Semi-analytic studies of the accretion disk and magnetic field geometry in M 87*"
+paper_doi: "10.1051/0004-6361/202556880"
+paper_cite: "Saurabh, M. Wielgus, A. Tursunov, A. P. Lobanov & R. Emami (2026). Semi-analytic studies of the accretion disk and magnetic field geometry in M 87*. Astronomy & Astrophysics 705, A166."
 topic: "The gas"
 date: 2026-11-12
 image: /img/o_accr.jpg

@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- assign stat = "/|/research.html|/explainers.html|/publications/|/simulations.html|/simulate-accretion.html|/writing.html" | split: "|" %}
+{%- for u in stat %}
+  <url><loc>{{ u | absolute_url }}</loc><lastmod>{{ site.time | date_to_xmlschema }}</lastmod></url>
+{%- endfor %}
+{%- for x in site.explainers %}
+  <url><loc>{{ x.url | absolute_url }}</loc><lastmod>{{ x.last_modified_at | default: x.date | date_to_xmlschema }}</lastmod></url>
+{%- endfor %}
+{%- for p in site.posts %}
+  <url><loc>{{ p.url | absolute_url }}</loc><lastmod>{{ p.date | date_to_xmlschema }}</lastmod></url>
+{%- endfor %}
+  <url><loc>{{ "/cv.pdf" | absolute_url }}</loc></url>
+</urlset>

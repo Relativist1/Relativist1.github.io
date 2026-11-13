@@ -1,7 +1,10 @@
 ---
 title: "A Black Hole Without a Horizon?"
 standfirst: "The first simulation of gas falling onto a horizonless object"
-summary: "The first simulation of gas falling onto an object with no event horizon."
+summary: "Could M87* be a collapsed object with no event horizon? We ran the first 3D magnetised simulation of gas falling onto such an object. Its image looks almost identical to a black hole's, except for a faint glow from inside the shadow that future telescopes could see."
+description: "Could M87* have no event horizon? A plain-language explainer of the first GRMHD simulation of gas falling onto the horizonless JMN-1 object."
+paper_title: "GRMHD accretion beyond the black hole paradigm: Light from within the shadow"
+paper_cite: "Saurabh, M. Wielgus, P. Bambhaniya, E. M. de Gouveia Dal Pino, A. P. Lobanov & P. S. Joshi (2026). GRMHD accretion beyond the black hole paradigm: Light from within the shadow. Submitted to Physical Review Letters, arXiv:2604.15430."
 topic: "Spacetime"
 date: 2026-11-13
 image: /img/o_jmn.jpg

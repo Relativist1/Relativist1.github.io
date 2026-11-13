@@ -1,0 +1,12 @@
+{%- comment -%} Explainer cards with thumbnails. Pass items=...; add feature=true to show the newest one large. {%- endcomment -%}
+<ul class="cards">
+{%- for x in include.items -%}
+{%- assign words = x.content | number_of_words -%}{%- assign mins = words | divided_by: 200 | plus: 1 -%}
+  <li class="card{% if include.feature and forloop.first %} feature{% endif %}"><a href="{{ x.url }}">
+    <span class="thumb"><img src="{{ x.thumbnail | default: x.image }}" alt="{{ x.image_alt | default: x.title | escape }}" loading="lazy"></span>
+    <span class="cb"><span class="meta">{{ x.topic }} <span>· {{ mins }} min read · {{ x.date | date: "%-d %b %Y" }}</span></span>
+    <b>{{ x.title }}</b><p>{{ x.summary }}</p></span></a></li>
+{%- else -%}
+  <li class="empty-note">The first explainers are on their way.</li>
+{%- endfor -%}
+</ul>

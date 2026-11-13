@@ -1,0 +1,38 @@
+---
+layout: null
+permalink: /llms.txt
+---
+# Saurabh (relativist1) · Theoretical Astrophysicist
+
+> Saurabh is a theoretical astrophysicist. He is a Postdoctoral Research Associate in AI³ (Astronomical Imaging × Astrophysical Inference × Artificial Intelligence) at the BASP lab, Heriot-Watt University, Edinburgh, from December 2026, and a member of the Event Horizon Telescope (EHT) Collaboration. He works on black-hole imaging and very-long-baseline interferometry (VLBI): theory, simulations (GRMHD and ray tracing) and image analysis. PhD in astrophysics from the Max Planck Institute for Radio Astronomy, Bonn (2026). Saurabh has a single name and no surname; in papers he appears as "Saurabh" (sometimes indexed as "Saurabh K." or "Kumar, Saurabh"). Online handle: relativist1.
+
+## About
+- [Home]({{ "/" | absolute_url }}): biography, selected research, press coverage, outreach and career
+- [CV (PDF)]({{ "/cv.pdf" | absolute_url }})
+
+## Research
+- [On the questions I pursue]({{ "/research.html" | absolute_url }}): overview of the research programme (spacetime, accretion flows, the telescope, time variability)
+- [Publications]({{ "/publications/" | absolute_url }}): full list with DOIs and arXiv links
+- [Explainers]({{ "/explainers.html" | absolute_url }}): plain-language accounts of individual papers
+{%- assign xs = site.explainers | sort: "date" | reverse %}{% for x in xs %}
+- [{{ x.title }}]({{ x.url | absolute_url }}): {{ x.summary }}{% if x.paper_url %} Paper: {{ x.paper_url }}{% endif %}
+{%- endfor %}
+
+## Simulations
+- [Simulations]({{ "/simulations.html" | absolute_url }}): simulated black-hole images and movies
+- [How to simulate black hole accretion]({{ "/simulate-accretion.html" | absolute_url }}): a guide to geodesics, ray tracing and radiative transfer
+
+## Essays
+- [Out of the Box]({{ "/writing.html" | absolute_url }}): essays on the philosophy of science
+{%- for p in site.posts %}
+- [{{ p.title }}]({{ p.url | absolute_url }}){% if p.summary %}: {{ p.summary }}{% endif %}
+{%- endfor %}
+
+## Profiles
+- ORCID: https://orcid.org/0000-0001-7156-4848
+- INSPIRE-HEP: https://inspirehep.net/authors/1853355
+- GitHub: https://github.com/Relativist1
+- Instagram: https://www.instagram.com/relativist1/
+
+## Citing this site
+Cite a research result through its paper (DOI on the Publications page). To cite an explainer: Saurabh (year), "Title", relativist1 explainers, URL.
