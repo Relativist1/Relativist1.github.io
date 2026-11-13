@@ -516,3 +516,11 @@ body:has(main[data-dim]) #scrim{background:rgba(5,5,6,.66)}
 @media (max-width:900px){.blurb-l{font-size:1.12em}.tale{font-size:1.08em}}
 
 .tale h2{margin-top:0;padding-top:2.2em}
+
+/* explainer: slightly smaller reading sizes */
+.tale{font-size:1.12em}
+.blurb-l{font-size:1.2em}
+.cnote{font-size:.86em}
+.chapters a{font-size:1.04em}
+.cused-l{font-size:1.02em}
+@media (max-width:900px){.tale{font-size:1.04em}.blurb-l{font-size:1.08em}}
