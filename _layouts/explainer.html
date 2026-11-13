@@ -5,9 +5,9 @@
 {% include seo.html %}<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{{ page.title }} · Saurabh</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Alegreya+Sans:wght@400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23050506%22/%3E%3Cellipse cx=%2216%22 cy=%2216%22 rx=%2214%22 ry=%225%22 fill=%22none%22 stroke=%22%23d9a566%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23050506%22/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23050506%22/%3E%3Cellipse cx=%2216%22 cy=%2216%22 rx=%2214%22 ry=%225%22 fill=%22none%22 stroke=%22%233fb3ad%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23050506%22/%3E%3C/svg%3E">
 {% if page.math %}<script>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]]},svg:{fontCache:"global"}};</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg-full.js" async></script>{% endif %}
-<link rel="stylesheet" href="/site.css?v=1794576118">
+<link rel="stylesheet" href="/site.css?v=1794586448">
 <style>html,body{margin:0}:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
 </head><body>
 <div id="scene" aria-hidden="true"><canvas id="view"></canvas></div>
@@ -18,19 +18,26 @@
   <nav id="nav" aria-label="Sections"><a href="/index.html">Home</a><div class="dd"><button type="button" class="dd-btn here" aria-expanded="false" aria-controls="dd-res">Research</button><div class="dd-menu" id="dd-res"><a href="/research.html">My Research</a><a href="/explainers.html">Explainers</a><a href="/publications/">Publications</a></div></div><div class="dd"><button type="button" class="dd-btn" aria-expanded="false" aria-controls="dd-sim">Simulations</button><div class="dd-menu" id="dd-sim"><a href="/simulations.html">Overview</a><a href="/simulate-accretion.html">How to simulate black hole accretion</a></div></div><a href="/index.html#press">Press</a><a href="/index.html#outreach">Outreach</a><a href="/index.html#about">Journey</a><a href="/writing.html">Out of the Box</a><a href="/index.html#contact">Contact</a><a class="cv" href="/cv.pdf" target="_blank" rel="noopener">CV</a></nav>
 </div></header>
 <main data-stop="1" data-dim=".2">
-<section class="page"><div class="col"><article class="article narrow post" style="max-width:760px">
-  <p class="crumb"><a href="/explainers.html">← Explainers</a></p>
-  <p class="kicker">Explainer{% if page.topic %} · {{ page.topic }}{% endif %}</p>
-  <h1 class="ptitle">{{ page.title }}</h1>
-  {% if page.standfirst %}<p class="kicker" style="margin-top:14px;text-transform:none;letter-spacing:0;font-size:1.1rem">{{ page.standfirst }}</p>{% endif %}
-  <p class="byline">Saurabh · {{ page.date | date: "%-d %B %Y" }}</p>
-  {% if page.image %}<figure class="figure post-image"><img src="{{ page.image }}" alt="{{ page.image_alt | default: page.title }}">{% if page.caption %}<figcaption>{{ page.caption }}</figcaption>{% endif %}</figure>{% endif %}
-  <div class="post-body">
-{{ content }}
+<section class="page"><div class="col xp">
+  <a class="back" href="/explainers.html"><span class="back-ring" aria-hidden="true">&#8592;</span>All explainers</a>
+  <header class="opener">
+    <p class="opener-no">Explainer{% if page.number %} No.&#8201;{{ page.number | prepend: "0" | slice: -2, 2 }}{% endif %}{% if page.topic %} &middot; {{ page.topic }}{% endif %}</p>
+    <h1 class="opener-title">{{ page.title }}</h1>
+  </header>
+  {% if page.breath %}<section class="blurb" aria-label="In one breath"><p class="blurb-k">In one breath</p><ul class="blurb-l">{% for b in page.breath %}<li>{{ b | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li>{% endfor %}</ul></section>{% endif %}
+  <div class="frontmatter">
+    <nav class="chapters" aria-label="Chapters"><p class="fm-k">Chapters</p><ol id="xp-toc"></ol></nav>
+    {% if page.concepts %}<div class="cused"><p class="fm-k">Concepts used</p><p class="cused-l">{% for c in page.concepts %}<a href="#c-{{ c.term | slugify }}">{{ c.term }}</a>{% endfor %}</p><p class="cused-n">You will find them explained in notes beside the text, where they first appear.</p></div>{% endif %}
   </div>
-  {% if page.paper_url %}<p class="paper"><a class="arrow" href="{{ page.paper_url }}" target="_blank" rel="noopener">{{ page.paper_label | default: "Read the paper" }} ↗</a><span>{{ page.paper_venue }}</span></p>{% endif %}
-  {% if page.reel %}<p class="paper"><a class="arrow" href="{{ page.reel }}" target="_blank" rel="noopener">Watch the reel ↗</a></p>{% endif %}
-  <aside class="cite-box" aria-label="How to cite">
+  <article class="tale">
+{{ content }}
+  </article>
+  <p class="fin" aria-hidden="true">&#8258;</p>
+  <div class="afterword">
+    <p class="pubdate">Published {{ page.date | date: "%-d %B %Y" }}</p>
+    {% if page.paper_url %}<p class="paper"><a class="arrow" href="{{ page.paper_url }}" target="_blank" rel="noopener">{{ page.paper_label | default: "Read the paper" }} &#8599;</a><span>{{ page.paper_venue }}</span></p>{% endif %}
+    {% if page.reel %}<p class="paper"><a class="arrow" href="{{ page.reel }}" target="_blank" rel="noopener">Watch the reel &#8599;</a></p>{% endif %}
+    <aside class="cite-box" aria-label="How to cite">
     <b>How to cite</b>
     {% if page.paper_cite %}<p><strong>The research:</strong> {{ page.paper_cite }}{% if page.paper_doi %} <a href="https://doi.org/{{ page.paper_doi }}">doi:{{ page.paper_doi }}</a>{% elsif page.paper_url %} <a href="{{ page.paper_url }}">{{ page.paper_url }}</a>{% endif %}</p>{% endif %}
     <p><strong>This explainer:</strong> Saurabh ({{ page.date | date: "%Y" }}). “{{ page.title }}.” relativist1 explainers. {{ page.url | absolute_url }}</p>
@@ -42,10 +49,17 @@
   note         = {Explainer of {{ page.paper_url }} }
 }</pre></details>
   </aside>
-  <hr class="close">
-</article></div></section>
+  </div>
+</div></section>
+
 </main>
 <footer class="foot">© 2026 Saurabh</footer>
-<script src="/bh.js?v=1794576118"></script>
-<script src="/site.js?v=1794576118"></script>
+<script src="/bh.js?v=1794586448"></script>
+<script src="/site.js?v=1794586448"></script>
+<script>
+/* chapter list built from the headings; concept links flash their note */
+(()=>{const ol=document.getElementById('xp-toc');if(ol){const R=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'];
+document.querySelectorAll('.tale h2').forEach((h,i)=>{const li=document.createElement('li');li.innerHTML='<a href="#'+h.id+'"><span class="r">'+R[i]+'</span><span class="t"></span></a>';li.querySelector('.t').textContent=h.textContent;ol.appendChild(li)})}
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#c-"]');if(!a)return;const t=document.querySelector(a.getAttribute('href'));if(t){t.classList.remove('flash');void t.offsetWidth;t.classList.add('flash')}});})();
+</script>
 </body></html>

@@ -17,8 +17,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://relativist1.github.io/simulate-accretion.html","url":"https://relativist1.github.io/simulate-accretion.html","name":"How to Simulate Black Hole Accretion · Saurabh","description":"A step-by-step guide to simulating black-hole images: spacetime, geodesics, ray tracing and radiative transfer, from Schwarzschild to GRMHD.","isPartOf":{"@id":"https://relativist1.github.io/#website"},"about":{"@id":"https://relativist1.github.io/#person"},"inLanguage":"en"},{"@type":"Person","@id":"https://relativist1.github.io/#person","name":"Saurabh","alternateName":["relativist1","Saurabh K.","Saurabh Kumar"],"url":"https://relativist1.github.io/","image":"https://relativist1.github.io/img/o_talk.jpg","jobTitle":"Postdoctoral Research Associate","description":"Theoretical astrophysicist. Postdoctoral Research Associate in AI³ (Astronomical Imaging × Astrophysical Inference × Artificial Intelligence) at the BASP lab, Heriot-Watt University, Edinburgh; member of the Event Horizon Telescope Collaboration; works on black-hole imaging, VLBI, accretion simulations and tests of gravity.","worksFor":{"@type":"Organization","name":"AI³, BASP lab, Heriot-Watt University","url":"https://ai-cubed.org/","parentOrganization":{"@type":"CollegeOrUniversity","name":"Heriot-Watt University","url":"https://www.hw.ac.uk/"}},"memberOf":{"@type":"Organization","name":"Event Horizon Telescope Collaboration","url":"https://eventhorizontelescope.org/"},"alumniOf":[{"@type":"ResearchOrganization","name":"Max Planck Institute for Radio Astronomy","url":"https://www.mpifr-bonn.mpg.de/"},{"@type":"CollegeOrUniversity","name":"Charusat University"},{"@type":"CollegeOrUniversity","name":"University of Delhi"}],"knowsAbout":["Black holes","Event Horizon Telescope","Very-long-baseline interferometry (VLBI)","Black-hole imaging","General relativistic magnetohydrodynamics (GRMHD)","General relativistic ray tracing","Accretion flows","Relativistic jets","M87*","Sagittarius A*","Tests of general relativity","Philosophy of science"],"sameAs":["https://orcid.org/0000-0001-7156-4848","https://inspirehep.net/authors/1853355","https://github.com/Relativist1","https://www.instagram.com/relativist1/","https://www.mpifr-bonn.mpg.de/9233290/Saurabh"]},{"@type":"WebSite","@id":"https://relativist1.github.io/#website","url":"https://relativist1.github.io/","name":"Saurabh · Theoretical Astrophysicist","author":{"@id":"https://relativist1.github.io/#person"},"inLanguage":"en"}]}</script><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>How to Simulate Black Hole Accretion · Saurabh</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Alegreya+Sans:wght@400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23050506%22/%3E%3Cellipse cx=%2216%22 cy=%2216%22 rx=%2214%22 ry=%225%22 fill=%22none%22 stroke=%22%23d9a566%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23050506%22/%3E%3C/svg%3E">
-<link rel="stylesheet" href="site.css?v=1794576118">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23050506%22/%3E%3Cellipse cx=%2216%22 cy=%2216%22 rx=%2214%22 ry=%225%22 fill=%22none%22 stroke=%22%233fb3ad%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23050506%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="site.css?v=1794586448">
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['$$','$$']]},svg:{fontCache:'global',scale:1.15},options:{enableMenu:false}};</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg-full.js" async></script>
 <style>html,body{margin:0}:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -112,15 +112,15 @@ function size(){const w=cv.clientWidth;W=w;H=Math.round(Math.min(w*.56,520));dpr
 function path(p){ctx.beginPath();p.forEach((q,i)=>{const x=W/2+q[0]*S,y=H/2-q[1]*S;i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.stroke()}
 function draw(){const b=+sl.value;out.textContent=b.toFixed(2)+' M';ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
   ctx.lineWidth=1;for(const r of family){ctx.strokeStyle=r.fate==='capture'?'rgba(154,148,136,.28)':'rgba(236,230,216,.32)';path(r.pts)}
-  ctx.setLineDash([4,5]);ctx.strokeStyle='rgba(217,165,102,.7)';ctx.beginPath();ctx.arc(W/2,H/2,3*M*S,0,7);ctx.stroke();ctx.setLineDash([]);
-  ctx.fillStyle='#000';ctx.strokeStyle='rgba(217,165,102,.9)';ctx.beginPath();ctx.arc(W/2,H/2,2*M*S,0,7);ctx.fill();ctx.stroke();
-  const r=trace(b);ctx.lineWidth=2.2;ctx.strokeStyle='#efd3a4';path(r.pts);
+  ctx.setLineDash([4,5]);ctx.strokeStyle='rgba(63,179,173,.7)';ctx.beginPath();ctx.arc(W/2,H/2,3*M*S,0,7);ctx.stroke();ctx.setLineDash([]);
+  ctx.fillStyle='#000';ctx.strokeStyle='rgba(63,179,173,.9)';ctx.beginPath();ctx.arc(W/2,H/2,2*M*S,0,7);ctx.fill();ctx.stroke();
+  const r=trace(b);ctx.lineWidth=2.2;ctx.strokeStyle='#9ad9d4';path(r.pts);
   ctx.font='13px "Alegreya Sans",sans-serif';ctx.fillStyle='rgba(236,230,216,.85)';ctx.textAlign='left';
   ctx.fillText(r.fate==='capture'?'falls into the horizon':r.fate==='orbit'?'circling the photon sphere':'escapes',12,H-14)}
 sl.addEventListener('input',draw);addEventListener('resize',size);size()})();
 </script>
 </main>
 <footer class="foot">© 2026 Saurabh</footer>
-<script src="bh.js?v=1794576118"></script>
-<script src="site.js?v=1794576118"></script>
+<script src="bh.js?v=1794586448"></script>
+<script src="site.js?v=1794586448"></script>
 </body></html>

@@ -1,12 +1,18 @@
-{%- comment -%} Explainer cards with thumbnails. Pass items=...; add feature=true to show the newest one large. {%- endcomment -%}
-<ul class="cards">
+{%- comment -%} List of explainers. items=... ; feature=true shows the newest one large. Thumbnails come from `thumbnail`; until one is supplied, a placeholder is shown. {%- endcomment -%}
+<div class="xl">
 {%- for x in include.items -%}
-{%- assign words = x.content | number_of_words -%}{%- assign mins = words | divided_by: 200 | plus: 1 -%}
-  <li class="card{% if include.feature and forloop.first %} feature{% endif %}"><a href="{{ x.url }}">
-    <span class="thumb"><img src="{{ x.thumbnail | default: x.image }}" alt="{{ x.image_alt | default: x.title | escape }}" loading="lazy"></span>
-    <span class="cb"><span class="meta">{{ x.topic }} <span>· {{ mins }} min read · {{ x.date | date: "%-d %b %Y" }}</span></span>
-    <b>{{ x.title }}</b><p>{{ x.summary }}</p></span></a></li>
+{%- assign words = x.content | strip_html | number_of_words -%}{%- assign mins = words | divided_by: 230 | plus: 1 -%}
+{%- assign big = false -%}{%- if include.feature and forloop.first -%}{%- assign big = true -%}{%- endif -%}
+  <article class="xl-item{% if big %} xl-feature{% endif %}">
+    <a class="xl-thumb" href="{{ x.url }}" tabindex="-1" aria-hidden="true">{% if x.thumbnail %}<img src="{{ x.thumbnail }}" alt="" loading="lazy">{% else %}<span class="thumb-ph"><span>Thumbnail to come</span></span>{% endif %}</a>
+    <div class="xl-text">
+      <p class="xp-meta">{% if x.number %}<span class="xl-no">No.&#8201;{{ x.number | prepend: "0" | slice: -2, 2 }}</span>{% endif %}<span class="xp-topic">{{ x.topic }}</span><span>{{ mins }} min read</span><span>{{ x.date | date: "%-d %B %Y" }}</span></p>
+      <h2><a href="{{ x.url }}">{{ x.title }}</a></h2>
+      <p class="xl-sum">{{ x.summary }}</p>
+      <a class="arrow" href="{{ x.url }}">Read the explainer ↗</a>
+    </div>
+  </article>
 {%- else -%}
-  <li class="empty-note">The first explainers are on their way.</li>
+  <p class="note">The first explainers are on their way.</p>
 {%- endfor -%}
-</ul>
+</div>

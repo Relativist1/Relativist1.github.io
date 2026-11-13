@@ -9,8 +9,8 @@ list_type: true
 {% include seo.html %}<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Explainers · Saurabh</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Alegreya+Sans:wght@400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23050506%22/%3E%3Cellipse cx=%2216%22 cy=%2216%22 rx=%2214%22 ry=%225%22 fill=%22none%22 stroke=%22%23d9a566%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23050506%22/%3E%3C/svg%3E">
-<link rel="stylesheet" href="site.css?v=1794576118">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23050506%22/%3E%3Cellipse cx=%2216%22 cy=%2216%22 rx=%2214%22 ry=%225%22 fill=%22none%22 stroke=%22%233fb3ad%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23050506%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="site.css?v=1794586448">
 <style>html,body{margin:0}:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
 </head><body>
 <div id="scene" aria-hidden="true"><canvas id="view"></canvas></div>
@@ -21,15 +21,16 @@ list_type: true
   <nav id="nav" aria-label="Sections"><a href="index.html">Home</a><div class="dd"><button type="button" class="dd-btn here" aria-expanded="false" aria-controls="dd-res">Research</button><div class="dd-menu" id="dd-res"><a href="research.html">My Research</a><a href="explainers.html">Explainers</a><a href="/publications/">Publications</a></div></div><div class="dd"><button type="button" class="dd-btn" aria-expanded="false" aria-controls="dd-sim">Simulations</button><div class="dd-menu" id="dd-sim"><a href="simulations.html">Overview</a><a href="simulate-accretion.html">How to simulate black hole accretion</a></div></div><a href="index.html#press">Press</a><a href="index.html#outreach">Outreach</a><a href="index.html#about">Journey</a><a href="writing.html">Out of the Box</a><a href="index.html#contact">Contact</a><a class="cv" href="cv.pdf" target="_blank" rel="noopener">CV</a></nav>
 </div></header>
 <main data-stop="1" data-dim=".2">
-<section class="page"><div class="col"><div>
-  <p class="crumb"><a href="research.html">← Research</a></p>
+<section class="page"><div class="col">
+  <a class="back" href="research.html"><span class="back-ring" aria-hidden="true">&#8592;</span>Research</a>
   <h1 class="ptitle">Explainers</h1>
-  <p class="note" style="max-width:62ch">A research paper is written for a handful of specialists. These pages are for everyone else. Each one tells the story behind one paper in plain language: the question we asked, how we went about it, and what we found. Most have a short reel to go with them; this is where to come for the details.</p>
-  {% assign xs = site.explainers | sort: "date" | reverse %}{% include cards.html items=xs feature=true %}
+  <p class="xl-lead">Christopher Nolan needed a future Nobel laureate and a render farm to put one black hole on a cinema screen. All I needed was the AI revolution. Nevertheless, the physics here is mine, and so are any mistakes: one paper, one story, written for anyone who remembers some first-year physics.</p>
+  {% assign xs = site.explainers | sort: "date" | reverse %}{% include cards.html items=xs %}
+  <aside class="watch"><p class="xp-label">Prefer to watch?</p><p>Most explainers start life as a short reel on Instagram.</p><a class="arrow" href="https://www.instagram.com/relativist1/" target="_blank" rel="noopener">Watch the reels ↗</a></aside>
   <hr class="close">
-</div></div></section>
+</div></section>
 </main>
 <footer class="foot">© 2026 Saurabh</footer>
-<script src="bh.js?v=1794576118"></script>
-<script src="site.js?v=1794576118"></script>
+<script src="bh.js?v=1794586448"></script>
+<script src="site.js?v=1794586448"></script>
 </body></html>

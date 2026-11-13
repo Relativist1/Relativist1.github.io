@@ -1,0 +1,4 @@
+{%- comment -%} A margin note explaining one concept. Use in an explainer as: {% include concept.html t="Event horizon" %} {%- endcomment -%}
+{%- for c in page.concepts -%}{%- if c.term == include.t -%}
+<aside class="cnote" id="c-{{ c.term | slugify }}"><span class="cnote-k">Concept</span><b>{{ c.term }}</b><span class="cnote-t">{{ c.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</span></aside>
+{%- endif -%}{%- endfor -%}
