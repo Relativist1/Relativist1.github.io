@@ -515,16 +515,4 @@ body:has(main[data-dim]) #scrim{background:rgba(5,5,6,.66)}
 .pubdate{margin:0 0 1em;text-align:center;font-family:var(--sans);font-size:.85em;letter-spacing:.14em;text-transform:uppercase;color:#8a8478}
 @media (max-width:900px){.blurb-l{font-size:1.12em}.tale{font-size:1.08em}}
 
-/* explainer: larger reading sizes (second step) */
-.tale{font-size:1.32em;line-height:1.7}
-.blurb-l{font-size:1.42em}
-.cnote{font-size:.86em;width:min(33%,380px)}
-.chapters a{font-size:1.2em}
-.cused-l{font-size:1.18em}
-.cused-n{font-size:1.02em}
-.fm-k,.blurb-k{font-size:.9em}
-.tale figcaption{font-size:.8em}
-.afterword{font-size:1.12em}
-@media (max-width:900px){.tale{font-size:1.12em}.blurb-l{font-size:1.18em}.cnote{font-size:.92em}}
-
 .tale h2{margin-top:0;padding-top:2.2em}
