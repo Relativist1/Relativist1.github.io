@@ -313,3 +313,20 @@ ul.plain{margin:6px 0 18px;padding-left:22px;display:grid;gap:10px}
 .paper{margin-top:30px!important;display:flex;gap:18px;align-items:baseline;flex-wrap:wrap}
 .paper span{font-family:var(--sans);font-size:.95rem;color:#b9b2a4}
 @media (max-width:760px){.t-cols{grid-template-columns:1fr;gap:28px}.t-cols::before,.t-cols::after,.t-col::before{display:none}.t-root{font-size:1.05rem}}
+
+/* inner pages: softer white for long reading; reading pages (research, explainers) sit on a darker sky */
+main[data-stop]{color:#d4cdbf;--ivory:#e2dbcd}
+main[data-stop] .article>p,main[data-stop] .post-body p,main[data-stop] .post-body li{color:#d4cdbf}
+body:has(main[data-dim]) #scrim{background:rgba(5,5,6,.66)}
+.post-body ul{padding-left:22px;display:grid;gap:10px;margin:6px 0 18px}
+.byline{font-family:var(--sans);font-size:.95rem;color:#b9b2a4;margin-top:12px}
+.cite-box{margin-top:44px;padding:20px 22px;border:1px solid var(--rule);border-radius:6px;background:rgba(12,11,12,.7);font-family:var(--sans);font-size:.95rem;line-height:1.55;color:#c9c2b4}
+.cite-box b{display:block;font-family:var(--serif);font-weight:500;font-size:1.15rem;color:var(--ivory);margin-bottom:6px}
+.cite-box p{margin:0 0 8px}
+
+/* Markdown pages (essays and explainers) */
+.post-body{margin-top:24px}
+.post-body p{max-width:none;margin-top:16px;text-align:left}
+.post-body h2{margin-top:56px;font-size:clamp(1.7rem,2.8vw,2.2rem);padding-bottom:14px;border-bottom:1px solid var(--rule)}
+.post-body h2+p{margin-top:20px}
+.post-image{margin-top:24px}

@@ -1,5 +1,6 @@
 # Jekyll settings. GitHub Pages builds the site from this repository automatically.
-# Only the posts in _posts and writing.html use Jekyll; every other page is plain HTML.
+# Jekyll is used for the essays (_posts, writing.html), the explainers (_explainers, explainers.html)
+# and the list of explainers on research.html; every other page is plain HTML.
 title: Saurabh
 url: https://relativist1.github.io
 markdown: kramdown
@@ -7,4 +8,11 @@ kramdown:
   input: GFM
   hard_wrap: false
 permalink: /writing/:year/:title/
-exclude: [README.md, WRITING.md, _drafts]
+exclude: [README.md, WRITING.md, EXPLAINERS.md, _drafts]
+collections:
+  explainers:
+    output: true
+    permalink: /explainers/:name/
+defaults:
+  - scope: {path: "", type: explainers}
+    values: {layout: explainer}

@@ -1,5 +1,7 @@
 # How to publish an essay, poem or note
 
+(Explainers of papers have their own guide: see `EXPLAINERS.md`.)
+
 Everything you write lives in the `_posts` folder as a plain text file (Markdown).
 GitHub turns it into a page automatically, styled like the rest of the site, and adds it to the
 **Out of the Box** page. No code, no tools: you can do it all on github.com, even from a phone.

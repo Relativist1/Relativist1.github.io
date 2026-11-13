@@ -1,9 +1,12 @@
+---
+permalink: /research.html
+---
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="description" content="Saurabh, astrophysicist: Postdoctoral Research Associate in AI³ at the BASP lab, Heriot-Watt University, and member of the Event Horizon Telescope Collaboration. Black-hole imaging, simulations and the philosophy of science."><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>My Research · Saurabh</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Alegreya+Sans:wght@400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23050506%22/%3E%3Cellipse cx=%2216%22 cy=%2216%22 rx=%2214%22 ry=%225%22 fill=%22none%22 stroke=%22%23d9a566%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23050506%22/%3E%3C/svg%3E">
-<link rel="stylesheet" href="site.css?v=1794572467">
+<link rel="stylesheet" href="site.css?v=1794574097">
 <style>html,body{margin:0}:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
 </head><body>
 <div id="scene" aria-hidden="true"><canvas id="view"></canvas></div>
@@ -11,9 +14,9 @@
 <header class="top"><div class="top-in">
   <a class="wordmark" href="index.html">Saurabh</a>
   <button class="menu" type="button" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
-  <nav id="nav" aria-label="Sections"><a href="index.html">Home</a><a href="research.html" class="here" aria-current="page">Research</a><div class="dd"><button type="button" class="dd-btn" aria-expanded="false" aria-controls="dd-sim">Simulations</button><div class="dd-menu" id="dd-sim"><a href="simulations.html">Overview</a><a href="simulate-accretion.html">How to simulate black hole accretion</a></div></div><a href="index.html#press">Press</a><a href="index.html#outreach">Outreach</a><a href="index.html#about">Journey</a><a href="writing.html">Out of the Box</a><a href="index.html#contact">Contact</a><a class="cv" href="cv.pdf" target="_blank" rel="noopener">CV</a></nav>
+  <nav id="nav" aria-label="Sections"><a href="index.html">Home</a><div class="dd"><button type="button" class="dd-btn here" aria-expanded="false" aria-controls="dd-res">Research</button><div class="dd-menu" id="dd-res"><a href="research.html" class="here" aria-current="page">My Research</a><a href="explainers.html">Explainers</a></div></div><div class="dd"><button type="button" class="dd-btn" aria-expanded="false" aria-controls="dd-sim">Simulations</button><div class="dd-menu" id="dd-sim"><a href="simulations.html">Overview</a><a href="simulate-accretion.html">How to simulate black hole accretion</a></div></div><a href="index.html#press">Press</a><a href="index.html#outreach">Outreach</a><a href="index.html#about">Journey</a><a href="writing.html">Out of the Box</a><a href="index.html#contact">Contact</a><a class="cv" href="cv.pdf" target="_blank" rel="noopener">CV</a></nav>
 </div></header>
-<main data-stop="1">
+<main data-stop="1" data-dim=".2">
 <section class="page"><div class="col"><article class="article">
   <p class="crumb"><a href="index.html#research">← Home</a></p>
   <h1 class="ptitle">My Research</h1>
@@ -37,15 +40,18 @@
   <h2 class="sub">What it means to pursue them</h2>
   <p>The order matters. First the spacetime, then the gas within it, then the telescope that observes both. Only then can we say anything meaningful about what sits at the heart of a galaxy. Each step settles a question small enough to be decided. Together, they turn a question about the nature of black holes into a question about what our evidence can bear, and those are not quite the same.</p>
 
-  <h2 class="sub">Read more</h2>
+  <h2 class="sub">Explainers</h2>
+  <p>Each explainer tells the story behind one paper in plain language: the question, how we went about it, and what we found.</p>
   <ul class="posts">
-    <li><a href="research-magnetic-fields.html"><span class="pd">The gas</span><span><b>Reading the Magnetic Fingerprints of M87*</b><span class="px">How the arrangement of the gas and its magnetic field shapes the image.</span></span><span class="go" aria-hidden="true">↗</span></a></li>
-    <li><a href="research-horizonless.html"><span class="pd">Spacetime</span><span><b>A Black Hole Without a Horizon?</b><span class="px">The first simulation of gas falling onto an object with no event horizon.</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+  {% assign xs = site.explainers | sort: "date" | reverse %}{% for x in xs %}
+    <li><a href="{{ x.url }}"><span class="pd">{{ x.topic }}</span><span><b>{{ x.title }}</b><span class="px">{{ x.summary }}</span></span><span class="go" aria-hidden="true">↗</span></a></li>
+  {% endfor %}
   </ul>
+  <p><a class="arrow" href="explainers.html">All explainers ↗</a></p>
   <hr class="close">
 </article></div></section>
 </main>
 <footer class="foot">© 2026 Saurabh</footer>
-<script src="bh.js?v=1794572467"></script>
-<script src="site.js?v=1794572467"></script>
+<script src="bh.js?v=1794574097"></script>
+<script src="site.js?v=1794574097"></script>
 </body></html>

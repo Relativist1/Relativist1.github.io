@@ -17,7 +17,7 @@ const KEY=[
  {r:4.4,th:73,ph:150,fov:.84,roll:5,look:0,at:[.82,.5],atM:[.6,.4],dim:.32},    // close to the ring, looking past it
  {r:3.4,th:70,ph:165,fov:.9,roll:0,look:0,at:[.5,.5],atM:[.5,.5],dim:.42},      // the shadow fills the view
  {r:2.7,th:77,ph:190,fov:.95,roll:0,look:180,at:[.5,.44],atM:[.5,.36],dim:.8}]; // just outside the hole, facing out across the disk // just outside the hole, facing out across the disk
-const pageDim=fixedStop===null?1:.5;
+const pageDim=fixedStop===null?1:(main.dataset.dim?+main.dataset.dim:.5);
 const user={th:null,r:null};
 function camAt(t){const small=vw<760,i=clamp(Math.floor(t),0,KEY.length-2),f0=clamp(t-i,0,1),f=f0*f0*f0*(f0*(6*f0-15)+10),A=KEY[i],B=KEY[i+1],k=small?'atM':'at',d=lerp(A.dim,B.dim,f);
   const c={r:Math.exp(lerp(Math.log(A.r),Math.log(B.r),f)),th:lerp(A.th,B.th,f),ph:lerp(A.ph,B.ph,f),fov:lerp(A.fov,B.fov,f),roll:lerp(A.roll,B.roll,f),look:lerp(A.look,B.look,f),
