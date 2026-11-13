@@ -11,7 +11,7 @@ let vw=innerWidth,vh=innerHeight,T=fixedStop||0,Ts=T;
 const KEY=[
  {r:120,th:80,ph:-25,fov:.30,roll:-14,look:0,at:[.95,.4],atM:[.5,.2],dim:.95},   // far view
  {r:42,th:17,ph:20,fov:.36,roll:0,look:0,at:[.8,.5],atM:[.5,.28],dim:.42},      // as seen from Earth, i \u2248 17\u00b0
- {r:30,th:80,ph:80,fov:.5,roll:4,look:0,at:[.72,.42],atM:[.5,.3],dim:.85},      // open stage: the visitor takes the camera
+ {r:30,th:80,ph:80,fov:.5,roll:4,look:0,at:[.72,.42],atM:[.5,.3],dim:.5},      // open stage: the visitor takes the camera
  {r:13,th:86,ph:110,fov:.6,roll:6,look:0,at:[.74,.42],atM:[.5,.28],dim:.36},    // skimming the disk
  {r:6,th:76,ph:135,fov:.78,roll:10,look:0,at:[.8,.5],atM:[.72,.3],dim:.32},     // at the photon ring
  {r:4.4,th:73,ph:150,fov:.84,roll:5,look:0,at:[.82,.5],atM:[.6,.4],dim:.32},    // close to the ring, looking past it

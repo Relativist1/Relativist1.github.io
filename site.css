@@ -90,7 +90,9 @@ figcaption{font-family:var(--sans);font-size:.95rem;color:#b9b2a4;margin-top:10p
 
 /* simulations */
 .sim-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:48px;align-items:end;margin-top:30px}
-.sim-top p{margin-top:12px}
+.sim-top p{margin-top:12px;font-size:1.08rem}
+.sim-top>div:first-child{position:relative;isolation:isolate}
+.sim-top>div:first-child::before{content:"";position:absolute;inset:-28px -36px;z-index:-1;border-radius:40px;background:#050506;opacity:.62;filter:blur(26px)}
 .controls{padding:20px 22px 18px;border:1px solid var(--rule);background:var(--panel);border-radius:4px;display:grid;gap:14px;text-shadow:none}
 .control{display:grid;grid-template-columns:112px minmax(0,1fr) 64px;gap:14px;align-items:center}
 .control label{font-family:var(--sans);font-size:.86rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
