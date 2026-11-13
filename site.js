@@ -80,4 +80,16 @@ document.querySelectorAll('.dd').forEach(dd=>{const b=dd.querySelector('.dd-btn'
 
 const mb=$('menu-btn'),nav=$('nav');mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
 nav.addEventListener('click',e=>{if(e.target.closest('.dd-btn'))return;nav.classList.remove('open');mb.setAttribute('aria-expanded','false')});
+
+/* Google Analytics, only after the visitor agrees (UK/EU consent rules). The choice is remembered in this browser. */
+const GA='G-J66JPKB5JM';
+const getC=()=>{try{return localStorage.getItem('analytics-consent')}catch(e){return null}};
+const setC=v=>{try{localStorage.setItem('analytics-consent',v)}catch(e){}};
+function loadGA(){if(window.__ga)return;window.__ga=1;window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};
+  gtag('js',new Date());gtag('config',GA,{anonymize_ip:true});const sc=document.createElement('script');sc.async=true;sc.src='https://www.googletagmanager.com/gtag/js?id='+GA;document.head.appendChild(sc)}
+function banner(){if(document.getElementById('consent'))return;const d=document.createElement('div');d.id='consent';d.setAttribute('role','dialog');d.setAttribute('aria-label','Analytics consent');
+  d.innerHTML='<p>May I count your visit with Google Analytics? It only tells me which pages are read, never who you are.</p><div><button type="button" data-c="no">No, thanks</button><button type="button" data-c="yes" class="yes">Allow</button></div>';
+  document.body.appendChild(d);d.addEventListener('click',e=>{const v=e.target.dataset&&e.target.dataset.c;if(!v)return;setC(v);d.remove();if(v==='yes')loadGA()})}
+const c0=getC();if(c0==='yes')loadGA();else if(c0!=='no')setTimeout(banner,1200);
+document.addEventListener('click',e=>{if(e.target.closest('[data-consent-reset]')){e.preventDefault();try{localStorage.removeItem('analytics-consent')}catch(_){}banner()}});
 })();
