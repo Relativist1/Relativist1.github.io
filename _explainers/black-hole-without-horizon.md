@@ -16,23 +16,23 @@ breath:
   - "The difference is a faint glow inside the shadow, which the telescope upgrades planned for the next few years should be able to test."
 concepts:
   - term: "Event horizon"
-    text: "A one-way surface around a black hole. Anything that crosses it, light included, can never come back out. For a mass $M$ it sits at $2r_g$, where $r_g = GM/c^2$ is the gravitational radius."
+    text: "The point of no return. Once inside, not even light can send a message back out. For a non-spinning black hole of mass $M$ it sits at $2r_g$, where $r_g = GM/c^2$ is the gravitational radius. Nothing marks the spot: someone falling through would notice nothing special at that moment."
   - term: "Singularity"
-    text: "A point where density becomes infinite and Einstein's equations stop giving answers. A *naked* singularity is one with no horizon around it."
+    text: "Where general relativity gives up: density and curvature become infinite, and the theory stops making predictions. A black hole keeps its singularity decently clothed behind the horizon. A *naked* singularity has no such modesty."
   - term: "Photon sphere"
-    text: "The distance, $3r_g$, at which gravity bends light into a circular orbit. Light passing closer falls in; light passing farther escapes."
+    text: "The radius at which gravity bends light into a full circle: $3r_g$, measured close to the black hole. Light can orbit there, but only just; the slightest nudge sends it falling in or flying away. A distant observer does not see this circle at $3r_g$, since curved space magnifies it (see *Shadow*)."
   - term: "Shadow"
-    text: "The dark patch in the middle of the bright ring. Its edge is drawn by light skimming the photon sphere, which makes it about two and a half times wider than the horizon."
+    text: "The photon sphere, as seen from far away. Light skimming the photon sphere is bent on its way to us, so a circle of radius $3r_g$ near the black hole appears on our sky with a radius of $\\sqrt{27}\\,r_g \\approx 5.2\\,r_g$. Spacetime acts as a magnifying glass, and inside that circle the image goes dark."
   - term: "Accretion"
-    text: "Gas spiralling onto a heavy object. Friction and magnetic fields heat it to billions of degrees, and it glows; around M87* the glow comes out mostly as radio waves."
+    text: "How a black hole eats. Gas spirals in, rubs against itself, heats up to billions of degrees and glows. Around M87* the meal is so thin that most of the heat goes straight down the drain, and the little light that escapes is mostly radio waves."
   - term: "GRMHD"
-    text: "General relativistic magnetohydrodynamics: the equations of a hot, magnetized gas, solved on a computer in curved spacetime, step by step in time."
+    text: "General relativistic magnetohydrodynamics, or weather forecasting for black holes: the equations of a hot, magnetized gas, solved on a grid in curved spacetime, one time step after another."
   - term: "Magnetically arrested disk"
-    text: "A disk that has dragged in so much magnetic field that the field pushes back, and the gas falls in fits and starts. Simulations favor this state for M87*."
+    text: "An accretion disk that has hoarded so much magnetic field near the center that the field starts pushing back. The gas then gets in only in fits and starts, squeezing between magnetic bubbles. The polarized EHT images of M87* favor this state."
   - term: "Gravitational redshift"
-    text: "Light climbing out of a gravitational well loses energy, so it arrives at a lower frequency and looks dimmer. The deeper it starts, the more it loses."
+    text: "Climbing out of gravity costs energy, even for light. The light arrives at a lower frequency and looks dimmer, and the deeper it started, the bigger the bill."
   - term: "Dynamic range"
-    text: "The ratio between the brightest and the faintest feature an image can show reliably. A sharp image can still miss a faint detail sitting next to a bright one."
+    text: "How faint a thing an image can show next to a bright one. Resolution says how sharp the picture is; dynamic range says whether you can see a candle beside a floodlight."
 paper_url: "https://arxiv.org/abs/2604.15430"
 paper_label: "Read the preprint"
 paper_venue: "Submitted to Physical Review Letters (2026)"
@@ -90,10 +90,12 @@ No new physics is needed: the same theory with different initial conditions, and
 
 ## Same shadow, different insides
 
-What a telescope sees is set by light passing close to the object. At three gravitational radii, light can orbit in a circle: the [photon sphere](#c-photon-sphere){:.term}. Light passing inside it falls in, and light passing outside escapes. The size of the dark center in the image, the [shadow](#c-shadow){:.term}, is set by the photon sphere, not by the horizon.
+What a telescope sees is set by light passing close to the object. At three gravitational radii from the center, measured near the black hole, light can orbit in a circle: the [photon sphere](#c-photon-sphere){:.term}. Light passing inside it falls in, and light passing outside escapes. A distant observer sees that circle enlarged by the curved space in between: its edge appears at $\sqrt{27} \approx 5.2$ gravitational radii, and inside it the image is dark. That dark patch, the [shadow](#c-shadow){:.term}, is set by the photon sphere, not by the horizon.
 
 {% include concept.html t="Photon sphere" %}
 {% include concept.html t="Shadow" %}
+
+<figure class="figure"><img src="/img/explainers/jmn-fig0_photon_sphere.png" alt="Schematic: light leaving a point P on the photon sphere at 3 gravitational radii bends on its way to a distant observer, who places it at P', 5.2 gravitational radii from the center"><figcaption>Light leaves $P$ on the photon sphere, at $3\,r_g$, and bends on its way out. The observer traces it back along a straight line and places it at $P'$, $\sqrt{27}\,r_g \approx 5.2\,r_g$ from the center.</figcaption></figure>
 
 A JMN-1 ball smaller than three gravitational radii has a photon sphere in exactly the same place. Light that stays outside the ball cannot distinguish the two. We chose a ball of 2.8 gravitational radii.
 
