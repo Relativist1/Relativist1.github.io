@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Alegreya+Sans:wght@400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23050506%22/%3E%3Cellipse cx=%2216%22 cy=%2216%22 rx=%2214%22 ry=%225%22 fill=%22none%22 stroke=%22%233fb3ad%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23050506%22/%3E%3C/svg%3E">
 {% if page.math %}<script>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]]},svg:{fontCache:"global"}};</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg-full.js" async></script>{% endif %}
-<link rel="stylesheet" href="/site.css?v=1794685191">
+<link rel="stylesheet" href="/site.css?v=1794686548">
 <style>html,body{margin:0}:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
 </head><body>
 <div id="scene" aria-hidden="true"><canvas id="view"></canvas></div>
@@ -21,7 +21,7 @@
 </div></header>
 <main data-stop="1" data-dim=".2">
 <section class="page"><div class="col xp">
-  <div class="xp-bar"><a class="back" href="/explainers.html"><span class="back-ring" aria-hidden="true">&#8592;</span>All explainers</a><button type="button" class="theme-tg" id="theme-tg" aria-label="Switch between dark and light reading mode"><span class="tg-d">Light page</span><span class="tg-l">Dark page</span></button></div>
+  <div class="xp-bar"><a class="back" href="/explainers.html"><span class="back-ring" aria-hidden="true">&#8592;</span>All explainers</a></div>
   <header class="opener">
     <p class="opener-no">Explainer{% if page.number %} No.&#8201;{{ page.number | prepend: "0" | slice: -2, 2 }}{% endif %}{% if page.topic %} &middot; {{ page.topic }}{% endif %}</p>
     <h1 class="opener-title">{{ page.title }}</h1>
@@ -53,6 +53,14 @@
   </aside>
   </div>
 </div></section>
+<nav class="dock" id="dock" aria-label="Reading tools">
+  <button type="button" class="dk" id="dk-theme" aria-label="Switch between dark and light page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" class="fill"/></svg><span class="dk-tip">Light / dark</span></button>
+  <button type="button" class="dk" id="dk-toc" aria-label="Chapters" aria-expanded="false" aria-controls="dk-pop"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6.5h11M8 12h11M8 17.5h11"/><circle cx="4.5" cy="6.5" r="1" class="fill"/><circle cx="4.5" cy="12" r="1" class="fill"/><circle cx="4.5" cy="17.5" r="1" class="fill"/></svg><span class="dk-tip">Chapters</span></button>
+  <button type="button" class="dk" id="dk-share" aria-label="Share this explainer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5.5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="18.5" r="2.5"/><path d="M8.2 10.8l7.6-4.1M8.2 13.2l7.6 4.1"/></svg><span class="dk-tip">Share</span></button>
+  <a class="dk dk-top" href="#" aria-label="Back to the top"><svg viewBox="0 0 36 36" class="ring" aria-hidden="true"><circle cx="18" cy="18" r="15.5" class="ring-bg"/><circle cx="18" cy="18" r="15.5" class="ring-fg" id="dk-ring"/></svg><svg viewBox="0 0 24 24" class="arrow" aria-hidden="true"><path d="M12 17V7M7.5 11.5 12 7l4.5 4.5"/></svg><span class="dk-tip">Top</span></a>
+  <div class="dk-pop" id="dk-pop" hidden><p class="fm-k">Chapters</p><ol id="dk-list"></ol></div>
+  <p class="dk-toast" id="dk-toast" role="status" aria-live="polite"></p>
+</nav>
 
 </main>
 <footer class="foot">© 2026 Saurabh</footer>
@@ -67,5 +75,26 @@ document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#c-"]')
 <script>
 /* reading mode: dark (default) or light, remembered in this browser */
 (()=>{const b=document.getElementById('theme-tg');if(!b)return;b.addEventListener('click',()=>{const r=document.documentElement,n=r.dataset.theme==='light'?'dark':'light';r.dataset.theme=n;try{localStorage.setItem('reading-theme',n)}catch(e){}})})();
+</script>
+<script>
+/* reading dock: theme, chapters, share, progress */
+(()=>{const r=document.documentElement,d=document.getElementById('dock');if(!d)return;
+const set=n=>{r.dataset.theme=n;try{localStorage.setItem('reading-theme',n)}catch(e){}};
+document.getElementById('dk-theme').addEventListener('click',()=>set(r.dataset.theme==='light'?'dark':'light'));
+const pop=document.getElementById('dk-pop'),tb=document.getElementById('dk-toc'),list=document.getElementById('dk-list'),src=document.getElementById('xp-toc');
+const fill=()=>{if(src&&!list.children.length)list.innerHTML=src.innerHTML};
+tb.addEventListener('click',e=>{e.stopPropagation();fill();const o=pop.hidden;pop.hidden=!o;tb.setAttribute('aria-expanded',o)});
+pop.addEventListener('click',e=>{if(e.target.closest('a')){pop.hidden=true;tb.setAttribute('aria-expanded','false')}});
+document.addEventListener('click',e=>{if(!d.contains(e.target)){pop.hidden=true;tb.setAttribute('aria-expanded','false')}});
+const toast=document.getElementById('dk-toast'),say=t=>{toast.textContent=t;toast.classList.add('on');setTimeout(()=>toast.classList.remove('on'),1800)};
+document.getElementById('dk-share').addEventListener('click',async()=>{const u=location.href.split('#')[0],t=document.title;
+  if(navigator.share){try{await navigator.share({title:t,url:u});return}catch(e){if(e&&e.name==='AbortError')return}}
+  try{await navigator.clipboard.writeText(u);say('Link copied')}catch(e){say(u)}});
+d.querySelector('.dk-top').addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:'smooth'})});
+const ring=document.getElementById('dk-ring'),C=2*Math.PI*15.5;ring.style.strokeDasharray=C;
+const op=document.querySelector('.opener');
+const upd=()=>{const h=document.documentElement.scrollHeight-innerHeight,f=h>0?Math.min(1,scrollY/h):0;ring.style.strokeDashoffset=C*(1-f);
+  d.classList.toggle('on',op?op.getBoundingClientRect().bottom<0:scrollY>300)};
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();})();
 </script>
 </body></html>

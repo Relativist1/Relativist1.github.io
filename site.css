@@ -561,3 +561,40 @@ html[data-theme=light] #consent{background:#ece5d6;color:#2a2620}
 
 html[data-theme=light] *{text-shadow:none!important}
 html[data-theme=light] .tale h2,html[data-theme=light] .cnote b,html[data-theme=light] .opener-title,html[data-theme=light] .ptitle,html[data-theme=light] h1,html[data-theme=light] h2,html[data-theme=light] h3,html[data-theme=light] .xl-text h2 a,html[data-theme=light] .wordmark{color:#1b1813}
+
+/* ---------- reading dock: a vertical rail on the right edge, a bottom pill on phones ---------- */
+.dock{position:fixed;right:22px;top:50%;z-index:6;display:flex;flex-direction:column;gap:10px;padding:10px 8px;border:1px solid var(--rule);border-radius:999px;background:rgba(10,9,10,.82);backdrop-filter:blur(8px);transform:translate(16px,-50%);opacity:0;pointer-events:none;transition:opacity .35s,transform .35s}
+.dock.on{opacity:1;transform:translate(0,-50%);pointer-events:auto}
+.dk{position:relative;display:grid;place-items:center;width:42px;height:42px;padding:0;border:0;border-radius:50%;background:none;color:#c9c2b4;cursor:pointer;transition:background .2s,color .2s}
+.dk:hover,.dk[aria-expanded=true]{background:rgba(63,179,173,.14);color:var(--ivory)}
+.dk svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dk svg .fill{fill:currentColor;stroke:none}
+.dk-top .ring{position:absolute;inset:0;width:42px;height:42px;transform:rotate(-90deg)}
+.dk-top .ring circle{fill:none;stroke-width:2}
+.dk-top .ring-bg{stroke:rgba(63,179,173,.18)}
+.dk-top .ring-fg{stroke:var(--amber);stroke-linecap:round;transition:stroke-dashoffset .15s}
+.dk-top .arrow{width:18px;height:18px}
+.dk-tip{position:absolute;right:calc(100% + 14px);top:50%;transform:translateY(-50%);white-space:nowrap;padding:4px 10px;border-radius:4px;background:rgba(10,9,10,.92);border:1px solid var(--rule);font-family:var(--sans);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ivory);opacity:0;pointer-events:none;transition:opacity .2s}
+.dk:hover .dk-tip,.dk:focus-visible .dk-tip{opacity:1}
+.dk-pop{position:absolute;right:calc(100% + 14px);top:50%;transform:translateY(-50%);width:min(340px,80vw);padding:18px 20px;border:1px solid var(--rule);border-radius:8px;background:rgba(10,9,10,.96);font-size:1rem}
+.dk-pop ol{list-style:none;margin:0;padding:0}
+.dk-pop a{display:flex;gap:12px;padding:6px 0;color:#d4cdbf}
+.dk-pop a .r{flex:0 0 36px;font-family:"Cormorant Garamond",var(--serif);font-style:italic;color:var(--amber)}
+.dk-pop a:hover{color:var(--ivory)}
+.dk-toast{position:absolute;right:calc(100% + 14px);bottom:6px;margin:0;padding:6px 12px;border-radius:4px;background:var(--amber);color:#050506;font-family:var(--sans);font-size:.8rem;letter-spacing:.06em;opacity:0;pointer-events:none;transition:opacity .25s;white-space:nowrap}
+.dk-toast.on{opacity:1}
+@media (max-width:900px){
+  .dock{right:auto;left:50%;top:auto;bottom:calc(16px + env(safe-area-inset-bottom,0px));flex-direction:row;padding:6px 10px;transform:translate(-50%,16px)}
+  .dock.on{transform:translate(-50%,0)}
+  .dk-tip{display:none}
+  .dk-pop{right:auto;left:50%;top:auto;bottom:calc(100% + 12px);transform:translateX(-50%)}
+  .dk-toast{right:auto;left:50%;bottom:calc(100% + 12px);transform:translateX(-50%)}
+}
+html[data-theme=light] .dock,html[data-theme=light] .dk-pop,html[data-theme=light] .dk-tip{background:rgba(246,241,231,.94)}
+html[data-theme=light] .dk,html[data-theme=light] .dk-pop a{color:#3a352d}
+html[data-theme=light] .dk-toast{color:#f6f1e7}
+
+.dock a.dk{border:0;text-decoration:none}
+.dk[aria-expanded=true] .dk-tip{opacity:0!important}
+.dk-pop{background:#0a090a}
+html[data-theme=light] .dk-pop{background:#f6f1e7;box-shadow:0 10px 30px rgba(0,0,0,.12)}
