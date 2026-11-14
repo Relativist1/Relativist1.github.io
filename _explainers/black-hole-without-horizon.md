@@ -22,7 +22,9 @@ concepts:
   - term: "Photon sphere"
     text: "The radius, $3r_g$ measured near the black hole, where light can travel on a circular orbit. The orbit is unstable: light slightly inside spirals in, and light slightly outside escapes. Seen from far away, the circle appears larger (see *Shadow*)."
   - term: "Shadow"
-    text: "The photon sphere as a distant observer sees it. Light grazing the photon sphere is bent on its way out, so a circle of radius $3r_g$ appears on the sky with a radius of $\\sqrt{27}\\,r_g \\approx 5.2\\,r_g$. For an object at distance $D$, that is an angular diameter of $2\\sqrt{27}\\,GM/(c^2 D)$; for M87*, about 40 microarcseconds, the size of an orange on the Moon seen from Earth. Inside it, the image is dark."
+    text: "The photon sphere as a distant observer sees it. Light grazing the photon sphere is bent on its way out, so a circle of radius $3r_g$ appears on the sky with a radius of $\\sqrt{27}\\,r_g \\approx 5.2\\,r_g$. Inside it, the image is dark."
+  - term: "Angular size"
+    text: "How big something looks, measured as an angle instead of a length. An object of size $L$ at distance $D$ spans an angle of about $L/D$ radians. For black holes the angles are tiny, so astronomers quote them in microarcseconds, millionths of an arcsecond. The shadow of M87*, with a diameter of $2\\sqrt{27}\\,GM/c^2$, spans about 40 microarcseconds: an orange on the Moon, seen from Earth."
   - term: "Accretion"
     text: "The inflow of gas onto a massive object. As the gas spirals in, turbulence and magnetic fields heat it to billions of degrees. Around M87* the flow is so dilute that most of this heat is carried inward rather than radiated, which is why such a massive object is comparatively faint."
   - term: "GRMHD"
@@ -90,10 +92,11 @@ No new physics is needed: the same theory with different initial conditions, and
 
 ## Same shadow, different insides
 
-What a telescope sees is set by light passing close to the object. At three gravitational radii from the center, measured near the black hole, light can orbit in a circle: the [photon sphere](#c-photon-sphere){:.term}. Light passing inside it falls in, and light passing outside escapes. A distant observer sees that circle enlarged by the curved space in between: its edge appears at $\sqrt{27} \approx 5.2$ gravitational radii, which makes the shadow of M87\* about 40 microarcseconds across on our sky. Inside it the image is dark. That dark patch, the [shadow](#c-shadow){:.term}, is set by the photon sphere, not by the horizon.
+What a telescope sees is set by light passing close to the object. At three gravitational radii from the center, measured near the black hole, light can orbit in a circle: the [photon sphere](#c-photon-sphere){:.term}. Light passing inside it falls in, and light passing outside escapes. A distant observer sees that circle enlarged by the curved space in between: its edge appears at $\sqrt{27} \approx 5.2$ gravitational radii, which makes the shadow of M87\* about 40 microarcseconds across on our sky, its [angular size](#c-angular-size){:.term}. Inside it the image is dark. That dark patch, the [shadow](#c-shadow){:.term}, is set by the photon sphere, not by the horizon.
 
 {% include concept.html t="Photon sphere" %}
 {% include concept.html t="Shadow" %}
+{% include concept.html t="Angular size" %}
 
 <figure class="figure"><img src="/img/explainers/jmn-fig0_photon_sphere.png" alt="Schematic: light leaving a point P on the photon sphere at 3 gravitational radii bends on its way to a distant observer, who places it at P', 5.2 gravitational radii from the center"><figcaption>Light leaves $P$ on the photon sphere, at $3\,r_g$, and bends on its way out. The observer traces it back along a straight line and places it at $P'$, $\sqrt{27}\,r_g \approx 5.2\,r_g$ from the center.</figcaption></figure>
 

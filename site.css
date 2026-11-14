@@ -598,3 +598,12 @@ html[data-theme=light] .dk-toast{color:#f6f1e7}
 .dk[aria-expanded=true] .dk-tip{opacity:0!important}
 .dk-pop{background:#0a090a}
 html[data-theme=light] .dk-pop{background:#f6f1e7;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+
+.dock a.dk,.dock a.dk:hover{background-image:none!important;box-shadow:none!important;text-decoration:none!important}
+@media (max-width:900px){
+  .dock{gap:4px;padding:4px 8px;background:rgba(10,9,10,.95)}
+  .dk,.dk-top .ring{width:38px;height:38px}
+  .dk svg{width:20px;height:20px}
+  .dock.hide{transform:translate(-50%,140%)!important}
+}
+html[data-theme=light] .dock{background:rgba(246,241,231,.97)}
