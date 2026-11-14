@@ -130,13 +130,25 @@ So, classically, any orbiting particle meets a wall before the center. Near a bl
 
 ## The simulations
 
-A potential tells you what is allowed, not what turbulent, magnetized gas will actually do. So we simulated it.
-
-- Identical initial conditions for both objects: a torus of gas 10 to 20 gravitational radii from the center, threaded with a magnetic field loop.
-- The [GRMHD](#c-grmhd){:.term} code KHARMA, which we modified for a spacetime without a horizon.
-- About five million cells, evolved for the equivalent of ten years for M87\*.
+A potential tells you what is allowed, not what turbulent, magnetized gas will actually do. So we simulated it, with a technique called [GRMHD](#c-grmhd){:.term}.
 
 {% include concept.html t="GRMHD" %}
+
+The idea is simple to state: place matter around the object and let the laws of physics move it. The matter is a hot plasma, mostly hydrogen so hot that its atoms have come apart into free protons and electrons. The computer follows it under three sets of rules at once:
+
+- Gravity: the gas moves through the curved spacetime of the central object, black hole or JMN-1. That spacetime is fixed in advance, since the gas is far too light to bend it noticeably.
+- Fluid dynamics and thermodynamics: the gas conserves mass, momentum and energy, and it is compressed, heated and pushed around like any fluid. We treat it as an ideal gas with an adiabatic index of 5/3, the value for a gas of free particles.
+- Electromagnetism: Maxwell's equations for the magnetic field. The plasma conducts electricity so well that the field lines are frozen into it and dragged along with the flow, while the field pushes back on the gas.
+
+The magnetic field does one more essential job. A small instability in the magnetized, rotating gas makes it turbulent, and turbulence lets the gas shed its angular momentum and fall inward. Without it, the gas would orbit forever.
+
+None of this can be solved with pen and paper. The computer divides the space around the object into a grid of about five million cells and advances every quantity in small steps of time. The equations contain no fixed scale, so one run describes a black hole of any mass; we set the mass and the gas density afterwards to match M87\*.
+
+Our setup:
+
+- Identical initial conditions for both objects: a torus of gas 10 to 20 gravitational radii from the center, threaded with a loop of magnetic field.
+- The GRMHD code KHARMA, which we modified for a spacetime without a horizon.
+- A run lasting the equivalent of about ten years for M87\*.
 
 Results:
 
