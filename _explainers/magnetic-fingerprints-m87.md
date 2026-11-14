@@ -2,7 +2,7 @@
 number: 1
 title: "Reading the Magnetic Fingerprints of M87*"
 standfirst: "How gas and magnetic fields shape the first image of a black hole"
-summary: "The first image of M87* could have been drawn by many different arrangements of gas and magnetic field. By comparing a large family of models with the polarised light, we found that the gas slowly spirals inward and that the field's shape can be read from the image."
+summary: "The first image of M87* could have been drawn by many different arrangements of gas and magnetic field. By comparing a large family of models with the polarized light, we found that the gas slowly spirals inward and that the field's shape can be read from the image."
 description: "How gas and magnetic fields shape the image of the black hole M87*: a plain-language explainer of Saurabh et al. (2026), A&A 705, A166."
 paper_title: "Semi-analytic studies of the accretion disk and magnetic field geometry in M 87*"
 paper_doi: "10.1051/0004-6361/202556880"
@@ -11,18 +11,18 @@ topic: "The gas"
 date: 2026-11-12
 level: "First-year undergraduates"
 image: /img/o_accr.jpg
-image_alt: "A ray-traced model of the gas around M87* beside the EHT 2017 image, both with polarisation marks"
-caption: "A model (left) beside the real image of M87* from 2017 (right). The short lines show the direction of polarisation."
+image_alt: "A ray-traced model of the gas around M87* beside the EHT 2017 image, both with polarization marks"
+caption: "A model (left) beside the real image of M87* from 2017 (right). The short lines show the direction of polarization."
 paper_url: "https://doi.org/10.1051/0004-6361/202556880"
 paper_label: "Read the paper"
 paper_venue: "Astronomy & Astrophysics 705, A166 (2026)"
 ---
 
-When the first image of M87\* appeared in 2019, most people saw a glowing ring. I saw a crime scene with too many suspects. The ring is bright, lopsided and slightly polarised, and any of half a dozen culprits could have arranged it that way: the thickness of the disk of gas, the way that gas moves, the spin of the black hole, or the shape of the magnetic field threaded through it all.
+When the first image of M87\* appeared in 2019, most people saw a glowing ring. I saw a crime scene with too many suspects. The ring is bright, lopsided and slightly polarized, and any of half a dozen culprits could have arranged it that way: the thickness of the disk of gas, the way that gas moves, the spin of the black hole, or the shape of the magnetic field threaded through it all.
 
 ## The question
 
-Light from near a black hole carries a quiet signature: its polarisation, the direction in which its waves vibrate. That direction is set by the magnetic field the light was born in, then twisted by gravity on its way out. If we could read it properly, we would learn not just *that* there is gas around M87\*, but *how* it is organised.
+Light from near a black hole carries a quiet signature: its polarization, the direction in which its waves vibrate. That direction is set by the magnetic field the light was born in, then twisted by gravity on its way out. If we could read it properly, we would learn not just *that* there is gas around M87\*, but *how* it is organized.
 
 ## How we went about it
 
@@ -33,13 +33,13 @@ We built a large family of model black holes, varying one ingredient at a time:
 - Magnetic field: whether the field wraps around the black hole like thread on a spool, or runs outward from it like the spokes of a wheel.
 - Spin: how fast the black hole itself rotates.
 
-For each combination we traced the light through curved spacetime, computed the image the Event Horizon Telescope would see, polarisation included, and compared it with the real data. It is a bit like trying every key on a very large ring until one turns.
+For each combination we traced the light through curved spacetime, computed the image the Event Horizon Telescope would see, polarization included, and compared it with the real data. It is a bit like trying every key on a very large ring until one turns.
 
 ## What we found
 
 - Thickness: it hardly matters. A thin disk and a thick one leave nearly the same fingerprint, which leaves one thing fewer to worry about.
-- Shape of the field: it matters, and it can be read. Wrapped and outward-running fields leave different polarisation patterns, so the data can tell them apart.
-- Motion: it matters most. The images favour gas that spirals slowly inward as it orbits, moving more lazily than a neat orbit would allow.
+- Shape of the field: it matters, and it can be read. Wrapped and outward-running fields leave different polarization patterns, so the data can tell them apart.
+- Motion: it matters most. The images favor gas that spirals slowly inward as it orbits, moving more lazily than a neat orbit would allow.
 
 The black hole spins its gas around and reels it in at the same time.
 

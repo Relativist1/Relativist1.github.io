@@ -524,3 +524,40 @@ body:has(main[data-dim]) #scrim{background:rgba(5,5,6,.66)}
 .chapters a{font-size:1.04em}
 .cused-l{font-size:1.02em}
 @media (max-width:900px){.tale{font-size:1.04em}.blurb-l{font-size:1.08em}}
+
+/* ---------- concept boxes: inline, full width, between paragraphs ---------- */
+.cnote{float:none;clear:both;width:auto;display:grid;grid-template-columns:minmax(170px,230px) minmax(0,1fr);gap:6px 28px;margin:1.3em 0 1.6em;padding:18px 24px;border:1px solid var(--rule);border-left:3px solid var(--amber);border-top:1px solid var(--rule);border-radius:4px;background:rgba(12,11,12,.72);font-size:.84em;line-height:1.55}
+.cnote-k{grid-column:1;grid-row:1}
+.cnote b{grid-column:1;grid-row:2;margin:0;font-size:1.12em}
+.cnote-t{grid-column:2;grid-row:1/span 2;align-self:center}
+@media (max-width:760px){.cnote{grid-template-columns:1fr;gap:4px;padding:14px 16px}.cnote-t{grid-column:1;grid-row:3}}
+/* ---------- reading bar: back link and theme switch ---------- */
+.xp-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.theme-tg{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border:1px solid var(--rule);border-radius:999px;background:none;cursor:pointer;font-family:var(--sans);font-size:.8em;letter-spacing:.12em;text-transform:uppercase;color:#c9c2b4}
+.theme-tg::before{content:"";width:14px;height:14px;border-radius:50%;background:linear-gradient(90deg,#f6f1e7 50%,#050506 50%);box-shadow:0 0 0 1px var(--amber)}
+.theme-tg:hover{border-color:var(--amber);color:var(--ivory)}
+.tg-l{display:none}
+html[data-theme=light] .tg-d{display:none}html[data-theme=light] .tg-l{display:inline}
+/* ---------- light reading mode (explainer pages) ---------- */
+html[data-theme=light]{--black:#f6f1e7;--ivory:#1b1813;--muted:#6b6458;--amber:#1d7f79;--amber-pale:#155f5a;--rule:rgba(29,127,121,.32);--panel:rgba(236,229,214,.9)}
+html[data-theme=light] body{background:#f6f1e7;color:#2a2620}
+html[data-theme=light] #scene,html[data-theme=light] #scrim{display:none}
+html[data-theme=light] .top{background:rgba(246,241,231,.95)}
+html[data-theme=light] .dd-menu{background:#f6f1e7}
+html[data-theme=light] .top nav .dd-menu a:hover{background:rgba(29,127,121,.08)}
+@media (max-width:1020px){html[data-theme=light] .top nav{background:#f6f1e7!important}}
+html[data-theme=light] main[data-stop]{color:#2a2620}
+html[data-theme=light] .tale,html[data-theme=light] .tale>p,html[data-theme=light] .tale li,html[data-theme=light] .blurb-l,html[data-theme=light] .chapters a,html[data-theme=light] .cused-l a,html[data-theme=light] .xl-sum,html[data-theme=light] .xl-lead,html[data-theme=light] .note,html[data-theme=light] .back,html[data-theme=light] .theme-tg,html[data-theme=light] .opener-stand{color:#2a2620}
+html[data-theme=light] .cnote{background:#ece5d6}
+html[data-theme=light] .cnote-t,html[data-theme=light] .cite-box,html[data-theme=light] .paper span,html[data-theme=light] .pubdate,html[data-theme=light] .cused-n,html[data-theme=light] .tale figcaption,html[data-theme=light] .xp-meta{color:#5d574c}
+html[data-theme=light] .cite-box,html[data-theme=light] .watch{background:#ece5d6}
+html[data-theme=light] .cite-box pre{background:#e2dac9;color:#2a2620}
+html[data-theme=light] .chapters a .t::after{border-bottom-color:#b9b0a0}
+html[data-theme=light] .back:hover .back-ring{color:#f6f1e7}
+html[data-theme=light] .thumb-ph{background:#ece5d6}
+html[data-theme=light] .tale .figure img{background:#0c0b0c}
+html[data-theme=light] footer.foot{color:#6b6458}
+html[data-theme=light] #consent{background:#ece5d6;color:#2a2620}
+
+html[data-theme=light] *{text-shadow:none!important}
+html[data-theme=light] .tale h2,html[data-theme=light] .cnote b,html[data-theme=light] .opener-title,html[data-theme=light] .ptitle,html[data-theme=light] h1,html[data-theme=light] h2,html[data-theme=light] h3,html[data-theme=light] .xl-text h2 a,html[data-theme=light] .wordmark{color:#1b1813}

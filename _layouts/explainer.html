@@ -2,12 +2,14 @@
 ---
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
+<script>try{var t=localStorage.getItem("reading-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+
 {% include seo.html %}<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{{ page.title }} · Saurabh</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Alegreya+Sans:wght@400;500&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%2215%22 fill=%22%23050506%22/%3E%3Cellipse cx=%2216%22 cy=%2216%22 rx=%2214%22 ry=%225%22 fill=%22none%22 stroke=%22%233fb3ad%22 stroke-width=%222.2%22/%3E%3Ccircle cx=%2216%22 cy=%2216%22 r=%226%22 fill=%22%23050506%22/%3E%3C/svg%3E">
 {% if page.math %}<script>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]]},svg:{fontCache:"global"}};</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg-full.js" async></script>{% endif %}
-<link rel="stylesheet" href="/site.css?v=1794587867">
+<link rel="stylesheet" href="/site.css?v=1794685191">
 <style>html,body{margin:0}:root{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
 </head><body>
 <div id="scene" aria-hidden="true"><canvas id="view"></canvas></div>
@@ -19,7 +21,7 @@
 </div></header>
 <main data-stop="1" data-dim=".2">
 <section class="page"><div class="col xp">
-  <a class="back" href="/explainers.html"><span class="back-ring" aria-hidden="true">&#8592;</span>All explainers</a>
+  <div class="xp-bar"><a class="back" href="/explainers.html"><span class="back-ring" aria-hidden="true">&#8592;</span>All explainers</a><button type="button" class="theme-tg" id="theme-tg" aria-label="Switch between dark and light reading mode"><span class="tg-d">Light page</span><span class="tg-l">Dark page</span></button></div>
   <header class="opener">
     <p class="opener-no">Explainer{% if page.number %} No.&#8201;{{ page.number | prepend: "0" | slice: -2, 2 }}{% endif %}{% if page.topic %} &middot; {{ page.topic }}{% endif %}</p>
     <h1 class="opener-title">{{ page.title }}</h1>
@@ -61,5 +63,9 @@
 (()=>{const ol=document.getElementById('xp-toc');if(ol){const R=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'];
 document.querySelectorAll('.tale h2').forEach((h,i)=>{const li=document.createElement('li');li.innerHTML='<a href="#'+h.id+'"><span class="r">'+R[i]+'</span><span class="t"></span></a>';li.querySelector('.t').textContent=h.textContent;ol.appendChild(li)})}
 document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#c-"]');if(!a)return;const t=document.querySelector(a.getAttribute('href'));if(t){t.classList.remove('flash');void t.offsetWidth;t.classList.add('flash')}});})();
+</script>
+<script>
+/* reading mode: dark (default) or light, remembered in this browser */
+(()=>{const b=document.getElementById('theme-tg');if(!b)return;b.addEventListener('click',()=>{const r=document.documentElement,n=r.dataset.theme==='light'?'dark':'light';r.dataset.theme=n;try{localStorage.setItem('reading-theme',n)}catch(e){}})})();
 </script>
 </body></html>

@@ -80,7 +80,7 @@ ax.annotate('a wall', xy=(0.95, 1.47), xytext=(2.9, 1.5), color=GREY, fontsize=2
             arrowprops=dict(arrowstyle='-', color=GREY, lw=1))
 ax.text(0.6, 0.12, 'a slide', color=JMN, fontsize=22, style='italic')
 ax.set_xlim(0, 14); ax.set_ylim(0, 1.8)
-ax.set_xlabel('distance from the centre, $r$  [$r_g$]')
+ax.set_xlabel('distance from the center, $r$  [$r_g$]')
 ax.set_ylabel('energy needed to get there')
 ax.legend(loc='lower right', bbox_to_anchor=(1.0, 0.04))
 plt.tight_layout()
