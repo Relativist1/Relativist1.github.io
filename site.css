@@ -573,7 +573,7 @@ html[data-theme=light] .tale h2,html[data-theme=light] .cnote b,html[data-theme=
 .dk-top .ring circle{fill:none;stroke-width:2}
 .dk-top .ring-bg{stroke:rgba(63,179,173,.18)}
 .dk-top .ring-fg{stroke:var(--amber);stroke-linecap:round;transition:stroke-dashoffset .15s}
-.dk-top .arrow{width:18px;height:18px}
+.dk-top .up{width:18px;height:18px}
 .dk-tip{position:absolute;right:calc(100% + 14px);top:50%;transform:translateY(-50%);white-space:nowrap;padding:4px 10px;border-radius:4px;background:rgba(10,9,10,.92);border:1px solid var(--rule);font-family:var(--sans);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ivory);opacity:0;pointer-events:none;transition:opacity .2s}
 .dk:hover .dk-tip,.dk:focus-visible .dk-tip{opacity:1}
 .dk-pop{position:absolute;right:calc(100% + 14px);top:50%;transform:translateY(-50%);width:min(340px,80vw);padding:18px 20px;border:1px solid var(--rule);border-radius:8px;background:rgba(10,9,10,.96);font-size:1rem}
