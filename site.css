@@ -621,3 +621,15 @@ html[data-theme=light] .dock{background:rgba(246,241,231,.97)}
 /* research essay */
 .essay>p{font-size:1.08em;line-height:1.75;margin-top:1.05em}
 .essay>.ptitle+p{margin-top:28px}
+
+.essay-meme{float:right;width:min(260px,40%);margin:.4em 0 1em 36px}
+.essay-meme img{display:block;width:100%;border-radius:6px;border:1px solid var(--rule)}
+.essay-meme figcaption{margin-top:8px;font-family:var(--sans);font-size:.75rem;letter-spacing:.04em;color:#8a8478;text-align:center}
+@media (max-width:640px){.essay-meme{float:none;width:70%;margin:1.2em auto}}
+
+.essay-meme.m-only{display:none}
+@media (max-width:640px){.essay-meme.d-only{display:none}.essay-meme.m-only{display:block;width:62%}}
+
+.essay-meme-wide{width:min(620px,100%);margin:1.4em auto 1.6em}
+.essay-meme-wide img{display:block;width:100%;border-radius:6px;border:1px solid var(--rule)}
+.essay-meme-wide figcaption{margin-top:8px;font-family:var(--sans);font-size:.75rem;letter-spacing:.04em;color:#8a8478;text-align:center}
