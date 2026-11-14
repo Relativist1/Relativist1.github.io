@@ -617,3 +617,7 @@ html[data-theme=light] .dock{background:rgba(246,241,231,.97)}
 
 .cite-box p,.afterword p{max-width:none}
 .pubdate{max-width:none!important;text-align:center}
+
+/* research essay */
+.essay>p{font-size:1.08em;line-height:1.75;margin-top:1.05em}
+.essay>.ptitle+p{margin-top:28px}
