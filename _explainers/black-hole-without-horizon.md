@@ -90,7 +90,7 @@ No new physics is needed: the same theory with different initial conditions, and
 
 ## Same shadow, different insides
 
-What a telescope sees is set by light passing close to the object. At three gravitational radii from the center, measured near the black hole, light can orbit in a circle: the [photon sphere](#c-photon-sphere){:.term}. Light passing inside it falls in, and light passing outside escapes. A distant observer sees that circle enlarged by the curved space in between: its edge appears at $\sqrt{27} \approx 5.2$ gravitational radii, which for M87\* is an angular diameter of about 40 microarcseconds on our sky. Inside it the image is dark. That dark patch, the [shadow](#c-shadow){:.term}, is set by the photon sphere, not by the horizon.
+What a telescope sees is set by light passing close to the object. At three gravitational radii from the center, measured near the black hole, light can orbit in a circle: the [photon sphere](#c-photon-sphere){:.term}. Light passing inside it falls in, and light passing outside escapes. A distant observer sees that circle enlarged by the curved space in between: its edge appears at $\sqrt{27} \approx 5.2$ gravitational radii, which makes the shadow of M87\* about 40 microarcseconds across on our sky. Inside it the image is dark. That dark patch, the [shadow](#c-shadow){:.term}, is set by the photon sphere, not by the horizon.
 
 {% include concept.html t="Photon sphere" %}
 {% include concept.html t="Shadow" %}
