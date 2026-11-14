@@ -607,3 +607,13 @@ html[data-theme=light] .dk-pop{background:#f6f1e7;box-shadow:0 10px 30px rgba(0,
   .dock.hide{transform:translate(-50%,140%)!important}
 }
 html[data-theme=light] .dock{background:rgba(246,241,231,.97)}
+
+/* afterword and citation box: full width, readable */
+.afterword{max-width:none;margin-left:0;margin-right:0}
+.cite-box{font-family:var(--serif);font-size:1.02em;line-height:1.6;padding:24px 28px}
+.cite-box b{font-size:1.2em}
+.cite-box pre{font-size:.8em}
+.afterword .paper{font-size:1.05em}
+
+.cite-box p,.afterword p{max-width:none}
+.pubdate{max-width:none!important;text-align:center}

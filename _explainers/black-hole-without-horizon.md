@@ -31,15 +31,19 @@ concepts:
     text: "General relativistic magnetohydrodynamics: the equations of a magnetized, electrically conducting gas in curved spacetime. Solved on a computer, they follow how the gas moves, heats up and drags magnetic fields along with it."
   - term: "Magnetically arrested disk"
     text: "An accretion flow that has carried so much magnetic flux to the center that the field resists further inflow. Gas then arrives intermittently, slipping between regions of strong field. Polarized EHT images of M87* favor this state."
+  - term: "Synchrotron emission"
+    text: "Light given off by electrons spiraling around magnetic field lines at nearly the speed of light. It is the main source of the radio light that the EHT sees from M87*, and it is naturally polarized."
+  - term: "Ray tracing"
+    text: "Building an image by following light rays from a camera back into the scene. Near a black hole the rays are not straight lines: they follow the curved paths given by the geodesic equation."
   - term: "Gravitational redshift"
     text: "Light loses energy climbing out of a gravitational field, so it arrives at a lower frequency than it was emitted. The deeper the starting point, the larger the loss; at a horizon, the loss is total."
   - term: "Dynamic range"
     text: "The ratio between the brightest and the faintest features an image can reliably show. It is independent of resolution: a sharp image can still miss a faint feature next to a bright one."
 paper_url: "https://arxiv.org/abs/2604.15430"
 paper_label: "Read the preprint"
-paper_venue: "Submitted to Physical Review Letters (2026)"
+paper_venue: "Preprint, under review (2026)"
 paper_title: "GRMHD accretion beyond the black hole paradigm: Light from within the shadow"
-paper_cite: "Saurabh, M. Wielgus, P. Bambhaniya, E. M. de Gouveia Dal Pino, A. P. Lobanov & P. S. Joshi (2026). GRMHD accretion beyond the black hole paradigm: Light from within the shadow. Submitted to Physical Review Letters, arXiv:2604.15430."
+paper_cite: "Saurabh, M. Wielgus, P. Bambhaniya, E. M. de Gouveia Dal Pino, A. P. Lobanov & P. S. Joshi (2026). GRMHD accretion beyond the black hole paradigm: Light from within the shadow. Preprint under review, arXiv:2604.15430."
 ---
 
 In 1937 a lost painting by Johannes Vermeer surfaced in the Netherlands. Vermeer is the seventeenth-century Dutch painter of *Girl with a Pearl Earring*. The leading Vermeer expert of the day called the painting a masterpiece, and a museum in Rotterdam paid a fortune for it.
@@ -160,7 +164,25 @@ Results:
 
 ## The images
 
-We computed images with ipole, a code that traces light through curved spacetime, at the EHT frequency of 230 GHz and with M87\*'s mass, distance and inclination.
+A GRMHD simulation tells us where the gas is, how dense and how hot it is, how fast it moves and how its magnetic field is arranged. It does not tell us what the gas looks like. For that, two more steps are needed.
+
+The first is emission. The hot electrons in the plasma spiral around the magnetic field lines at nearly the speed of light, and in doing so they radiate: [synchrotron emission](#c-synchrotron-emission){:.term}. From the density, temperature and field of the simulation, we compute how much light every part of the gas gives off, and how much it absorbs. The simulation follows a single temperature for the whole fluid, so the temperature of the electrons, which do the radiating, has to be assigned by a prescription. This is one of the main uncertainties in the models.
+
+{% include concept.html t="Synchrotron emission" %}
+
+The second is the journey of that light to the telescope. Near the object, light does not travel in straight lines, so we use [ray tracing](#c-ray-tracing){:.term}: for every pixel of a virtual camera placed far away, we follow a light ray backward into the simulation, collecting the light emitted along its path and subtracting what is absorbed. The path of every ray is a solution of the geodesic equation,
+
+<div class="eq-box" markdown="1">
+$$ \frac{d^2x^\mu}{d\lambda^2} + \Gamma^\mu_{\alpha\beta}\,\frac{dx^\alpha}{d\lambda}\frac{dx^\beta}{d\lambda} = 0 $$
+</div>
+
+- $x^\mu$ is the position of the light in space and time, and $\lambda$ measures progress along its path;
+- $\Gamma^\mu_{\alpha\beta}$ encodes the curvature of spacetime, here either the black hole or JMN-1;
+- in flat space $\Gamma = 0$, and the equation says light moves in a straight line. Gravity is what bends it.
+
+{% include concept.html t="Ray tracing" %}
+
+We computed the images with [ipole](https://github.com/AFD-Illinois/ipole), a public code that traces rays through curved spacetime and keeps track of their polarization, at the EHT frequency of 230 GHz and with M87\*'s mass, distance and inclination.
 
 Below are the two simulations in motion. Try to tell which is which before reading the caption.
 
