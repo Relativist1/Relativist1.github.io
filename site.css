@@ -87,6 +87,7 @@ figcaption{font-family:var(--sans);font-size:.95rem;color:#b9b2a4;margin-top:10p
 .work:nth-child(even) .figure{order:2}
 .work p{margin-top:10px}
 .work .arrow{margin-top:16px}
+.work-links{display:flex;gap:18px;flex-wrap:wrap}
 
 /* simulations */
 .sim-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:48px;align-items:end;margin-top:30px}
@@ -146,6 +147,13 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
 .ol li:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}
 .ol p{margin-top:8px;color:#d6cfc0}
 .ol .arrow{margin-top:12px}
+.outreach-network{margin-top:34px;padding-top:22px;border-top:1px solid var(--rule)}
+.network-label{font-family:var(--sans);font-size:.86rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.network-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:12px}
+.network-grid a{position:relative;display:flex;flex-direction:column;min-height:72px;padding:13px 36px 12px 14px;border:1px solid var(--rule);background:var(--panel);color:var(--ivory);text-shadow:none}
+.network-grid a:hover{border-color:rgba(239,211,164,.6);color:#fff}
+.network-grid span{font-size:1.05rem;line-height:1.2}.network-grid small{margin-top:4px;font-family:var(--sans);font-size:.78rem;letter-spacing:.04em;color:#b9b2a4}
+.network-grid b{position:absolute;right:13px;top:12px;font-weight:400;color:var(--amber)}
 
 /* contact */
 .stop.last{align-items:center;text-align:center;justify-content:center;padding-top:calc(120px + 16vh)}
@@ -172,6 +180,7 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
 }
 @media (max-width:900px){
   .outreach{grid-template-columns:1fr;gap:28px}
+  .network-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hero{max-width:none!important}
   .work,.work:nth-child(even){grid-template-columns:1fr;gap:16px}.work:nth-child(even) .figure{order:0}
   .sim-top{grid-template-columns:1fr;gap:24px}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -182,6 +191,7 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
   .top{background:rgba(5,5,6,.94);border-bottom:1px solid var(--rule);backdrop-filter:blur(6px)}
   .hero .figure{max-width:260px}
   .sher{font-size:1.45rem}
+  .network-grid{grid-template-columns:1fr}
   .narrow.right .note{font-size:1.14rem}
   #scrim{background:rgba(5,5,6,.42)}
   body{font-size:18.9px}
