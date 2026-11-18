@@ -103,10 +103,7 @@ input[type=range]::-moz-range-track{height:1px;background:var(--rule)}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;margin-top:-6.5px;border-radius:50%;background:var(--amber-pale);border:0}
 input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--amber-pale);border:0}
 .reset{justify-self:start;background:none;border:0;padding:0;font-family:var(--sans);font-size:.86rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-pale);cursor:pointer}
-.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:36px;padding-top:32px;border-top:1px solid var(--rule)}
 .sim-top .arrow{margin-top:16px}
-.strip figcaption{font-family:var(--serif);font-size:1.08rem;color:var(--ivory)}
-.strip .figure img{aspect-ratio:1;object-fit:cover}
 
 /* out of the box */
 .note{margin-top:18px;font-size:1.12rem;line-height:1.62;max-width:62ch}
@@ -184,7 +181,6 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
   .peers{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.peers h3{grid-column:1/-1}
   .hero{max-width:none!important}
   .work,.work:nth-child(even){grid-template-columns:1fr;gap:16px}.work:nth-child(even) .figure{order:0}
-  .sim-top{grid-template-columns:1fr;gap:24px}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
   .story{grid-template-columns:1fr;gap:10px}.story .go{display:none}
   .cv li{grid-template-columns:1fr;gap:4px}.cv p,.cv div{grid-column:1}
   .journey{grid-template-columns:1fr;gap:28px}}
@@ -228,7 +224,6 @@ h2{font-size:clamp(2rem,3.36vw,2.625rem)}
 .sim-top p,.narrow.right .note,#writing .note{font-size:1em}
 .cv h3,.ol h3,.story h3,.work h3{font-size:1.575rem}
 .cv time,.outlet span{font-size:1.1rem}
-.strip figcaption{font-family:var(--sans);font-size:.95rem;color:#b9b2a4}
 
 /* inner pages */
 .page{min-height:100vh;box-sizing:border-box;padding-block:120px 96px;padding-left:max(7vw,env(safe-area-inset-left,0px));padding-right:max(7vw,env(safe-area-inset-right,0px))}
@@ -251,6 +246,8 @@ h2{font-size:clamp(2rem,3.36vw,2.625rem)}
 .steps .n{font-size:2rem;line-height:1;color:var(--amber);font-variant-numeric:lining-nums}
 .models-head{margin-top:72px}.models-head .sub{margin-top:0}
 .models-head>p{margin-top:18px;color:#d6cfc0;max-width:58ch}
+.sim-top p{font-size:1em;line-height:1.6;max-width:none}
+.simulations-lede{max-width:none;font-size:1em;line-height:1.6}
 .ladder{list-style:none;margin:28px 0 0;padding:0}
 .ladder li{display:grid;grid-template-columns:54px minmax(220px,360px) minmax(0,1fr);gap:28px;align-items:start;padding:30px 0;border-bottom:1px solid var(--rule)}
 .ladder li:first-child{padding-top:0}
