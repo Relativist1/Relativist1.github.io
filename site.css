@@ -249,17 +249,22 @@ h2{font-size:clamp(2rem,3.36vw,2.625rem)}
 .steps{list-style:none;margin:20px 0 0;padding:0}
 .steps li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:20px;padding:24px 0;border-bottom:1px solid var(--rule)}
 .steps .n{font-size:2rem;line-height:1;color:var(--amber);font-variant-numeric:lining-nums}
-.ladder{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:28px}
-.ladder .figure img{aspect-ratio:1;object-fit:cover}
-.ladder figcaption{font-family:var(--serif);font-size:1rem;color:#d6cfc0;line-height:1.45}
-.ladder figcaption b{font-weight:500;color:var(--ivory)}
+.models-head{margin-top:72px}.models-head .sub{margin-top:0}
+.models-head>p{margin-top:18px;color:#d6cfc0;max-width:58ch}
+.ladder{list-style:none;margin:28px 0 0;padding:0}
+.ladder li{display:grid;grid-template-columns:54px minmax(220px,360px) minmax(0,1fr);gap:28px;align-items:start;padding:30px 0;border-bottom:1px solid var(--rule)}
+.ladder li:first-child{padding-top:0}
+.model-number{font-family:var(--sans);font-size:1rem;letter-spacing:.08em;color:var(--amber);font-variant-numeric:tabular-nums;padding-top:3px}
+.ladder .figure img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.model-copy{padding-top:2px}.model-copy h3{font-size:1.55rem}.model-copy p{margin-top:9px;color:#d6cfc0;max-width:52ch}
+.model-copy .model-adds{font-family:var(--sans);font-size:.92rem;letter-spacing:.03em;color:var(--amber-pale)}
 .codes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px}
 .codes li{padding:22px 0;border-bottom:1px solid var(--rule)}
 .empty{margin-top:24px;padding:28px;border:1px dashed var(--rule);border-radius:4px;color:#b9b2a4;font-style:italic}
 footer.foot{padding-block:28px 40px;padding-left:max(7vw,env(safe-area-inset-left,0px));padding-right:max(7vw,env(safe-area-inset-right,0px));position:relative;z-index:3;font-family:var(--sans);font-size:.84rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center}
-@media (max-width:900px){.qs,.codes{grid-template-columns:1fr}.ladder{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.qs,.codes{grid-template-columns:1fr}.ladder li{grid-template-columns:48px minmax(200px,300px) minmax(0,1fr);gap:20px}}
 @media (max-width:760px){.page{padding-block:96px 64px;padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
-  .pubs li{grid-template-columns:1fr;gap:2px}.steps li{grid-template-columns:40px minmax(0,1fr);gap:12px}.steps .n{font-size:1.5rem}}
+  .pubs li{grid-template-columns:1fr;gap:2px}.steps li{grid-template-columns:40px minmax(0,1fr);gap:12px}.steps .n{font-size:1.5rem}.ladder li{grid-template-columns:38px minmax(0,1fr);gap:12px}.ladder .figure,.model-copy{grid-column:2}.ladder .figure{grid-row:1}.model-copy{grid-row:2}.model-copy h3{font-size:1.4rem}}
 
 /* guide card on the Simulations page */
 .guide{display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:6px 28px;margin-top:40px;padding:28px 30px;border:1px solid var(--rule);border-radius:4px;background:var(--panel);color:var(--ivory)}
